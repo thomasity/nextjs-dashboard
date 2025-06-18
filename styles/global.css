@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input[type='number'] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+html {
+  background-color: #f1f1f1;
+}
+
+body {
+  --dot-bg: #f1f1f1;
+  --dot-color: #161616;
+  --dot-size: 1px;
+  --dot-space: 50px;
+  background:
+    linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+    linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+    var(--dot-color);
+
+  
+}
+
+.dark body {
+  --dot-bg: #161616;
+  --dot-color: #f1f1f1;
+}
+
+main {
+  align-items: center;
+}
+
+section {
+  --tw-border-opacity: 1;
+  --tw-bg-opacity: 1;
+  background-color: rgba(249, 250, 251, var(--tw-bg-opacity));
+  border: rgba(229, 231, 235, var(--tw-border-opacity)) solid 1px;
+  border-radius: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  color: #161616;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-family: 'Comfortaa', sans-serif;
+  font-weight: 400;
+}
+.dark p {
+  color: #f1f1f1;
+}
+
+a {
+  color: #161616;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-family: 'Comfortaa', sans-serif;
+  font-weight: 400;
+}
+
+.dark a {
+  color: #f1f1f1;
+}
+
+h1 {
+  color: #161616;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-family: 'Comfortaa', sans-serif;
+  font-weight: 700;
+}
+
+.dark h1 {
+  color: #f1f1f1;
+}
+
+h2 {
+  color: #161616;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+h3 {
+  color: #161616;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
