@@ -6,8 +6,14 @@ import styles from '@/app/projects/projects.module.css';
 import clsx from "clsx";
 
 
+interface ProjectPageProps {
+  params: {
+    name: string;
+  };
+}
 
-export default async function ProjectPage({ params }: { params: { name: string } }) {
+
+export default async function ProjectPage({ params }: ProjectPageProps) {
   const decodedName = decodeURIComponent(params.name);
   const project = Projects.find(p => p.name === decodedName);
 
