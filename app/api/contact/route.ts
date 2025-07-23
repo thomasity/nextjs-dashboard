@@ -14,7 +14,12 @@ export async function POST(req: Request) {
 
   const { name, email, message }: ContactFormData = await req.json();
 
-  if (!name || !email || !message) return 400;
+  if (!name || !email || !message) {
+    return NextResponse.json(
+        { error: 'Missing fields' },
+        { status: 400 }
+      );
+  }
 
   console.log(name, email, message)
 
