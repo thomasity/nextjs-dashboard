@@ -1,0 +1,227 @@
+{
+  "Name": "Thomas Kent Callen",
+  "Contact Information": {
+    "email": "tcallen1001@gmail.com",
+    "phone": "(616) 558-8366",
+    "location": "Spring Lake, MI",
+    "linkedin": "linkedin.com/in/thomascallen"
+  },
+  "Summary": "Embedded systems engineer with a background in computer science...",
+  "Education": [
+    {
+      "degree": "Bachelor of Science in Engineering in Computer Science",
+      "minor": "Entrepreneurship",
+      "school": "The University of Michigan",
+      "college": "Engineering",
+      "graduation": "2025-05",
+      "gpa": "3.5",
+      "logo": "/logos/umich_logo.jpg",
+      "link": null,
+      "coursework": [
+        {
+            "title": "Web Systems",
+            "description": "Concepts surrounding web systems, applications, and internet scale distributed systems. Topics covered include client/server protocols, security, information retrieval and search engines, scalable data processing, and fault tolerant systems.",
+            "semester": "Fall",
+            "year": 2024
+        },
+        {
+            "title": "Mobile App Development for Entrepreneurs",
+            "description": "Best practices in the software engineering of mobile applications and best practices of software entrepreneurs in the design, production and marketing of mobile apps. Engagement in the hands-on practice of entrepreneurship by actually inventing, building, and marketing a mobile app.",
+            "semester": "Fall",
+            "year": 2024
+        },
+        {
+            "title": "Election Security",
+            "description": "This course will provide a deep examination of the past, present, and future of election mechanics, informed by perspectives from computer security, tech policy, human factors, and more. We'll cover vulnerabilities and safeguards for election infrastructure; the rise of election security disinformation; legal and regulatory structures that impact election security at federal, state, and local levels; and efforts to change technology and policy to strengthen security. Our weekly discussions will be informed by current events surrounding the 2024 presidential election.",
+            "semester": "Fall",
+            "year": 2024
+        },
+        {
+            "title": "Introduction to Computer Security",
+            "description": "Introduction to the principles and practices of computer security as applied to software, host systems, and networks. Covers the foundations of building, using, and managing secure systems. Topics include standard cryptographic functions and protocols, threats and defenses for real-world systems, include response, and computer forensics.",
+            "semester": "Winter",
+            "year": 2024
+        },
+        {
+            "title": "Introduction to Quantum Computing",
+            "description": "A practical approach towards exploring how each layer of the computing stack is impacted by quantum computing. Quantum logic design using classical oracles, phase kickback, and entanglement. Quantum algorithms including Deutsch-Jozsa, Grover's, and Shor's. Error correction schemes including Shor and Steane codes. Building fault-tolerant architectures.",
+            "semester": "Winter",
+            "year": 2025
+        },
+        {
+            "title": "Data Mining",
+            "description": "Fundamental concepts and methods in data mining, and practical skills for mining massive, real data on distributed frameworks (e.g., Hadoop). Topics include big data systems, frequent itemsets, similarity and cluster analysis, classification, dimensionality reduction, mining of networks, time series and data streams, and applications (e.g., social network analysis, web search).",
+            "semester": "Winter",
+            "year": 2025
+        },
+        {
+            "title": "Foundations of Computer Science",
+            "description": "An introduction to theory of computation. Models of computation: finite state machines, Turing machines. Decidable and undecidable problems. Polynomial time computability and paradigms of algorithm design. Computational complexity emphasizing NP-hardness. Coping with intractability. Exploiting intractability: cryptography.",
+            "semester": "Winter",
+            "year": 2024
+        },
+        {
+            "title": "Introduction to Computer Organization",
+            "description": "Basic concepts of computer organization and hardware. Instructions executed by a processor and how to use these instructions in simple assembly-language programs. Stored-program concept. Data-path and control for multiple implementations of a processor. Performance evaluation, pipelining, caches, virtual memory, input/output.",
+            "semester": "Fall",
+            "year": 2023
+        },
+        {
+            "title": "Data Structures and Algorithms",
+            "description": "Introduction to the algorithm analysis and O-notation; Fundamental data structures including lists, stacks, queues, priority queues, hash tables, binary trees, search trees, balanced, trees, and graphs; searching and sorting algorithms; recursive algorithms; basic graph algorithms; introduction to greedy algorithms and divide and conquer strategy. Several programming assignments.",
+            "semester": "Winter",
+            "year": 2023
+        },
+        {
+            "title": "Programming and Introductory Data Structures",
+            "description": "Algorithm development and effective programming, top-down analysis, structured programming, testing, and program correctness. Program language syntax and static and runtime semantics. Scope, procedure instantiation, recursion, abstract data types, and parameter passing methods. Structured data types, pointers, linked data structures, stacks, queues, arrays, records, and trees.",
+            "semester": "Fall",
+            "year": 2022
+        },
+        {
+            "title": "Introduction to Logic Design",
+            "description": "Boolean algebra, digital design techniques, logic gates, logic and state minimization, standard combinational circuits, latches and flip-flops, sequential circuits, synthesis of synchronous sequential circuits, state machines, FPGAs, memories, arithmetic circuits, and computer-aided design. Laboratory involves CAD-based design implemented on a FPGA including elementary interfacing.",
+            "semester": "Winter",
+            "year": 2023
+        },
+        {
+            "title": "Introduction to Signals and Systems",
+            "description": "Theory and practice of signals and systems engineering in continuous and discrete time. Continuous-time linear time-invariant systems, impulse response, convolution. Fourier series, Fourier transforms, spectrum, frequency response and filtering. Sampling leading to basic digital signal processing using the discrete-time Fourier and the discrete Fourier transform. Laplace transform, transfer functions, poles and zeros, stability. Applications of Laplace transform theory to RLC circuit analysis. Introduction to communications, control, and signal processing.",
+            "semester": "Winter",
+            "year": 2025
+        },
+        {
+            "title": "Introduction to Electronic Circuits",
+            "description": "Basic Concepts of voltage and current; Kirchhoff's voltage and current laws; Ohm's law; voltage and current sources; Thevenin and Norton equivalent circuits; DC and low frequency active circuits using operational amplifiers, diodes, and transistors; small signal analysis; energy and power. Time-and frequency-domain analysis of RLC circuits. Basic passive and active electronic filters. Laboratory experience with electrical signals and circuits.",
+            "semester": "Winter",
+            "year": 2024
+        },
+        {
+            "title": "Entrepreneurship Practicum",
+            "description": "The Practicum immerses students in the entrepreneurial process in a supportive classroom environment. Students critically evaluate and then pursue the development of their own ideas for new ventures. Throughout the course, students work closely with entrepreneurship faculty and mentors.",
+            "semester": "Winter",
+            "year": 2025
+        },
+        {
+            "title": "Entrepreneurial Business Basics",
+            "description": "This business basics course covers how to make a product or service idea real in the form of a tangible, marketable product and an organization that can produce and distribute it. Topic areas covered include: motivation and social purpose of entrepreneurship, market research and product development activities, people resource management, capital resources management, and go-to-market management.",
+            "semester": "Fall",
+            "year": 2024
+        },
+        {
+            "title": "Advanced Technical Communication for Computer Science",
+            "description": "Advanced technical communication for computer science. Design and writing of user and task analyses, requirements documents, specifications, proposals, reports and documentation, all aimed at diverse organizational audiences. Preparation and delivery of final oral presentations and written project reports.",
+            "semester": "Fall",
+            "year": 2024
+        }
+      ]
+    },
+    {
+      "degree": "High School Diploma",
+      "minor": null,
+      "school": "Spring Lake High School",
+      "college": null,
+      "graduation": "2020-05",
+      "gpa": "4.0",
+      "logo": "/logos/spring_lake_logo.png",
+      "coursework": null
+    }
+  ],
+  "Work Experience": [
+    {
+        "company": "GLBL Foundation",
+        "title": "Software Engineer",
+        "location": "Remote",
+        "start": "2024-11",
+        "end": "2025-07",
+        "details": [
+            "Design and prototype the embedded systems of a free-source internet-connected water purifier/analyzer",
+            "Build responsive web and mobile UIs using React to visualize data from water purifiers"
+        ],
+        "logo": "/logos/glbl_logo.webp",
+        "link": "https://glblfoundation.org/",
+        "still_working": true
+    }
+  ],
+  "Extracurriculars": [
+    {
+        "company": "UofM's Bioastronautics & Life Support Systems Team",
+        "title": "Electrical Sub Team Lead",
+        "location": "Ann Arbor, MI",
+        "start": "2024-08",
+        "end": "2025-05",
+        "logo": "/logos/BLiSS_Logo_white_bg.jpg",
+        "link": "https://sites.google.com/a/umich.edu/bliss/",
+        "details": [
+            "Designed real-time embedded systems using STM32",
+            "Built custom PCBs and sensor interfaces"
+        ],
+        "still_working": false
+    },
+    {
+        "company": "UofM's Bioastronautics & Life Support Systems Team",
+        "title": "Data Sub Team Member",
+        "location": "Ann Arbor, MI",
+        "start": "2023-09",
+        "end": "2024-05",
+        "logo": "/logos/BLiSS_Logo_white_bg.jpg",
+        "link": "https://sites.google.com/a/umich.edu/bliss/",
+        "details": [
+            "Designed real-time embedded systems using STM32",
+            "Built custom PCBs and sensor interfaces"
+        ],
+        "still_working": false
+    },
+    {
+        "company": "Entrepreneurship Creativity Club",
+        "title": "Treasurer",
+        "location":"Ann Arbor, MI",
+        "start": "2023-01",
+        "end": "2024-09",
+        "logo": "/logos/ecc_logo.jpeg",
+        "link": "https://maizepages.umich.edu/organization/entrepreneurshipcreativityclub",
+        "details": [
+            " Applied for grants and dispersed funds to selected startups and entrepreneurs based on campus",
+            "Interviewed established entrepreneurs to inquire lessons learned from their experiences"
+        ],
+        "still_working": false
+    }
+  ],
+  "Skills": [
+    {
+        "title": "Languages",
+        "summary": null,
+        "items": ["C", "C++", "Python", "Java", "MATLAB", "SQL", "JavaScript/TypeScript", "HTML/CSS"]
+    },
+    {
+        "title": "Frameworks",
+        "summary": null,
+        "items": ["Next.js", "Flask", "Express.js", "Spark", "Hadoop"]
+    },
+    {
+        "title": "Libraries",
+        "summary": null,
+        "items": ["React", "Tailwind CSS", "NumPy", "Matplotlib", "qiskit", "OpenCV"]
+    },
+    {
+        "title":"Databases",
+        "summary": null,
+        "items": ["PostgreSQL", "MySQL", "Firebase"]
+    },
+    {
+        "title": "Tools",
+        "summary": null,
+        "items": ["Git", "GitHub", "Docker", "Figma"]
+    },
+    {
+        "title": "Platforms",
+        "summary": null,
+        "items": ["Node.js", "AWS", "Raspberry Pi", "Arduino"]
+    },
+    {
+        "title":"Hardware",
+        "summary": null,
+        "items": ["MicroPython", "CircuitPython", "Arduino"]
+    }
+]
+}

@@ -1,0 +1,23 @@
+.beginner {
+    border-left: 4px solid #4caf50 !important; /* Green for beginner */
+}
+
+.intermediate {
+    border-left: 4px solid #ff9800 !important; /* Orange for intermediate */
+} 
+
+.advanced {
+    border-left: 4px solid #f44336 !important; /* Red for advanced */
+}
+
+.beginnerBackground {
+    background-color:  #4caf50 !important; /* Green for beginner */
+}
+
+.intermediateBackground {
+    background-color:  #ff9800 !important; /* Orange for intermediate */
+} 
+
+.advancedBackground {
+    background-color: #f44336 !important; /* Red for advanced */
+}

@@ -3,6 +3,8 @@ import Link from "next/link";
 import React from 'react';
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
+import SocialMediaWidget from "../socialMediaWidget/socialMediaWidget";
+import styles from './header.module.css';
 
 const links = [
     "Home",
@@ -16,24 +18,26 @@ export default function Header() {
     const pathname = usePathname();
 
     return (
-        <header className="fixed flex justify-center items-center w-full h-16 z-50">
-            <nav className="flex flex-row justify-around items-center mx-2 bg-gray-50 border-2 border-gray-200 dark:border-gray-700 rounded-full dark:bg-gray-800 shadow-lg">
+        <header>
+            <div></div>
+            <nav className={styles.navBar}>
                 {links.map((link) => {
                     const path = link === "Home" ? '/' : `/${link.toLowerCase()}`;
-                    const isActive = path === pathname;
+                    const isActive = path === '/' ? pathname === path : pathname.startsWith(path);
                     return (
                         <Link
                         key={link}
                         href={path}
-                        className={clsx('w-1/5 items-center justify-center h-full p-3 font-comfortaa text-xs text-center cursor-pointer border-0 \
+                        className={clsx('w-1/5 items-center justify-center h-full p-3 text-xs text-center cursor-pointer border-0 active:scale-95 \
                             rounded-full',
-                            isActive ? 'bg-black text-white dark:bg-white dark:text-black' : 'hover:bg-gray-200 dark:hover:bg-gray-700')}
+                            isActive ? 'bg-[#0d1117] text-[#f0f6fc] dark:bg-[#f9fafb] dark:text-[#1f2328]' : 'hover:bg-[#ececec] active:bg-[#e0e0e0] dark:hover:bg-[#181b20] dark:active:bg-[#23272e]')}
                         >
                             {link}
                         </Link>
                     );
                 })}
             </nav>
+            <SocialMediaWidget />
         </header>
     );
 }

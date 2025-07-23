@@ -12,6 +12,9 @@ const config: Config = {
       fontFamily: {
         comfortaa: ['Comfortaa', 'sans-serif'],
       },
+      borderColor: {
+        DEFAULT: 'var(--border-color)',
+      },
       gridTemplateColumns: {
         '13': 'repeat(13, minmax(0, 1fr))',
       },
@@ -31,6 +34,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [require('@tailwindcss/forms')],
+  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
 };
 export default config;

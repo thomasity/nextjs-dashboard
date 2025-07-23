@@ -1,0 +1,27 @@
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 2px;
+}
+
+.course {
+    cursor: pointer;
+    padding: 8px 4px;
+    border-bottom: var(--border-color) solid 1px;
+}
+
+.course:last-child {
+    border-width: 0px;
+}
+
+.course:hover {
+    background-color: var(--bg-hover);
+}
+
+.course:active {
+    background-color: var(--bg-active);
+}

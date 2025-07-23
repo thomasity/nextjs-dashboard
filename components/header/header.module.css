@@ -1,0 +1,11 @@
+/* @media (min-width: 1180px) {
+  .navBar {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+} */
+
+.navBar {
+  justify-self: center;
+}
