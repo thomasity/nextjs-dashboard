@@ -10,8 +10,6 @@ export async function POST(req: Request) {
     message: string;
   }
 
-  console.log(1)
-
   const { name, email, message }: ContactFormData = await req.json();
 
   if (!name || !email || !message) {
@@ -20,8 +18,6 @@ export async function POST(req: Request) {
         { status: 400 }
       );
   }
-
-  console.log(name, email, message)
 
   try {
     const transporter = nodemailer.createTransport({
@@ -32,16 +28,12 @@ export async function POST(req: Request) {
       },
     });
 
-    console.log(transporter)
-
     await transporter.sendMail({
       from: email,
       to: process.env.EMAIL_USERNAME,
       subject: `New contact from ${name}`,
       text: message,
     });
-
-    console.log("OK")
 
     return NextResponse.json({ success: true }, { status: 200 });
   } catch (err) {

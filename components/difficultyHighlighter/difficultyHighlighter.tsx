@@ -1,6 +1,6 @@
 import React from 'react';
-import clsx from "clsx";
-import styles from './difficultyHighlighter.module.css'
+import clsx from 'clsx';
+import styles from './difficultyHighlighter.module.css';
 
 interface DifficultyHighlighterProps {
     difficulty: string;
@@ -12,11 +12,11 @@ export default function DifficultyHighlighter({ difficulty, children }: Difficul
 
     return (
         <div className={clsx(
-        "w-full h-full p-2 text-left",
-        difficulty.toLowerCase() === "beginner" ? styles.beginner :
-        difficulty.toLowerCase() === "intermediate" ? styles.intermediate :
-        difficulty.toLowerCase() === "advanced" ? styles.advanced :
-        "border-l-4 border-gray-500"
+        'w-full h-full p-2 text-left',
+        difficulty.toLowerCase() === 'beginner' ? styles.beginner :
+        difficulty.toLowerCase() === 'intermediate' ? styles.intermediate :
+        difficulty.toLowerCase() === 'advanced' ? styles.advanced :
+        'border-l-4 border-gray-500'
       )}>
             {children}
         </div>

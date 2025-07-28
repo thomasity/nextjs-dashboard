@@ -9,9 +9,8 @@ export default function MarkdownWindow({ name }: { name: string }) {
 
   useEffect(() => {
     const fetchMarkdown = async () => {
-      try {markdown
+      try {markdown;
         const res = await fetch(`/READMEs/${name}.md`);
-        console.log()
         if (!res.ok) throw new Error('Markdown not found');
         const text = await res.text();
         setMarkdown(text);
@@ -21,10 +20,10 @@ export default function MarkdownWindow({ name }: { name: string }) {
     };
 
     fetchMarkdown();
-  }, [name]);
+  }, );
 
   return (
-      <article className="
+      <article className='
         prose dark:prose-invert
         markdown-body
         h-full overflow-auto overscroll-contain
@@ -34,7 +33,7 @@ export default function MarkdownWindow({ name }: { name: string }) {
         bg-[var(--dot-bg)]
         dark:bg-[var(--dot-bg)]
         rounded-none
-      ">
+      '>
         {markdown ? 
           <ReactMarkdown 
           remarkPlugins={[remarkGfm]}

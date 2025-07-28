@@ -6,7 +6,7 @@ import { comfortaa } from '@/styles/fonts';
 import { ThemeProvider } from 'next-themes';
 import Header from '@/components/header/header';
 import ThemeToggle from '@/components/themeToggle/themeToggle';
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 
 export const metadata: Metadata = {

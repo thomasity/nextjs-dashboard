@@ -1,3 +1,14 @@
+
+
+export interface Resume {
+    name: string,
+    summary: string,
+    education: Education[],
+    experience: Experience[],
+    extracurriculars: Experience[],
+    skills: Skill[]
+}
+
 export interface Project {
     name: string;
     year: number;

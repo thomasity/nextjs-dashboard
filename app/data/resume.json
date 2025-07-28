@@ -1,13 +1,7 @@
 {
-  "Name": "Thomas Kent Callen",
-  "Contact Information": {
-    "email": "tcallen1001@gmail.com",
-    "phone": "(616) 558-8366",
-    "location": "Spring Lake, MI",
-    "linkedin": "linkedin.com/in/thomascallen"
-  },
-  "Summary": "Embedded systems engineer with a background in computer science...",
-  "Education": [
+  "name": "Thomas Kent Callen",
+  "summary": "Embedded systems engineer with a background in computer science...",
+  "education": [
     {
       "degree": "Bachelor of Science in Engineering in Computer Science",
       "minor": "Entrepreneurship",
@@ -127,7 +121,7 @@
       "coursework": null
     }
   ],
-  "Work Experience": [
+  "experience": [
     {
         "company": "GLBL Foundation",
         "title": "Software Engineer",
@@ -143,7 +137,7 @@
         "still_working": true
     }
   ],
-  "Extracurriculars": [
+  "extracurriculars": [
     {
         "company": "UofM's Bioastronautics & Life Support Systems Team",
         "title": "Electrical Sub Team Lead",
@@ -187,7 +181,7 @@
         "still_working": false
     }
   ],
-  "Skills": [
+  "skills": [
     {
         "title": "Languages",
         "summary": null,

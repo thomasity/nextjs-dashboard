@@ -1,17 +1,17 @@
-'use client'
-import Link from "next/link";
+'use client';
+import Link from 'next/link';
 import React from 'react';
-import clsx from "clsx";
-import { usePathname } from "next/navigation";
-import SocialMediaWidget from "../socialMediaWidget/socialMediaWidget";
+import clsx from 'clsx';
+import { usePathname } from 'next/navigation';
+import SocialMediaWidget from '../socialMediaWidget/socialMediaWidget';
 import styles from './header.module.css';
 
 const links = [
-    "Home",
-    "About",
-    "Projects",
-    "Resume",
-    "Contact"
+    'Home',
+    'About',
+    'Projects',
+    'Resume',
+    'Contact'
 ];
 
 export default function Header() {
@@ -22,7 +22,7 @@ export default function Header() {
             <div></div>
             <nav className={styles.navBar}>
                 {links.map((link) => {
-                    const path = link === "Home" ? '/' : `/${link.toLowerCase()}`;
+                    const path = link === 'Home' ? '/' : `/${link.toLowerCase()}`;
                     const isActive = path === '/' ? pathname === path : pathname.startsWith(path);
                     return (
                         <Link

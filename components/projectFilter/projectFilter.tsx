@@ -3,8 +3,8 @@
 import React, { useState, useEffect } from 'react';
 // import { frameworkTree, languageTree, fieldTree } from '@/app/data/frameworkTree';
 import { getFilters } from '@/app/data/frameworkTree';
-import { Project } from "@/app/types";
-import projectsData from '@/app/data/projects.json'
+import { Project } from '@/app/types';
+import projectsData from '@/app/data/projects.json';
 import FilterTab from '../filterTab';
 
 const projects: Project[] = projectsData;
@@ -21,7 +21,7 @@ export default function ProjectFilter({ setProjects, projects, setFilter }
   : 
   { setProjects: React.Dispatch<React.SetStateAction<Project[]>>, 
     projects: Project[],
-    setFilter: React.Dispatch<React.SetStateAction<String>>}) 
+    setFilter: React.Dispatch<React.SetStateAction<string>>}) 
 {
   const [selectedFrameworks, setSelectedFrameworks] = useState<string[]>([]);
   const [selectedLanguages, setSelectedLanguages] = useState<string[]>([]);
@@ -31,16 +31,16 @@ export default function ProjectFilter({ setProjects, projects, setFilter }
   const [selectedDifficulties, setSelectedDifficulties] = useState<string[]>([]);
 
   function generateLogicExpression(groups: Array<string[] | number[]>) {
-    if (!Array.isArray(groups)) return "";
+    if (!Array.isArray(groups)) return '';
 
     const orGroups = groups
       .filter(group => Array.isArray(group) && group.length > 0)
       .map(group => {
         if (group.length === 1) return group[0];
-        return `(${group.join(" OR ")})`;
+        return `(${group.join(' OR ')})`;
       });
 
-    return (orGroups.join(" AND "));
+    return (orGroups.join(' AND '));
   }
 
   useEffect(() => {
@@ -54,7 +54,7 @@ export default function ProjectFilter({ setProjects, projects, setFilter }
       (selectedDifficulties.length === 0 || selectedDifficulties.includes(project.difficulty))
     );
     setProjects(filteredProjects);
-    setFilter(generateLogicExpression([selectedFrameworks, selectedLanguages, selectedFields, selectedLibraries, selectedYears, selectedDifficulties]))
+    setFilter(generateLogicExpression([selectedFrameworks, selectedLanguages, selectedFields, selectedLibraries, selectedYears, selectedDifficulties]));
 
   }, [selectedFrameworks, selectedLanguages, selectedFields, selectedLibraries, selectedYears, selectedDifficulties]);
 
@@ -65,53 +65,53 @@ export default function ProjectFilter({ setProjects, projects, setFilter }
     setSelectedLibraries([]);
     setSelectedYears([]);
     setSelectedDifficulties([]);
-    setFilter("");
-  }
+    setFilter('');
+  };
 
   return (
-    <aside className="h-full w-full mb-auto flex flex-col justify-start items-center overflow-hidden p-0">
-      <div className="w-full flex flex-row justify-between items-center border-b-[3px] pb-0">
+    <aside className='h-full w-full mb-auto flex flex-col justify-start items-center overflow-hidden p-0'>
+      <div className='w-full flex flex-row justify-between items-center border-b-[3px] pb-0'>
         <p>Filters</p>
         <button
           onClick={resetFilters}
-          className="mb-1 px-4 py-2 text-xs"
+          className='mb-1 px-4 py-2 text-xs'
         >
           Clear
         </button>
       </div>
-      <div className="h-auto p-0 m-0 overflow-auto">
+      <div className='h-auto p-0 m-0 overflow-auto'>
         <FilterTab
-          label="Frameworks"
+          label='Frameworks'
           items={frameworkTree}
           selected={selectedFrameworks}
           onChange={(val) => setSelectedFrameworks(val.map(String))}
         />
         <FilterTab
-          label="Languages"
+          label='Languages'
           items={languageTree}
           selected={selectedLanguages}
           onChange={(val) => setSelectedLanguages(val.map(String))}
         />
         <FilterTab
-          label="Fields"
+          label='Fields'
           items={fieldTree}
           selected={selectedFields}
           onChange={(val) => setSelectedFields(val.map(String))}
         />
         <FilterTab
-          label="Years"
+          label='Years'
           items={yearTree}
           selected={selectedYears}
           onChange={(val) => setSelectedYears(val.map(Number))}
         />
         <FilterTab
-          label="Libraries"
+          label='Libraries'
           items={libraryTree}
           selected={selectedLibraries}
           onChange={(val) => setSelectedLibraries(val.map(String))}
         />
         <FilterTab
-          label="Project Complexity"
+          label='Project Complexity'
           items={difficultyTree}
           selected={selectedDifficulties}
           onChange={(val) => setSelectedDifficulties(val.map(String))}
