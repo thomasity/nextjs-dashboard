@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import ReactMarkdown from 'react-markdown';
+import Markdown from 'react-markdown'
 import remarkGfm from 'remark-gfm';
 
 export default function MarkdownWindow({ name }: { name: string }) {
@@ -9,7 +9,7 @@ export default function MarkdownWindow({ name }: { name: string }) {
 
   useEffect(() => {
     const fetchMarkdown = async () => {
-      try {markdown;
+      try {
         const res = await fetch(`/READMEs/${name}.md`);
         if (!res.ok) throw new Error('Markdown not found');
         const text = await res.text();
@@ -20,7 +20,7 @@ export default function MarkdownWindow({ name }: { name: string }) {
     };
 
     fetchMarkdown();
-  }, );
+  }, [name]);
 
   return (
       <article className='
@@ -35,11 +35,9 @@ export default function MarkdownWindow({ name }: { name: string }) {
         rounded-none
       '>
         {markdown ? 
-          <ReactMarkdown 
-          remarkPlugins={[remarkGfm]}
-          >
+          <Markdown remarkPlugins={[remarkGfm]}>
             {markdown}
-          </ReactMarkdown> 
+          </Markdown>
           : 
           <p>Loading…</p>}
       </article>
