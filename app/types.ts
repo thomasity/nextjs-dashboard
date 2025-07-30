@@ -31,13 +31,14 @@ export interface Course {
 
 export interface Education {
     degree: string,
-    minor: string,
+    minor?: string,
     school: string,
-    college: string,
+    college?: string,
     graduation: string,
     gpa: number,
     logo: string,
-    coursework: Course[],
+    link?: string,
+    coursework?: Course[],
 }
 
 export interface Experience {

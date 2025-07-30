@@ -28,9 +28,8 @@ export default function Header() {
                         <Link
                         key={link}
                         href={path}
-                        className={clsx('w-1/5 items-center justify-center h-full p-3 text-xs text-center cursor-pointer border-0 active:scale-95 \
-                            rounded-full',
-                            isActive ? 'bg-[#0d1117] text-[#f0f6fc] dark:bg-[#f9fafb] dark:text-[#1f2328]' : 'hover:bg-[#ececec] active:bg-[#e0e0e0] dark:hover:bg-[#181b20] dark:active:bg-[#23272e]')}
+                        className={clsx(styles.navButton,
+                            isActive ? styles.active : null)}
                         >
                             {link}
                         </Link>

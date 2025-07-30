@@ -14,7 +14,7 @@ export default function ExperienceCard({ info } : { info : Experience}) {
                     href={link}
                     target='_blank'
                     rel='noopener noreferrer'
-                    className='text-xs font-bold text-[var(--blue)] hover:underline inline-flex items-center gap-1'
+                    className='!text-sm !font-bold !text-[var(--blue)] hover:underline !flex !inline-flex !items-center !gap-1'
                     >
                     website
                     <ArrowTopRightOnSquareIcon className='w-4 h-4' />
@@ -24,16 +24,16 @@ export default function ExperienceCard({ info } : { info : Experience}) {
 
 
     return (
-        <div className='items-start border-b last:border-b-0'>
+        <div className='!p-8 border-[var(--border-color)] border-b last:border-b-0'>
             <div className={styles.row}>
-                <div className='p-0 m-0'>
-                    <h3 className='m-0'>{info.company}</h3>
+                <div className='!p-0 !m-0'>
+                    <h3 className='!m-0'>{info.company}</h3>
                     {info.link ? <ExternalLink link={info.link} /> : null}
                 </div>
                 {info.logo ? 
-                (<Image src={info.logo} alt='school logo' width={40} height={40} className='p-0'/>) 
+                (<Image src={info.logo} alt='school logo' width={48} height={48} className='p-0'/>) 
                 : 
-                (<Image src='placeholder-image.svg' alt='placeholder image' width={40} height={40} className='p-0'/>)}
+                (<Image src='placeholder-image.svg' alt='placeholder image' width={48} height={48} className='p-0'/>)}
             </div>
             <div className={styles.row}>
                 <p>
@@ -46,7 +46,7 @@ export default function ExperienceCard({ info } : { info : Experience}) {
             {info.details === null ? (
                 null
             ) : (
-            <div className='p-0 m-0 mt-4 items-start'>
+            <div className='!p-0 !m-0 !mt-4 !items-start'>
                 <ul className='p-0 m-0 list-disc pl-5 gap-5'>
                     {(info.details).map((detail, index) => (
                         <li key={`${info.company}-${index}`}>

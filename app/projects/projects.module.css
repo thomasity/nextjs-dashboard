@@ -1,3 +1,27 @@
+.componentWrapper {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    border: none;
+    height: 100% !important;
+}
+
+.projectsWrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    row-gap: 1rem;
+    background-color: transparent;
+    border: none;
+}
+
 .beginner {
     border-left: 4px solid #4caf50 !important; /* Green for beginner */
 }
@@ -20,4 +44,26 @@
 
 .advancedBackground {
     background-color: #f44336 !important; /* Red for advanced */
+}
+
+.scrollView {
+display: grid;
+grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+@media (min-width: 1200px) {
+.scrollView {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+}
+
+.scrollView {
+gap: 1rem;
+width: 100%;
+height: 100%;
+overflow-y: auto;
+padding: 2rem;
+margin: 0;
+border: var(--border-color) solid 3px;
+background-color: var(--dot-bg);
 }

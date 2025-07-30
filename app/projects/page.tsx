@@ -4,9 +4,9 @@ import { useEffect, useState } from 'react';
 import ProjectLeaf from '../../components/projectLeaf/projectLeaf';
 import ProjectFilter from '@/components/projectFilter/projectFilter';
 import projectsData from '@/app/data/projects.json';
-import styles from '@/components/projectFilter/projectFilter.module.css';
+import styles from './projects.module.css';
 import { Project } from '@/app/types';
-import ProjectCrossBar from '@/components/projectCrossBar';
+import ProjectCrossBar from '@/components/projectCrossBar/projectCrossBar';
 
 
 export default function Page() {
@@ -25,12 +25,12 @@ export default function Page() {
 
   return (
     <main className='h-[calc(100vh-6.5rem)]'>
-      <section className='grid grid-cols-1 md:grid-cols-[250px_1fr] gap-4 p-0 m-0 bg-transparent dark:bg-transparent border-none h-full w-full'>
+      <section className={styles.componentWrapper}>
         <ProjectFilter setFilter={setFilter} setProjects={setFilteredProjects} projects={projects}/>
 
-        <div className='bg-transparent dark:bg-transparent border-none h-full w-full flex flex-col p-0 m-0 gap-y-2 overflow-hidden'>
+        <div className={styles.projectsWrapper}>
 
-          <section className='h-full w-full py-0'>
+          <section className='h-full w-full flex-col py-0'>
           <ProjectCrossBar projects={projects} setProjects={setProjects} filter={filter}/>
 
             {projects.length === 0 ? (
@@ -42,7 +42,7 @@ export default function Page() {
                   ))}
                 </div>
             )}
-            <p className='ml-auto mb-0 text-xs text-[var(--subtle-font-color)]'>{filteredProjects.length} projects</p>
+            <p className='!ml-auto !mb-0 !text-xs !text-(--subtle-font-color)'>{filteredProjects.length} projects</p>
           </section>
         </div>
 

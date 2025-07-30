@@ -15,6 +15,7 @@ export default function MarkdownWindow({ name }: { name: string }) {
         const text = await res.text();
         setMarkdown(text);
       } catch (err) {
+        console.error(err);
         setMarkdown('# Project not found');
       }
     };
@@ -30,8 +31,8 @@ export default function MarkdownWindow({ name }: { name: string }) {
         p-6
         space-y-2
         m-0
-        bg-[var(--dot-bg)]
-        dark:bg-[var(--dot-bg)]
+        bg-(--dot-bg)
+        dark:bg-(--dot-bg)
         rounded-none
       '>
         {markdown ? 

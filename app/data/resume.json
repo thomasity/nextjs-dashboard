@@ -8,9 +8,8 @@
       "school": "The University of Michigan",
       "college": "Engineering",
       "graduation": "2025-05",
-      "gpa": "3.5",
+      "gpa": 3.5,
       "logo": "/logos/umich_logo.jpg",
-      "link": null,
       "coursework": [
         {
             "title": "Web Systems",
@@ -112,13 +111,10 @@
     },
     {
       "degree": "High School Diploma",
-      "minor": null,
       "school": "Spring Lake High School",
-      "college": null,
       "graduation": "2020-05",
-      "gpa": "4.0",
-      "logo": "/logos/spring_lake_logo.png",
-      "coursework": null
+      "gpa": 4.0,
+      "logo": "/logos/spring_lake_logo.png"
     }
   ],
   "experience": [

@@ -1,10 +1,42 @@
-/* @media (min-width: 1180px) {
-  .navBar {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-} */
+.navButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  height: 100%;
+  padding: 0.5rem 0.75rem;
+  text-align: center;
+  font-size: 0.75rem;
+  border: 0;
+  border-radius: 9999px;
+}
+
+.navButton:hover {
+  background-color: var(--bg-hover);
+}
+
+.navButton:active {
+  background-color: var(--bg-active);
+  transform: scale(0.95);
+}
+
+.dark .navButton:hover {
+  background-color: var(--dark-bg-hover);
+}
+
+.dark .navButton:active {
+  background-color: var(--dark-bg-active);
+}
+
+.active {
+  background-color: var(--bg-inverse);
+  color: var(--font-inverse);
+}
+
+.active:hover, .active:active {
+  background-color: var(--bg-inverse);
+
+}
 
 .navBar {
   justify-self: center;

@@ -50,14 +50,15 @@ export function isEducation(value: unknown): value is Education {
 
   return (
     typeof obj.degree === 'string' &&
-    typeof obj.minor === 'string' &&
+    (obj.minor === undefined || typeof obj.minor === 'string') &&
     typeof obj.school === 'string' &&
-    typeof obj.college === 'string' &&
+    (obj.college === undefined || typeof obj.college === 'string') &&
     typeof obj.graduation === 'string' &&
     typeof obj.gpa === 'number' &&
     typeof obj.logo === 'string' &&
-    Array.isArray(obj.coursework) &&
-    obj.coursework.every(isCourse)
+    (typeof obj.link === 'string' || obj.link === undefined) &&
+    (obj.coursework === undefined || Array.isArray(obj.coursework)) &&
+    (obj.coursework === undefined || obj.coursework.every(isCourse))
   );
 }
 

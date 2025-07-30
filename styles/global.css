@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 input[type='number'] {
   -moz-appearance: textfield;
@@ -69,6 +67,7 @@ background-color: transparent;
   --font-black: #1F2328;
   --border-color: rgb(222, 222, 222);
   --bg-color: #f9fafb;
+  --bg-inverse: #0d1117;
   --bg-hover: #ececec;
   --bg-active: #e0e0e0;
   --border-width: 3px;
@@ -85,6 +84,7 @@ background-color: transparent;
   --font-inverse: #1F2328;
   --border-color: #262C36;
   --bg-color: #0D1117;
+  --bg-inverse: #F9FAFB;
   --bg-hover: #181b20;
   --bg-active: #23272e;
   --subtle-font-color: #9198A1;
@@ -145,7 +145,6 @@ main {
   margin: 0 auto;
   max-width: 1200px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -158,7 +157,6 @@ div {
 
 section, article, aside {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -174,6 +172,7 @@ section, article, aside {
 }
 
 button {
+  cursor: pointer;
   background-color: var(--bg-color);
   padding: 8px 12px;
   font-size: 12px;

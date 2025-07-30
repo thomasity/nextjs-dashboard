@@ -1,0 +1,14 @@
+.sectionWrapper {
+    align-items: start;
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem;
+    margin: 0;
+}

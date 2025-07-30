@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 import { Project } from '@/app/types';
+import styles from '@/components/projectCrossBar/projectCrossBar.module.css';
 
 enum DifficultyLevel {
   Beginner = 1,
@@ -15,10 +16,10 @@ export default function ProjectCrossBar({
 }: {
   projects: Project[],
   setProjects: React.Dispatch<React.SetStateAction<Project[]>>,
-  filter: String
+  filter: string
 }) {
     const [open, setOpen] = useState<boolean>(false);
-    const [sortState, setSortState] = useState<String>('Year: New to Old');
+    const [sortState, setSortState] = useState<string>('Year: New to Old');
     type ProjectKey = keyof Project;
 
     useEffect(() => {
@@ -46,24 +47,24 @@ export default function ProjectCrossBar({
     };
 
   return (
-    <div className='m-0 p-0 flex flex-row items-center justify-between w-full'>
-        <div className='relative inline-block w-auto text-left m-0 p-0'>
+    <div className={styles.crossBarContainer}>
+        <div className='!relative !inline-block !w-auto !text-left !m-0 !p-0'>
             <button
                 onClick={() => setOpen(!open)}
-                className='w-[13rem]'
+                className='w-52'
             >
                 <span>{sortState}</span> <span>{open ? '▼' : '►'}</span>
             </button>
 
             {open && (
-                <section className='absolute z-10 mt-2 w-[12rem] p-0 overflow-hidden'>
+                <section className={styles.sortButtonContainer}>
                     <button
                         onClick={() => {
                             sortProjects('year');
                             setSortState('Year: New to Old');
                             setOpen(false);
                         }}
-                        className='px-4 py-2 w-full text-left border-0 border-b rounded-none'
+                        className={styles.sortButton}
                     >
                         Year: New to Old
                     </button>
@@ -73,7 +74,7 @@ export default function ProjectCrossBar({
                             setSortState('Year: Old to New');
                             setOpen(false);
                         }}
-                        className='px-4 py-2 w-full text-left border-0 border-b rounded-none'
+                        className={styles.sortButton}
                     >
                         Year: Old to New
                     </button>
@@ -83,7 +84,7 @@ export default function ProjectCrossBar({
                             setSortState('Complexity: High to Low');
                             setOpen(false);
                         }}
-                        className='px-4 py-2 w-full text-left border-0 border-b rounded-none'
+                        className={styles.sortButton}
                     >
                         Complexity: High to Low
                     </button>
@@ -93,28 +94,28 @@ export default function ProjectCrossBar({
                             setSortState('Complexity: Low to High');
                             setOpen(false);
                         }}
-                        className='px-4 py-2 w-full text-left border-0 rounded-none'
+                        className={styles.sortButton}
                     >
                         Complexity: Low to High
                     </button>
                 </section>
             )}
+        </div>
+        <p className='!text-xs'>{filter !== '' ? `Showing: ${filter}` : 'No filter(s) selected'}</p>
+        <div className={`${styles.difficultyContainer} !flex-row !justify-end !w-auto gap-2 !p-0 !m-0`}>
+            <div className={styles.difficultyContainer}>
+                <div className={`${styles.difficultyColor} bg-[#4caf50]`} />
+                <p className={styles.difficultyLabel}>Beginner</p>
             </div>
-            <p className='text-xs overflow-y-auto'>{filter !== '' ? `Showing: ${filter}` : 'No filter(s) selected'}</p>
-            <div className='flex flex-row justify-end items-center w-auto h-auto p-0 m-0'>
-                <div className='flex flex-col items-center justify-center h-auto w-1/3 py-2'>
-                    <div className='rounded-full bg-[#4caf50] h-[1rem] w-[1rem] m-0 p-0' />
-                    <p className='text-xs text-[var(--subtle-font-color)]'>Beginner</p>
-                </div>
-                <div className='flex flex-col items-center justify-center h-auto w-1/3 py-2'>
-                    <div className='rounded-full bg-[#ff9800] h-[1rem] w-[1rem] m-0 p-0' />
-                    <p className='text-xs text-[var(--subtle-font-color)]'>Intermediate</p>
-                </div>
-                <div className='flex flex-col items-center justify-center h-auto w-1/3 py-2'>
-                    <div className='rounded-full bg-[#f44336] h-[1rem] w-[1rem] m-0 p-0' />
-                    <p className='text-xs text-[var(--subtle-font-color)]'>Advanced</p>
-                </div>
+            <div className={styles.difficultyContainer}>
+                <div className={`${styles.difficultyColor} bg-[#ff9800]`} />
+                <p className={styles.difficultyLabel}>Intermediate</p>
             </div>
+            <div className={styles.difficultyContainer}>
+                <div className={`${styles.difficultyColor} bg-[#f44336]`} />
+                <p className={styles.difficultyLabel}>Advanced</p>
+            </div>
+        </div>
 
     </div>
 
