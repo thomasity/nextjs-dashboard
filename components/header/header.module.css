@@ -33,9 +33,9 @@
   color: var(--font-inverse);
 }
 
-.active:hover, .active:active {
+.active:hover,
+.active:active {
   background-color: var(--bg-inverse);
-
 }
 
 .nav-bar {

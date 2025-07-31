@@ -80,7 +80,7 @@
 }
 
 html {
-  font-family: var(--font-comfortaa), sans-serif;  
+  font-family: var(--font-comfortaa), sans-serif;
   font-size: 16px;
   border-color: var(--border-color);
   color: var(--font-color);
@@ -139,7 +139,6 @@ main {
   justify-content: center;
   align-items: center;
 }
-
 
 div {
   width: 100%;

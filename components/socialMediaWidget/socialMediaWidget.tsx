@@ -20,7 +20,7 @@ export default function SocialMediaWidget() {
     if (!mounted) return null;
 
     return (
-        <div className={styles.widgetContainer}>
+        <div className={styles['widget-container']}>
             <a
                 href='/resume.pdf'
                 download='ThomasCallen_Resume.pdf'
@@ -33,10 +33,10 @@ export default function SocialMediaWidget() {
             </a>
             <nav className={styles.widget}>
                 <Link 
-                    href='https://www.linkedin.com/in/thomas-callen-410a11252' 
+                    href='https://github.com/thomasity' 
                     rel='noopener noreferrer'
                     target='_blank'
-                    className={styles.socialIcon} 
+                    className={styles['social-icon']} 
                 >
                     {theme === 'dark' ? (
                         <Image src="/social_icons/github_logo_white.png" alt="Github" height={32} width={32} />
@@ -45,10 +45,10 @@ export default function SocialMediaWidget() {
                     )}
                 </Link>
                 <Link 
-                    href='https://github.com/thomasity' 
+                    href='https://www.linkedin.com/in/thomas-callen-410a11252' 
                     rel='noopener noreferrer'
                     target='_blank'
-                    className={styles.socialIcon} 
+                    className={styles['social-icon']} 
                 >
                     {theme === 'dark' ? (
                         <Image src="/social_icons/linkedin_logo_white.png" alt="LinkedIn" height={32} width={32} />
