@@ -25,7 +25,7 @@ export default function MarkdownWindow({ name }: { name: string }) {
 
   return (
       <article className='
-        prose dark:prose-invert
+        !prose !dark:prose-invert
         markdown-body
         h-full overflow-auto overscroll-contain
         p-6

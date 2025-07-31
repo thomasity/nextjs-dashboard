@@ -3,6 +3,9 @@ import React from 'react';
 import styles from './socialMediaWidget.module.css';
 import { useTheme } from 'next-themes';
 import { ArrowDownTrayIcon } from '@heroicons/react/24/solid';
+import Image from 'next/image';
+import Link from 'next/link';
+import { redirect } from 'next/dist/server/api-utils';
 
 
 
@@ -21,29 +24,38 @@ export default function SocialMediaWidget() {
             <a
                 href='/resume.pdf'
                 download='ThomasCallen_Resume.pdf'
-                className='flex flex-row justify-between items-center px-4 py-2 bg-(--blue) text-white rounded hover:bg-(--blue-hover) active:bg-(--blue-active) active:scale-95 text-sm'
+                className={styles['download-button']}
+                rel='noopener noreferrer'
+                target='_blank'
             >
                 Download Resume
                 <ArrowDownTrayIcon className='h-5 w-5'/>
             </a>
             <nav className={styles.widget}>
-                <p>Icons</p>
-                {/* <SocialIcon 
-                    url='https://www.linkedin.com/in/thomas-callen-410a11252' 
+                <Link 
+                    href='https://www.linkedin.com/in/thomas-callen-410a11252' 
                     rel='noopener noreferrer'
                     target='_blank'
                     className={styles.socialIcon} 
-                    style={{ height: 32, width: 32 }}
-                />
-                <SocialIcon 
-                    url='https://github.com/thomasity' 
+                >
+                    {theme === 'dark' ? (
+                        <Image src="/social_icons/github_logo_white.png" alt="Github" height={32} width={32} />
+                    ) : (
+                        <Image src="/social_icons/github_logo.png" alt="Github" height={32} width={32} />
+                    )}
+                </Link>
+                <Link 
+                    href='https://github.com/thomasity' 
                     rel='noopener noreferrer'
                     target='_blank'
                     className={styles.socialIcon} 
-                    style={{ height: 32, width: 32 }} 
-                    bgColor={theme === 'dark' ? '#F9FAFB' : '#1F2937'} 
-                    fgColor={theme === 'light' ? '#F9FAFB' : '#1F2937'} 
-                /> */}
+                >
+                    {theme === 'dark' ? (
+                        <Image src="/social_icons/linkedin_logo_white.png" alt="LinkedIn" height={32} width={32} />
+                    ) : (
+                        <Image src="/social_icons/linkedin_logo.png" alt="LinkedIn" height={32} width={32} />
+                    )}
+                </Link>
             </nav>
 
         </div>

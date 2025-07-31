@@ -20,7 +20,7 @@ export default function Header() {
     return (
         <header>
             <div></div>
-            <nav className={styles.navBar}>
+            <nav className={styles['nav-bar']}>
                 {links.map((link) => {
                     const path = link === 'Home' ? '/' : `/${link.toLowerCase()}`;
                     const isActive = path === '/' ? pathname === path : pathname.startsWith(path);
@@ -28,7 +28,7 @@ export default function Header() {
                         <Link
                         key={link}
                         href={path}
-                        className={clsx(styles.navButton,
+                        className={clsx(styles['nav-button'],
                             isActive ? styles.active : null)}
                         >
                             {link}

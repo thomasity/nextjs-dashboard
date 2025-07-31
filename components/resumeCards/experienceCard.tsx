@@ -27,11 +27,11 @@ export default function ExperienceCard({ info } : { info : Experience}) {
         <div className='!p-8 border-[var(--border-color)] border-b last:border-b-0'>
             <div className={styles.row}>
                 <div className='!p-0 !m-0'>
-                    <h3 className='!m-0'>{info.company}</h3>
+                    <h3 className='!m-0 !p-0'>{info.company}</h3>
                     {info.link ? <ExternalLink link={info.link} /> : null}
                 </div>
                 {info.logo ? 
-                (<Image src={info.logo} alt='school logo' width={48} height={48} className='p-0'/>) 
+                (<Image src={info.logo} alt='school logo' width={48} height={48} className='p-0 m-0'/>) 
                 : 
                 (<Image src='placeholder-image.svg' alt='placeholder image' width={48} height={48} className='p-0'/>)}
             </div>

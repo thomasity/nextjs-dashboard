@@ -52,7 +52,7 @@ export default function FilterTab({
                     </p>
                     <input
                       type='checkbox'
-                      className='!rounded-full !bg-(--bg-color) !text-[#0969DA] !dark:text-[#418DEE]'
+                      className='rounded-full !bg-(--bg-color) !text-[#0969DA] !dark:text-[#418DEE]'
                       checked={selected.includes(item)}
                       readOnly
                     />

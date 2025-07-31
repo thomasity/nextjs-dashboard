@@ -1,4 +1,4 @@
-.navButton {
+.nav-button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,20 +11,20 @@
   border-radius: 9999px;
 }
 
-.navButton:hover {
+.nav-button:hover {
   background-color: var(--bg-hover);
 }
 
-.navButton:active {
+.nav-button:active {
   background-color: var(--bg-active);
   transform: scale(0.95);
 }
 
-.dark .navButton:hover {
+.dark .nav-button:hover {
   background-color: var(--dark-bg-hover);
 }
 
-.dark .navButton:active {
+.dark .nav-button:active {
   background-color: var(--dark-bg-active);
 }
 
@@ -38,6 +38,6 @@
 
 }
 
-.navBar {
+.nav-bar {
   justify-self: center;
 }

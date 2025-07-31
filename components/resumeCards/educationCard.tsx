@@ -31,12 +31,12 @@ export default function EducationCard({ info } : { info : Education}) {
 
 
     return (
-        <div className='flex flex-col items-start border-[var(--border-color)] border-b last:border-b-0 gap-y-4'>
+        <div className='flex flex-col items-start border-[var(--border-color)] border-b last:border-b-0 gap-y-4 !p-8'>
             <div className={styles.row}>
                 <h3>
                     {info.school}{info.college !== undefined ? `, College of ${info.college}` : null}
                 </h3>
-                <Image src={info.logo} alt='school logo' width={40} height={40} className='p-0'/>
+                <Image src={info.logo} alt='school logo' width={40} height={40} className='p-0 m-0'/>
             </div>
             <div className={styles.row}>
                 <p>

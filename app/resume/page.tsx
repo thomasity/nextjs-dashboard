@@ -18,7 +18,7 @@ export default function Page() {
     if (key === 'education' && isEducationArray(value)) {
       return (
         <div key={key} className={styles.sectionWrapper}>
-          <h2>{key}</h2>
+          <h2>{key.charAt(0).toUpperCase() + key.slice(1).toLowerCase()}</h2>
           <section className={styles.section} key={key}>
             {value.map((entry: Education, i: number) => (
               <EducationCard key={i} info={entry} />
@@ -31,7 +31,7 @@ export default function Page() {
     if ((key === 'experience' || key === 'extracurriculars') && isExperienceArray(value)) {
       return (
         <div key={key} className={styles.sectionWrapper}>
-          <h2>{key}</h2>
+          <h2>{key.charAt(0).toUpperCase() + key.slice(1).toLowerCase()}</h2>
           <section className={styles.section} key={key}>
             {value.map((entry: Experience, i: number) => (
               <ExperienceCard key={i} info={entry} />
@@ -44,7 +44,7 @@ export default function Page() {
     if (key === 'skills' && Array.isArray(value)) {
       return (
         <div key={key} className={styles.sectionWrapper}>
-          <h2>{key}</h2>
+          <h2>{key.charAt(0).toUpperCase() + key.slice(1).toLowerCase()}</h2>
           <section className={styles.section} key={key}>
             <Link
                     href='/projects'

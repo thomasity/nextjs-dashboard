@@ -25,10 +25,10 @@ export default function Page() {
 
   return (
     <main className='h-[calc(100vh-6.5rem)]'>
-      <section className={styles.componentWrapper}>
+      <section className={styles['component-wrapper']}>
         <ProjectFilter setFilter={setFilter} setProjects={setFilteredProjects} projects={projects}/>
 
-        <div className={styles.projectsWrapper}>
+        <div className={styles['projects-wrapper']}>
 
           <section className='h-full w-full flex-col py-0'>
           <ProjectCrossBar projects={projects} setProjects={setProjects} filter={filter}/>
@@ -36,7 +36,7 @@ export default function Page() {
             {projects.length === 0 ? (
               <p>No projects found.</p>
             ) : (
-                <div className={styles.scrollView}>
+                <div className={styles['scroll-view']}>
                   {filteredProjects.map((p) => (
                     <ProjectLeaf key={p.name} project={p} />
                   ))}

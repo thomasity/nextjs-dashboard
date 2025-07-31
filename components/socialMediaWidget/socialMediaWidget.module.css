@@ -41,3 +41,26 @@
 .socialIcon:active {
     scale: 0.95;
 }
+
+.download-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--blue);
+  color: white;
+  border: none;
+  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+  font-size: 0.875rem;
+}
+
+.download-button:hover {
+  background: var(--blue-hover);
+}
+
+.download-button:active {
+  background: var(--blue-active);
+  transform: scale(0.95);
+}

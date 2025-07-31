@@ -47,7 +47,7 @@ export default function ProjectCrossBar({
     };
 
   return (
-    <div className={styles.crossBarContainer}>
+    <div className={styles['cross-bar-container']}>
         <div className='!relative !inline-block !w-auto !text-left !m-0 !p-0'>
             <button
                 onClick={() => setOpen(!open)}
@@ -57,14 +57,14 @@ export default function ProjectCrossBar({
             </button>
 
             {open && (
-                <section className={styles.sortButtonContainer}>
+                <section className={styles['sort-button-container']}>
                     <button
                         onClick={() => {
                             sortProjects('year');
                             setSortState('Year: New to Old');
                             setOpen(false);
                         }}
-                        className={styles.sortButton}
+                        className={styles['sort-button']}
                     >
                         Year: New to Old
                     </button>
@@ -74,7 +74,7 @@ export default function ProjectCrossBar({
                             setSortState('Year: Old to New');
                             setOpen(false);
                         }}
-                        className={styles.sortButton}
+                        className={styles['sort-button']}
                     >
                         Year: Old to New
                     </button>
@@ -84,7 +84,7 @@ export default function ProjectCrossBar({
                             setSortState('Complexity: High to Low');
                             setOpen(false);
                         }}
-                        className={styles.sortButton}
+                        className={styles['sort-button']}
                     >
                         Complexity: High to Low
                     </button>
@@ -94,7 +94,7 @@ export default function ProjectCrossBar({
                             setSortState('Complexity: Low to High');
                             setOpen(false);
                         }}
-                        className={styles.sortButton}
+                        className={styles['sort-button']}
                     >
                         Complexity: Low to High
                     </button>
@@ -102,18 +102,18 @@ export default function ProjectCrossBar({
             )}
         </div>
         <p className='!text-xs'>{filter !== '' ? `Showing: ${filter}` : 'No filter(s) selected'}</p>
-        <div className={`${styles.difficultyContainer} !flex-row !justify-end !w-auto gap-2 !p-0 !m-0`}>
-            <div className={styles.difficultyContainer}>
-                <div className={`${styles.difficultyColor} bg-[#4caf50]`} />
-                <p className={styles.difficultyLabel}>Beginner</p>
+        <div className={`${styles['difficulty-container']} !flex-row !justify-end !w-auto gap-2 !p-0 !m-0`}>
+            <div className={styles['difficulty-container']}>
+                <div className={`${styles['difficulty-color']} bg-[#4caf50]`} />
+                <p className={styles['difficulty-label']}>Beginner</p>
             </div>
-            <div className={styles.difficultyContainer}>
-                <div className={`${styles.difficultyColor} bg-[#ff9800]`} />
-                <p className={styles.difficultyLabel}>Intermediate</p>
+            <div className={styles['difficulty-container']}>
+                <div className={`${styles['difficulty-color']} bg-[#ff9800]`} />
+                <p className={styles['difficulty-label']}>Intermediate</p>
             </div>
-            <div className={styles.difficultyContainer}>
-                <div className={`${styles.difficultyColor} bg-[#f44336]`} />
-                <p className={styles.difficultyLabel}>Advanced</p>
+            <div className={styles['difficulty-container']}>
+                <div className={`${styles['difficulty-color']} bg-[#f44336]`} />
+                <p className={styles['difficulty-label']}>Advanced</p>
             </div>
         </div>
 
