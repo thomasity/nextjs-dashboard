@@ -131,6 +131,50 @@
         "logo": "/logos/glbl_logo.webp",
         "link": "https://glblfoundation.org/",
         "still_working": true
+    },
+    {
+        "company": "Kinetix LLC",
+        "title": "IT and Business Analytics Intern",
+        "location": "Sparta, MI",
+        "start": "2024-05",
+        "end": "2025-08",
+        "details": [
+            "Automated the remote deployment and installation of software updates and applications",
+            "Created interactive and business reports with Power BI and Microsoft Excel",
+            "Assisted in the programming, installation, and testing of network appliances"
+        ],
+        "logo": "/logos/kinetix_logo.png",
+        "link": "https://kinetixinc.com/",
+        "still_working": false
+    },
+    {
+        "company": "Callen Engineering, Inc.",
+        "title": "Civil Engineering Intern",
+        "location": "Spring Lake, MI",
+        "start": "2020-09",
+        "end": "2021-08",
+        "details": [
+            "Utilized Sketchup and rendering software to create life-like 3D models of structures and terrain",
+            "Drafted and organized professional engineering documents for various civil projects",
+            "Provided duties of inspector throughout the construction of multiple housing developments to ensure abidance to local and national building codes and ordinances"
+        ],
+        "logo": "/logos/callen_engineering_logo.jpg",
+        "link": "https://callenengineering.com/",
+        "still_working": false
+    },
+    {
+        "company": "Lake Michigan Surveying LLC",
+        "title": "Survey Technician",
+        "location": "Spring Lake, MI",
+        "start": "2020-09",
+        "end": "2021-08",
+        "details": [
+            "Operated surveying equipment to map topographic and boundary surveys",
+            "Mentored new employees regarding proper equipment usage and survey strategy"
+        ],
+        "logo": "/logos/lake_michigan_surveying_logo.jpg",
+        "link": "https://www.lakemichigansurveying.com/",
+        "still_working": false
     }
   ],
   "extracurriculars": [

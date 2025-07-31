@@ -40,7 +40,7 @@ export default function EducationCard({ info } : { info : Education}) {
             </div>
             <div className={styles.row}>
                 <p>
-                    {info.degree}{info.minor !== undefined ? `, Minor in ${info.minor}` : null}
+                    {info.degree}<br/>{info.minor !== undefined ? `Minor in ${info.minor}` : null}
                 </p>
                 <p>
                     {formatYearMonth(info.graduation)}
