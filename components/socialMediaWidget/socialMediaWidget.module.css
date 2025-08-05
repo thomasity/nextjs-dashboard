@@ -20,15 +20,15 @@
   margin: 0;
   margin-left: 0.5rem;
   padding: 0 0.5rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  white-space: nowrap;
   border-radius: 9999px;
 }
 
 
 .social-icon {
+  display: inline-block;
+  height: 32px;
+  width: 32px;
   margin: 0.25rem;
   cursor: pointer;
   transition: scale 0.2s;
@@ -43,9 +43,7 @@
 }
 
 .download-button {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: block;
   background: var(--blue);
   color: white;
   border: none;

@@ -48,7 +48,7 @@ export default function ProjectCrossBar({
 
   return (
     <div className={styles['cross-bar-container']}>
-        <div className='!relative !inline-block !w-auto !text-left !m-0 !p-0'>
+        <div className='!w-auto !text-left !m-0 !p-0'>
             <button
                 onClick={() => setOpen(!open)}
                 className='w-52'
@@ -101,7 +101,7 @@ export default function ProjectCrossBar({
                 </section>
             )}
         </div>
-        <p className='!text-xs'>{filter !== '' ? `Showing: ${filter}` : 'No filter(s) selected'}</p>
+        <p className={`${styles['filter-text']} !text-xs`}>{filter !== '' ? `Showing: ${filter}` : 'No filter(s) selected'}</p>
         <div className={`${styles['difficulty-container']} !flex-row !justify-end !w-auto gap-2 !p-0 !m-0`}>
             <div className={styles['difficulty-container']}>
                 <div className={`${styles['difficulty-color']} bg-[#4caf50]`} />

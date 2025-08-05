@@ -2,12 +2,20 @@
   position: fixed;
   bottom: 1rem;
   right: 1.25rem;
-  z-index: 50;
+  z-index: 1001;
   padding: 0.5rem;
   border-radius: 9999px;
   border-width: 2px;
   font-size: 1rem;
   transition: background-color 0s ease, transform 0s ease;
+}
+
+@media (max-width: 700px) {
+  .themeButton {
+    top: 1rem;
+    right: 1.25rem;
+    bottom: auto;
+  }
 }
 
 .themeButton:active {

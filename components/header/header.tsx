@@ -5,10 +5,11 @@ import clsx from 'clsx';
 import { usePathname } from 'next/navigation';
 import SocialMediaWidget from '../socialMediaWidget/socialMediaWidget';
 import styles from './header.module.css';
+import SideNav from '../sideNav';
+import useIsMobile from '@/lib/hooks/useIsMobile';
 
 const links = [
     'Home',
-    'About',
     'Projects',
     'Resume',
     'Contact'
@@ -16,27 +17,34 @@ const links = [
 
 export default function Header() {
     const pathname = usePathname();
+    const isMobile = useIsMobile();
 
     return (
-        <header>
-            <div></div>
-            <nav className={styles['nav-bar']}>
-                {links.map((link) => {
-                    const path = link === 'Home' ? '/' : `/${link.toLowerCase()}`;
-                    const isActive = path === '/' ? pathname === path : pathname.startsWith(path);
-                    return (
-                        <Link
-                        key={link}
-                        href={path}
-                        className={clsx(styles['nav-button'],
-                            isActive ? styles.active : null)}
-                        >
-                            {link}
-                        </Link>
-                    );
-                })}
-            </nav>
-            <SocialMediaWidget />
+        <header className={styles.header}>
+            {isMobile ? (
+                <SideNav />
+            ) : (
+                <>
+                <nav className={styles['nav-bar']}>
+                    {links.map((link) => {
+                        const path = link === 'Home' ? '/' : `/${link.toLowerCase()}`;
+                        const isActive = path === '/' ? pathname === path : pathname.startsWith(path);
+                        return (
+                            <Link
+                            key={link}
+                            href={path}
+                            className={clsx(styles['nav-button'],
+                                isActive ? styles.active : null)}
+                            >
+                                {link}
+                            </Link>
+                        );
+                    })}
+                </nav>
+                <SocialMediaWidget />
+                </>
+            )}
+
         </header>
     );
 }

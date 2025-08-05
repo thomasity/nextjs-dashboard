@@ -3,7 +3,7 @@
   padding: 0;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
 }
@@ -41,6 +41,13 @@
   height: auto;
   width: 1/3;
   padding: 0.5rem 0;
+}
+
+@media (max-width: 900px) {
+  .difficulty-container,
+  .filter-text {
+    display: none;
+  }
 }
 
 .difficulty-label {

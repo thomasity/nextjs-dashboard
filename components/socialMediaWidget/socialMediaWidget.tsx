@@ -5,7 +5,6 @@ import { useTheme } from 'next-themes';
 import { ArrowDownTrayIcon } from '@heroicons/react/24/solid';
 import Image from 'next/image';
 import Link from 'next/link';
-import { redirect } from 'next/dist/server/api-utils';
 
 
 
@@ -28,8 +27,8 @@ export default function SocialMediaWidget() {
                 rel='noopener noreferrer'
                 target='_blank'
             >
-                Download Resume
-                <ArrowDownTrayIcon className='h-5 w-5'/>
+                <span className="inline-block">Download Resume</span>
+                <ArrowDownTrayIcon className='inline-block h-5 w-5'/>
             </a>
             <nav className={styles.widget}>
                 <Link 

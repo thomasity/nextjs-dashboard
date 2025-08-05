@@ -5,11 +5,13 @@ import { formatYearMonth } from '@/lib/format';
 import Image from 'next/image';
 import styles from './resumeCards.module.css';
 import { isCourseArray } from '@/lib/util';
+import useIsMobile from '@/lib/hooks/useIsMobile';
 
 
 export default function EducationCard({ info } : { info : Education}) {
 
     const [expanded, setExpanded] = React.useState(false);
+    const isMobile = useIsMobile();
 
     function Course({ course }: { course : Course }) {
         const [expanded, setExpanded] = React.useState(false);
@@ -36,7 +38,7 @@ export default function EducationCard({ info } : { info : Education}) {
                 <h3>
                     {info.school}{info.college !== undefined ? `, College of ${info.college}` : null}
                 </h3>
-                <Image src={info.logo} alt='school logo' width={40} height={40} className='p-0 m-0'/>
+                <Image src={info.logo} alt='school logo' width={isMobile ? 36 : 48} height={isMobile ? 36: 48} className='p-0 m-0'/>
             </div>
             <div className={styles.row}>
                 <p>

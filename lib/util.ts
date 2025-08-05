@@ -89,7 +89,6 @@ export function isExperienceArray(value: unknown): value is Experience[] {
   return Array.isArray(value) && value.every(isExperience);
 }
 
-// === Skill ===
 export function isSkill(value: unknown): value is Skill {
   if (typeof value !== 'object' || value === null) return false;
 

@@ -1,8 +1,11 @@
+'use client';
 import Image from 'next/image';
 import React from 'react';
+import useIsMobile from '@/lib/hooks/useIsMobile';
 
 
 export default function Page() {
+  const isMobile = useIsMobile();
 
   return (
     <main>
@@ -12,8 +15,8 @@ export default function Page() {
                 <Image
                   src="/handsome_fella.jpg"
                   alt="Profile Picture"
-                  width={200}
-                  height={200}
+                  width={isMobile ? 150 : 200}
+                  height={isMobile ? 150 : 200}
                   className="rounded-full shadow-lg"
                 />
                 <h1>Thomas Callen</h1>

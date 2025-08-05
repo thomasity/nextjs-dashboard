@@ -5,7 +5,7 @@ export default function Page() {
 
   return (
     <main>
-        <section className="w-fit">
+        <section className="w-fit !flex-col">
           <div className="h-full w-[20rem]">
             <h1>Contact Me!</h1>
           </div>
