@@ -1,23 +1,26 @@
-.themeButton{
+.theme-button {
   position: fixed;
   bottom: 1rem;
   right: 1.25rem;
-  z-index: 1001;
+  z-index: 900;
   padding: 0.5rem;
   border-radius: 9999px;
   border-width: 2px;
   font-size: 1rem;
   transition: background-color 0s ease, transform 0s ease;
+  aspect-ratio: 1;
+  width: 3rem;
+  height: 3rem;
 }
 
 @media (max-width: 700px) {
-  .themeButton {
-    top: 1rem;
+  .theme-button {
+    top: 0.5rem;
     right: 1.25rem;
     bottom: auto;
   }
 }
 
-.themeButton:active {
+.theme-button:active {
   transform: scale(0.9);
 }

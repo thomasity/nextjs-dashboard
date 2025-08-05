@@ -1,20 +1,27 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import clsx from 'clsx';
+import styles from './themeToggle/themeToggle.module.css';
+import { usePathname } from 'next/navigation';
 
 const navLinks = ['Home', 'Projects', 'Resume', 'Contact'];
 
 export default function SideNav() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed top-4 left-4 z-50 p-2"
+        className={` ${styles['theme-button']} !left-[1.25rem] !right-auto !bottom-auto`}
       >
-        <h3>☰</h3>
+        ☰
       </button>
+
+    <h2>
+      {pathname === '/' ? 'Home' : pathname.charAt(1).toUpperCase() + pathname.slice(2)}
+    </h2>
 
       <div
         className={clsx(
@@ -26,13 +33,13 @@ export default function SideNav() {
 
       <section
         className={clsx(
-          'fixed top-0 left-0 h-full w-full z-50 transition-transform duration-300 !rounded-none',
+          'fixed top-0 left-0 h-full w-full z-1000 transition-transform duration-300 !rounded-none',
           isOpen ? 'translate-x-0' : '-translate-x-full'
         )}
       >
         <button
           onClick={() => setIsOpen(false)}
-          className="absolute top-4 right-4 text-2xl"
+          className={`${styles['theme-button']} !top-[1rem] !left-[1.25rem] !right-auto !bottom-auto`}
         >
           ✕
         </button>
