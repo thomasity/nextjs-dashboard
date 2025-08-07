@@ -336,4 +336,21 @@ h3 {
   .markdown-wrapper {
     width: 100%;
   }
+
+  .markdown-body h1 {
+    font-size: 1.5rem;
+  }
+}
+
+.markdown-body pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-x: auto;
+  padding: 1rem;
+  background-color: #f3f4f6; /* light gray */
+  border-radius: 0.5rem;
+}
+
+.dark .markdown-body pre {
+  background-color: #161b22; /* dark gray */
 }
