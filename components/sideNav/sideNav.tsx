@@ -87,7 +87,7 @@ export default function SideNav({ path } : { path: string }) {
           <Link
             key="Resume-Download"
             href="/resume.pdf"
-            download="ThomasCallen_Resume.pdf"
+            // download="ThomasCallen_Resume.pdf"
             rel="noopener noreferrer"
             target="_blank"
             onClick={() => setIsOpen(false)}

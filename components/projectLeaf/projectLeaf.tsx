@@ -8,7 +8,7 @@ import { Project } from '@/app/types';
 export default function ProjectLeaf({ project }: { project: Project }) {
 
     return (
-        <Link href={`/projects/${project.name}`} className='!w-full !h-64 !p-0'>
+        <Link href={`/projects/${project.name}`} className='!w-full !h-64 !p-0 !m-0'>
             <section className={clsx(styles.card, styles[project.difficulty.toLowerCase()])}>
                 <p className={styles.year}>{project.year}</p>
                 <DifficultyHighlighter difficulty={project.difficulty}>

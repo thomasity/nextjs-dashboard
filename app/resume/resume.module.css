@@ -5,10 +5,54 @@
   background-color: transparent;
 }
 
+@media (max-width: 700px) {
+  .section-wrapper {
+    align-items: center;
+    width: 100%;
+    padding: 0.5rem;
+    background-color: var(--bg-color);
+    border-bottom: var(--border-color) solid var(--border-width);
+  }
+
+  .section-wrapper:last-child {
+    border-bottom: none;
+  }
+
+}
+
 .section {
   display: flex;
   flex-direction: column;
   width: 100%;
   padding: 1rem;
   margin: 0;
+}
+
+@media (max-width: 700px) {
+  .section {
+    padding: 0;
+    border: none;
+  }
+}
+
+.page-wrapper {
+  max-width: var(--breakpoint-lg);
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+@media (max-width: 700px) {
+  .page-wrapper {
+    width: 100%;
+    padding: 2rem 0;
+    margin-top: 4rem;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-color);
+  }
 }

@@ -33,7 +33,7 @@ export default function EducationCard({ info } : { info : Education}) {
 
 
     return (
-        <div className='flex flex-col items-start border-[var(--border-color)] border-b last:border-b-0 gap-y-4 !p-8'>
+        <div className='flex flex-col items-start border-[var(--border-color)] border-b last:border-b-0 gap-y-4 !p-6'>
             <div className={styles.row}>
                 <h3>
                     {info.school}{info.college !== undefined ? `, College of ${info.college}` : null}

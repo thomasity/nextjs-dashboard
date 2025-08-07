@@ -18,7 +18,7 @@ export default function Page() {
 
     return (
       <div key={key} className={styles['section-wrapper']}>
-        <h2>{key.charAt(0).toUpperCase() + key.slice(1).toLowerCase()}</h2>
+        <h2 className="mr-auto">{key.charAt(0).toUpperCase() + key.slice(1).toLowerCase()}</h2>
         <section className={styles.section} key={key}>
           {(key === 'education' && isEducationArray(value)) ? (
             value.map((entry: Education, i: number) => (
@@ -53,7 +53,7 @@ export default function Page() {
   );
 
   return (
-    <main className='!max-w-(--breakpoint-lg) !mx-auto !flex !flex-col !items-start !p-4 !gap-4'>
+    <main className={styles['page-wrapper']}>
         {renderedResume}
     </main>
   );

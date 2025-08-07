@@ -22,7 +22,7 @@ export default function SocialMediaWidget() {
         <div className={styles['widget-container']}>
             <a
                 href='/resume.pdf'
-                download='ThomasCallen_Resume.pdf'
+                // download='ThomasCallen_Resume.pdf'
                 className={styles['download-button']}
                 rel='noopener noreferrer'
                 target='_blank'
