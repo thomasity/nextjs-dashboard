@@ -36,13 +36,13 @@ export default function SideNav({ path } : { path: string }) {
 
       <section
         className={clsx(
-          'fixed top-0 left-0 h-full w-full !p-0 z-1000 transition-transform duration-300 !rounded-none',
+          'fixed top-0 left-0 h-full w-full !p-0 !z-1000 transition-transform duration-300 !rounded-none',
           isOpen ? 'translate-x-0' : '-translate-x-full'
         )}
       >
         <button
           onClick={() => setIsOpen(false)}
-          className={`${styles['theme-button']} !top-[1rem] !left-[1.25rem] !right-auto !bottom-auto`}
+          className={`${styles['theme-button']} !top-[0.5rem] !left-[1.25rem] !right-auto !bottom-auto`}
         >
           ✕
         </button>
@@ -63,25 +63,27 @@ export default function SideNav({ path } : { path: string }) {
                     href='https://github.com/thomasity' 
                     rel='noopener noreferrer'
                     target='_blank'
-                    className={`${styles['nav-entry']} !border-0`} 
+                    className={`${styles['nav-entry']} !border-0 !border-r !border-[var(--border-color)] !flex-col gap-2`} 
                 >
                     {theme === 'dark' ? (
                         <Image src="/social_icons/github_logo_white.png" alt="Github" height={40} width={40} />
                     ) : (
                         <Image src="/social_icons/github_logo.png" alt="Github" height={40} width={40} />
                     )}
+                    Github
                 </Link>
                 <Link 
                     href='https://www.linkedin.com/in/thomas-callen-410a11252' 
                     rel='noopener noreferrer'
                     target='_blank'
-                    className={`${styles['nav-entry']} !border-0`}
+                    className={`${styles['nav-entry']} !border-0 !flex-col gap-2`}
                 >
                     {theme === 'dark' ? (
                         <Image src="/social_icons/linkedin_logo_white.png" alt="LinkedIn" height={40} width={40} />
                     ) : (
                         <Image src="/social_icons/linkedin_logo.png" alt="LinkedIn" height={40} width={40} />
                     )}
+                    Linkedin
                 </Link>
           </div>
           <Link

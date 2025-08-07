@@ -20,7 +20,7 @@
     background-color: var(--bg-hover);
 }
 
-.nav-entry.active {
+.nav-entry:active {
     background-color: var(--bg-active);
 }
 
