@@ -44,7 +44,7 @@ export default function Page() {
                   ))}
                 </div>
             )}
-            <p className='!ml-auto !mb-0 !text-xs !text-(--subtle-font-color)'>{filteredProjects.length} projects</p>
+            {!isMobile && <p className='!ml-auto !mb-0 !text-xs !text-(--subtle-font-color)'>{filteredProjects.length} projects</p>}
           </section>
         </div>
 

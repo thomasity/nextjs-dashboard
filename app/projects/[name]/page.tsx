@@ -21,9 +21,9 @@ export default async function ProjectPage(props: ProjectPageProps) {
     if (!project) return notFound();
 
     return (
-      <main className='!h-[calc(100vh-6.5rem)] !flex-row !justify-center !gap-x-4'>
+      <main className={`${styles['page-wrapper']} ${styles['row-to-column']} !mt-16 !p-6`}>
           <article className={clsx(
-            'flex-col !h-full !w-1/3 !items-start',
+            styles['project-card'],
             project.difficulty.toLowerCase() === 'beginner' ? styles.beginner :
             project.difficulty.toLowerCase() === 'intermediate' ? styles.intermediate :
             project.difficulty.toLowerCase() === 'advanced' ? styles.advanced :
@@ -77,8 +77,8 @@ export default async function ProjectPage(props: ProjectPageProps) {
 
             </div>
           </article>
-          <article className='flex-col !w-2/3 !h-full !p-4 !overflow-hidden'>
-              <h3 className='!p-2 !mr-auto !font-bold'>README.md</h3>
+          <article className="markdown-wrapper">
+              <h3 className='!p-2 !font-bold !mr-auto'>README.md</h3>
               <MarkdownWindow name={project.name} />
           </article>
       </main>

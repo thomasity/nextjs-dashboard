@@ -317,7 +317,23 @@ h3 {
 }
 
 .markdown-wrapper {
-  height: 500px;
-  overflow: auto;
-  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 66%;
+  height: 100%;
+  padding: 1rem;
+  overflow: hidden;
+}
+
+@media (max-width: 700px) {
+  .markdown-body {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .markdown-wrapper {
+    width: 100%;
+  }
 }

@@ -9,9 +9,8 @@ import { ArrowDownTrayIcon } from '@heroicons/react/24/solid';
 
 const navLinks = ['Home', 'Projects', 'Resume', 'Contact'];
 
-export default function SideNav() {
+export default function SideNav({ path } : { path: string }) {
   const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname();
   const { theme } = useTheme();
 
   return (
@@ -23,9 +22,9 @@ export default function SideNav() {
         ☰
       </button>
 
-    <h2>
-      {pathname === '/' ? 'Home' : pathname.charAt(1).toUpperCase() + pathname.slice(2)}
-    </h2>
+    <h3>
+      {path === '/' ? 'Home' : path.charAt(1).toUpperCase() + path.slice(2)}
+    </h3>
 
       <div
         className={clsx(

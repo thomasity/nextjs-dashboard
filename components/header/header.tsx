@@ -17,12 +17,13 @@ const links = [
 
 export default function Header() {
     const pathname = usePathname();
+    const decodedPathname = decodeURIComponent(pathname);
     const isMobile = useIsMobile();
 
     return (
         <header className={styles.header}>
             {isMobile ? (
-                <SideNav />
+                <SideNav path={'/' + decodedPathname.split('/')[1]} />
             ) : (
                 <>
                 <nav className={styles['nav-bar']}>

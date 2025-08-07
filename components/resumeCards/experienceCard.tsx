@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import { Experience }from '@/app/types';
 import { formatYearMonth } from '@/lib/format';
@@ -5,8 +6,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 import styles from './resumeCards.module.css';
+import useIsMobile from '@/lib/hooks/useIsMobile';
 
 export default function ExperienceCard({ info } : { info : Experience}) {
+    const isMobile = useIsMobile();
 
     function ExternalLink({ link } : { link : string}) {
         return (
@@ -31,9 +34,9 @@ export default function ExperienceCard({ info } : { info : Experience}) {
                     {info.link ? <ExternalLink link={info.link} /> : null}
                 </div>
                 {info.logo ? 
-                (<Image src={info.logo} alt='school logo' width={48} height={48} className='p-0 m-0'/>) 
+                (<Image src={info.logo} alt='school logo' width={isMobile ? 36 : 48} height={isMobile ? 36 : 48} className='p-0 m-0'/>) 
                 : 
-                (<Image src='placeholder-image.svg' alt='placeholder image' width={48} height={48} className='p-0'/>)}
+                (<Image src='placeholder-image.svg' alt='placeholder image' width={isMobile ? 36 : 48} height={isMobile ? 36 : 48} className='p-0'/>)}
             </div>
             <div className={styles.row}>
                 <p>
