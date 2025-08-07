@@ -21,7 +21,7 @@ export default async function ProjectPage(props: ProjectPageProps) {
     if (!project) return notFound();
 
     return (
-      <main className={`${styles['page-wrapper']} ${styles['row-to-column']} !mt-16 !p-6`}>
+      <main className={`${styles['page-wrapper']} ${styles['row-to-column']}`}>
           <article className={clsx(
             styles['project-card'],
             project.difficulty.toLowerCase() === 'beginner' ? styles.beginner :
