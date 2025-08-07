@@ -5,7 +5,7 @@ import clsx from 'clsx';
 import { usePathname } from 'next/navigation';
 import SocialMediaWidget from '../socialMediaWidget/socialMediaWidget';
 import styles from './header.module.css';
-import SideNav from '../sideNav';
+import SideNav from '../sideNav/sideNav';
 import useIsMobile from '@/lib/hooks/useIsMobile';
 
 const links = [
