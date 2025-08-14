@@ -148,6 +148,22 @@
         "still_working": false
     },
     {
+        "company": "The Deck",
+        "title": "Line Chef",
+        "location": "Muskegon, MI",
+        "start": "2023-05",
+        "end": "2023-08",
+        "details": [
+            "Thrived in an extremely fast-paced kitchen; routinely handled a workload equal to ~10 hours within an 8-hour shift while keeping orders moving.",
+            "Prepared salads and side dishes to order",
+            "Handled dishwashing and closing tasks to support the kitchen.",
+            "Assisted with basic prep such as chopping, portioning, and labeling."
+        ],
+        "logo": "/logos/the_deck_logo.avif",
+        "link": "https://thedeckmkg.com/eats/",
+        "still_working": false
+    },
+    {
         "company": "Callen Engineering, Inc.",
         "title": "Civil Engineering Intern",
         "location": "Spring Lake, MI",
@@ -174,6 +190,21 @@
         ],
         "logo": "/logos/lake_michigan_surveying_logo.jpg",
         "link": "https://www.lakemichigansurveying.com/",
+        "still_working": false
+    },
+    {
+        "company": "Village Baker",
+        "title": "Line Chef",
+        "location": "Spring Lake, MI",
+        "start": "2018-05",
+        "end": "2018-08",
+        "details": [
+            "Prepared salads and side dishes to order and operated grill and fryer stations",
+            "Handled dishwashing and closing tasks to support the kitchen.",
+            "Assisted with basic prep such as chopping, portioning, and labeling."
+          ],
+        "logo": "",
+        "link": "https://www.villagebaker.us/",
         "still_working": false
     }
   ],

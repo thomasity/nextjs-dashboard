@@ -7,14 +7,16 @@ import Link from 'next/link';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 import styles from './resumeCards.module.css';
 import useIsMobile from '@/lib/hooks/useIsMobile';
+import Logo from '../logo';
 
 export default function ExperienceCard({ info } : { info : Experience}) {
     const isMobile = useIsMobile();
 
-    function ExternalLink({ link } : { link : string}) {
+    function ExternalLink({ info } : { info : Experience}) {
+        if (!info.link) return null;
         return (
             <Link
-                    href={link}
+                    href={info.link}
                     target='_blank'
                     rel='noopener noreferrer'
                     className='!text-sm !font-bold !text-[var(--blue)] hover:underline !flex !inline-flex !items-center !gap-1'
@@ -31,12 +33,9 @@ export default function ExperienceCard({ info } : { info : Experience}) {
             <div className={styles.row}>
                 <div className='!p-0 !m-0'>
                     <h3 className='!m-0 !p-0'>{info.company}</h3>
-                    {info.link ? <ExternalLink link={info.link} /> : null}
+                    <ExternalLink info={info} />
                 </div>
-                {info.logo ? 
-                (<Image src={info.logo} alt='school logo' width={isMobile ? 36 : 48} height={isMobile ? 36 : 48} className='p-0 m-0'/>) 
-                : 
-                (<Image src='placeholder-image.svg' alt='placeholder image' width={isMobile ? 36 : 48} height={isMobile ? 36 : 48} className='p-0'/>)}
+                <Logo info={info} isMobile={isMobile} />
             </div>
             <div className={styles.row}>
                 <p>

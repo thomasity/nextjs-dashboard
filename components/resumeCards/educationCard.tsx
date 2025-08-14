@@ -6,6 +6,7 @@ import Image from 'next/image';
 import styles from './resumeCards.module.css';
 import { isCourseArray } from '@/lib/util';
 import useIsMobile from '@/lib/hooks/useIsMobile';
+import Logo from '../logo';
 
 
 export default function EducationCard({ info } : { info : Education}) {
@@ -38,7 +39,7 @@ export default function EducationCard({ info } : { info : Education}) {
                 <h3>
                     {info.school}{info.college !== undefined ? `, College of ${info.college}` : null}
                 </h3>
-                <Image src={info.logo} alt='school logo' width={isMobile ? 36 : 48} height={isMobile ? 36: 48} className='p-0 m-0'/>
+                <Logo info={info} isMobile={isMobile} />
             </div>
             <div className={styles.row}>
                 <p>

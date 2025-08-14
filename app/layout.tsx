@@ -10,22 +10,22 @@ import ThemeToggle from '@/components/themeToggle/themeToggle';
 export const metadata: Metadata = {
   title: 'Thomas Callen - Software Developer Portfolio',
   description: 'Welcome to the portfolio of Thomas Callen, showcasing software projects, skills, and experience.',
-  keywords: ['Thomas Callen', 'Software Developer', 'Portfolio', 'React', 'Next.js', 'JavaScript', 'TypeScript', 'Web Developer'],
-  authors: [{ name: 'Thomas Callen', url: 'https://yourwebsite.com' }],
+  keywords: ['Thomas Callen', 'Reliable', 'Software Developer', 'Portfolio', 'React', 'Next.js', 'JavaScript', 'TypeScript', 'Web Developer'],
+  authors: [{ name: 'Thomas Callen', url: 'https://tommycallen.com' }],
   creator: 'Thomas Callen',
   publisher: 'Thomas Callen',
-  metadataBase: new URL('https://yourwebsite.com'),
+  metadataBase: new URL('https://tommycallen.com'),
   openGraph: {
     title: 'Thomas Callen Portfolio',
     description: 'Explore projects, skills, and experience of software developer Thomas Callen.',
-    url: 'https://yourwebsite.com',
+    url: 'https://tommycallen.com',
     siteName: 'Thomas Callen Portfolio',
     images: [
       {
-        url: 'https://yourwebsite.com/og-image.png',
+        url: 'https://tommycallen.com/handsome_fella.jpg',
         width: 1200,
         height: 630,
-        alt: 'Thomas Callen Portfolio',
+        alt: 'Thomas Callen',
       },
     ],
     locale: 'en-US',

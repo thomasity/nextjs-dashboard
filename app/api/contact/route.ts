@@ -31,7 +31,7 @@ export async function POST(req: Request) {
     await transporter.sendMail({
       from: email,
       to: process.env.EMAIL_USERNAME,
-      subject: `New contact from ${name}`,
+      subject: `tommycallen.com - Contact from ${name}`,
       text: message,
     });
 

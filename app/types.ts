@@ -1,4 +1,4 @@
-
+import { StaticImageData } from "next/image";
 
 export interface Resume {
     name: string,
@@ -48,7 +48,7 @@ export interface Experience {
     start: string,
     end: string,
     details: string[],
-    logo: string,
+    logo?: string | StaticImageData,
     link: string,
     still_working: boolean
 }
