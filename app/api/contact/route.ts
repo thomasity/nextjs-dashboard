@@ -29,10 +29,11 @@ export async function POST(req: Request) {
     });
 
     await transporter.sendMail({
-      from: email,
+      from: `"tommycallen.com Contact" <${process.env.EMAIL_USERNAME}>`,
       to: process.env.EMAIL_USERNAME,
+      replyTo: `${name} <${email}>`, // key line
       subject: `tommycallen.com - Contact from ${name}`,
-      text: message,
+      text: `From: ${name} <${email}>\n\n${message}`,
     });
 
     return NextResponse.json({ success: true }, { status: 200 });
