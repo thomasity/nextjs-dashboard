@@ -218,8 +218,10 @@
         "logo": "/logos/BLiSS_Logo_white_bg.jpg",
         "link": "https://sites.google.com/a/umich.edu/bliss/",
         "details": [
-            "Designed real-time embedded systems using STM32",
-            "Built custom PCBs and sensor interfaces"
+            "Led requirements, trade studies, verification, and risk for an ISS EXPRESS rack prototype",
+            "Coordinated with NASA stakeholders and cross-functional leads; mentored and delegated tasks",
+            "Integrated sensors, Raspberry Pi controllers, and power relays to actuate pumps/lights/heaters; bench-tested",
+            "Built React front end + Express.js back end with a peer-to-peer link to a control laptop; enabled CSV (comma-separated values) logging, manual control, and live video"
         ],
         "still_working": false
     },
@@ -232,8 +234,8 @@
         "logo": "/logos/BLiSS_Logo_white_bg.jpg",
         "link": "https://sites.google.com/a/umich.edu/bliss/",
         "details": [
-            "Designed real-time embedded systems using STM32",
-            "Built custom PCBs and sensor interfaces"
+            "Conducted trade studies, requirements decomposition, and verification planning for early-stage astronaut exercise equipment",
+            "Designed embedded firmware (Arduino), sensor integration (I²C/UART), and a touchscreen GUI for real-time data acquisition, visualization, and logging"
         ],
         "still_working": false
     },
