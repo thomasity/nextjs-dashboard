@@ -5,6 +5,7 @@ import 'katex/dist/katex.min.css';
 import { comfortaa } from '@/styles/fonts';
 import { ThemeProvider } from 'next-themes';
 import Header from '@/components/header/header';
+import Footer from '@/components/footer/footer';
 import ThemeToggle from '@/components/themeToggle/themeToggle';
 
 export const metadata: Metadata = {
@@ -69,7 +70,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Header />
             {children}
-          <ThemeToggle />
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

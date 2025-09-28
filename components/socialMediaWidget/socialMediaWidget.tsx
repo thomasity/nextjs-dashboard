@@ -2,9 +2,39 @@
 import React from 'react';
 import styles from './socialMediaWidget.module.css';
 import { useTheme } from 'next-themes';
-import { ArrowDownTrayIcon } from '@heroicons/react/24/solid';
+import { ArrowDownTrayIcon, EnvelopeIcon } from '@heroicons/react/24/solid';
 import Image from 'next/image';
 import Link from 'next/link';
+
+export function DownloadResume({className}: {className?: string}) {
+    return (
+        <Link
+            href='/resume.pdf'
+            // download='ThomasCallen_Resume.pdf'
+            className="text-center"
+            rel='noopener noreferrer'
+            target='_blank'
+            id="download-resume"
+        >
+            <span className="inline-block">View Resume</span>
+            <ArrowDownTrayIcon className='inline-block h-5 w-5 ml-2'/>
+        </Link>
+
+    )
+}
+
+export function EmailMe({className}: {className?: string}) {
+    return (
+        <Link
+            href='/contact'
+            className="text-center"
+            id="email-me"
+        >
+            <EnvelopeIcon className='inline-block h-5 w-5 mr-2'/>
+            <span className="inline-block">Email Me</span>
+        </Link>
+    )
+}
 
 
 
@@ -20,16 +50,6 @@ export default function SocialMediaWidget() {
 
     return (
         <div className={styles['widget-container']}>
-            <a
-                href='/resume.pdf'
-                // download='ThomasCallen_Resume.pdf'
-                className={styles['download-button']}
-                rel='noopener noreferrer'
-                target='_blank'
-            >
-                <span className="inline-block">Download Resume</span>
-                <ArrowDownTrayIcon className='inline-block h-5 w-5'/>
-            </a>
             <nav className={styles.widget}>
                 <Link 
                     href='https://github.com/thomasity' 

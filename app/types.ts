@@ -55,6 +55,5 @@ export interface Experience {
 
 export interface Skill {
     title: string,
-    summary: string,
     items: string[],
 }

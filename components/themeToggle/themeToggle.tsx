@@ -1,5 +1,6 @@
 'use client';
 
+import clsx from 'clsx';
 import { useTheme } from 'next-themes';
 import React from 'react';
 import styles from '@/components/themeToggle/themeToggle.module.css';
@@ -17,7 +18,7 @@ export default function ThemeToggle({}) {
 
   return (
     <button
-      className={styles['theme-button']}
+      className={clsx(styles['theme-button'], "trapezoid")}
       aria-label="Toggle Theme"
       onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
     >

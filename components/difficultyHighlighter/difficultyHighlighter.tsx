@@ -12,7 +12,7 @@ export default function DifficultyHighlighter({ difficulty, children }: Difficul
 
     return (
         <div className={clsx(
-        '!w-full !h-full !p-2 !text-left',
+        '!w-full !h-full !p-4 !text-left',
         difficulty.toLowerCase() === 'beginner' ? styles.beginner :
         difficulty.toLowerCase() === 'intermediate' ? styles.intermediate :
         difficulty.toLowerCase() === 'advanced' ? styles.advanced :

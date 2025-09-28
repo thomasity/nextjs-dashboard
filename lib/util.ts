@@ -1,6 +1,5 @@
 import { Resume, Project, Course, Education, Experience, Skill } from "@/app/types";
 
-// === Project ===
 export function isProject(value: unknown): value is Project {
   if (typeof value !== 'object' || value === null) return false;
 
@@ -24,7 +23,6 @@ export function isProjectArray(value: unknown): value is Project[] {
   return Array.isArray(value) && value.every(isProject);
 }
 
-// === Course ===
 export function isCourse(value: unknown): value is Course {
   if (typeof value !== 'object' || value === null) return false;
 
@@ -42,7 +40,6 @@ export function isCourseArray(value: unknown): value is Course[] {
   return Array.isArray(value) && value.every(isCourse);
 }
 
-// === Education ===
 export function isEducation(value: unknown): value is Education {
   if (typeof value !== 'object' || value === null) return false;
 
@@ -66,7 +63,6 @@ export function isEducationArray(value: unknown): value is Education[] {
   return Array.isArray(value) && value.every(isEducation);
 }
 
-// === Experience ===
 export function isExperience(value: unknown): value is Experience {
   if (typeof value !== 'object' || value === null) return false;
 

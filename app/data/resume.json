@@ -1,6 +1,6 @@
 {
   "name": "Thomas Kent Callen",
-  "summary": "Embedded systems engineer with a background in computer science...",
+  "summary": "Computer Science engineer with experience in embedded systems, IoT hardware/software integration, and full-stack development. Skilled in building prototypes from concept to deployment, including Raspberry Pi/Pico-based sensor systems, cloud integration (Azure, AWS), and React frontends. Proven leadership in NASA-funded student design challenges and nonprofit engineering initiatives.",
   "education": [
     {
       "degree": "Bachelor of Science in Engineering in Computer Science",
@@ -257,37 +257,30 @@
   "skills": [
     {
         "title": "Languages",
-        "summary": null,
         "items": ["C", "C++", "Python", "Java", "MATLAB", "SQL", "JavaScript/TypeScript", "HTML/CSS"]
     },
     {
         "title": "Frameworks",
-        "summary": null,
         "items": ["Next.js", "Flask", "Express.js", "Spark", "Hadoop"]
     },
     {
         "title": "Libraries",
-        "summary": null,
         "items": ["React", "Tailwind CSS", "NumPy", "Matplotlib", "qiskit", "OpenCV"]
     },
     {
         "title":"Databases",
-        "summary": null,
         "items": ["PostgreSQL", "MySQL", "Firebase"]
     },
     {
         "title": "Tools",
-        "summary": null,
         "items": ["Git", "GitHub", "Docker", "Figma"]
     },
     {
         "title": "Platforms",
-        "summary": null,
         "items": ["Node.js", "AWS", "Raspberry Pi", "Arduino"]
     },
     {
         "title":"Hardware",
-        "summary": null,
         "items": ["MicroPython", "CircuitPython", "Arduino"]
     }
 ]
