@@ -122,8 +122,7 @@ header {
     grid-template-columns: auto auto;
     justify-content: center;
     align-items: center;
-    background-color: var(--bg-color);
-    border-bottom: var(--border-color) solid var(--border-width);
+    background-color: transparent;
     width: 100%;
     position: fixed;
     margin: 0;

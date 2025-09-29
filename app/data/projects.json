@@ -366,7 +366,9 @@
     "frameworks": ["React", "Raspberry Pi"],
     "libraries": ["serial", "threading"],
     "languages": ["JavaScript", "Python"],
-    "description": "A full-stack control and telemetry system developed for NASA's X-Hab project to support the redesign of ISS EXPRESS racks for lunar habitats. Combines a React frontend with a Raspberry Pi backend that streams MJPEG video, receives telemetry from Pi Picos over UART, and controls rack components via GPIO relay."
+    "description": "A full-stack control and telemetry system developed for NASA's X-Hab project to support the redesign of ISS EXPRESS racks for lunar habitats. Combines a React frontend with a Raspberry Pi backend that streams MJPEG video, receives telemetry from Pi Picos over UART, and controls rack components via GPIO relay.",
+    "image": "/project_covers/racknstack_cover.png",
+    "featured": true
   },
   {
     "name": "Smart Grocery & Meal Planner App",
@@ -378,6 +380,17 @@
     "languages": ["JavaScript"],
     "description": "A React Native app for managing groceries, finding recipes, and tracking user statistics. Includes multi-screen navigation, state sharing with Context API, and a mobile-friendly interface.",
     "course": "ENTR 390"
+  },
+  {
+    "name": "This Website!",
+    "year": 2025,
+    "difficulty": "Advanced",
+    "fields": ["Web Development"],
+    "frameworks": ["Next.js, AWS"],
+    "libraries": ["Next, React, Prisma"],
+    "languages": ["TypeScript"],
+    "description": "A React Native app for managing groceries, finding recipes, and tracking user statistics. Includes multi-screen navigation, state sharing with Context API, and a mobile-friendly interface.",
+    "featured": true
   }
 
 

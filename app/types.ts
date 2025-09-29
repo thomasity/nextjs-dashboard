@@ -20,6 +20,8 @@ export interface Project {
     description: string;
     link?: string;
     course?: string;
+    image?: string;
+    featured?: boolean;
 }
 
 export interface Course {

@@ -9,8 +9,8 @@ export default function ProjectLeaf({ project }: { project: Project }) {
 
     return (
         <Link href={`/projects/${project.name}`} className='!w-full !h-64 !p-0 !m-0'>
-            <section className={clsx(styles.card, styles[project.difficulty.toLowerCase()])}>
-                {/* <p className={styles.year}>{project.year}</p> */}
+            <div className={clsx(styles.card, styles[project.difficulty.toLowerCase()])}>
+                <p className={styles.year}>{project.year}</p>
                 <DifficultyHighlighter difficulty={project.difficulty}>
                     <div className='!flex !flex-col-reverse !items-start !m-0 !p-0 !h-[19%]'>
                         <h3 className={styles.name}>{project.name}</h3>
@@ -53,7 +53,7 @@ export default function ProjectLeaf({ project }: { project: Project }) {
                     </div>
 
                 </DifficultyHighlighter>
-            </section>
+            </div>
         </Link>
     );
 }

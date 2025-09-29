@@ -2,6 +2,7 @@
 
 import { use, useEffect, useState } from 'react';
 import ProjectLeaf from '../../components/projectLeaf/projectLeaf';
+import FeaturedProjectLeaf from '../../components/projectLeaf/featuredProjectLeaf';
 import ProjectFilter from '@/components/projectFilter/projectFilter';
 import projectsData from '@/app/data/projects.json';
 import styles from './projects.module.css';
@@ -29,9 +30,9 @@ export default function Page() {
     <main className="page-wrapper">
       <section className="w-full max-w-[80%]">
         <h2 className="mr-auto mb-4">Featured Projects</h2>
-        <div className="grid grid-cols-3 gap-4 mb-4">
-          {projectsData.slice(0, 3).map((p) => (
-            <ProjectLeaf key={p.name} project={p} />
+        <div className="grid xl:grid-cols-2 grid-cols-1 gap-4 mb-4">
+          {projectsData.map((p) => (
+            p.featured &&<FeaturedProjectLeaf key={p.name} project={p} />
           ))}
         </div>
       </section>

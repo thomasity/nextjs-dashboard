@@ -11,11 +11,7 @@
     transition: scale 0.3s, box-shadow 0.3s;
     border: var(--border-color) solid 1px;
     background-color: var(--bg-color);
-}
-
-.card:hover {
-    transform: scale(1.02);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding-right: 1rem; 
 }
 
 @media (max-width: 700px) {
@@ -42,7 +38,7 @@
 
 .name {
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 600;
     line-height: 1.2;
 }
 

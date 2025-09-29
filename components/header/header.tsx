@@ -22,7 +22,7 @@ export default function Header() {
     return (
         <header>
             {isMobile ? (
-                <SideNav path={'/' + decodedPathname.split('/')[1]} />
+                <SideNav />
             ) : (
             <nav className="w-full flex flex-row justify-between items-center">
                 <a id="email" href="mailto:tcallen1001@gmail.com">tcallen1001@gmail.com</a>
