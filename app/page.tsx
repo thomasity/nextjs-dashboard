@@ -14,9 +14,19 @@ export default function Page() {
   const [projects, setProjects] = useState<Project[]>(projectsData as Project[]);
 
   useEffect(() => {
-        const newProjects = projects.filter((project) => project.ongoing);
-        setProjects(newProjects);
-    }, []);
+    let cancelled = false;
+    (async () => {
+      try {
+        const res = await fetch('/api/projects?ongoing=true', { cache: 'no-store' });
+        if (!res.ok) throw new Error('Failed to fetch');
+        const data = (await res.json()) as Project[];
+        if (!cancelled) setProjects(data);
+      } catch (e) {
+        console.error(e);
+      }
+    })();
+    return () => { cancelled = true; };
+  }, []);
 
   return (
     <div className="page-wrapper">

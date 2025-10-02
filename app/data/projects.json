@@ -51,16 +51,6 @@
       "description": "A C++ project that evaluates the trustworthiness of reviews based on score thresholds, using file I/O and conditional logic."
     },
     {
-      "name": "Planetary Route Planning Based on Coordinate and ID Mapping",
-      "year": 2021,
-      "difficulty": "Beginner",
-      "fields": ["Coordinate Mapping"],
-      "frameworks": [],
-      "libraries": [],
-      "languages": ["C++"],
-      "description": "A C++ program that reads planetary location and name data from input files, maps them using structs and vectors, and supports grid-based route planning across planetary coordinates."
-    },
-    {
       "name": "Column-Based Statistical Summary Tool",
       "year": 2022,
       "difficulty": "Beginner",
@@ -227,7 +217,7 @@
       "fields": ["Web Development"],
       "frameworks": ["React"],
       "libraries": ["Flask", "React", "Webpack", "Babel"],
-      "languages": ["JavaScript", "JSX", "HTML", "CSS", "SQL", "Python"],
+      "languages": ["JavaScript", "HTML", "CSS", "SQL", "Python"],
       "description": "A React-based frontend for a photo-sharing app that dynamically renders content from a RESTful API backed by a SQL database, combining modern UI design with persistent backend data."
     },
     {
@@ -294,7 +284,7 @@
     "name": "Buffer Overflow Exploitation and Shellcode Injection",
     "year": 2024,
     "difficulty": "Advanced",
-    "fields": ["Cybersecurity", "Memory Safety"],
+    "fields": ["Cybersecurity"],
     "frameworks": [],
     "libraries": [],
     "languages": ["C", "Python"],
@@ -318,7 +308,7 @@
     "name": "Rowing Machine Display Interface for NASA xHAB Rower System",
     "year": 2024,
     "difficulty": "Intermediate",
-    "fields": ["Embedded Systems", "UI Design"],
+    "fields": ["Embedded Systems"],
     "frameworks": [],
     "libraries": ["UTFT", "Wire", "SPI"],
     "languages": ["C++", "Arduino"],
@@ -397,7 +387,6 @@
     "fields": [
     "Internet of Things (IoT)",
     "Embedded Systems",
-    "Edge-to-Cloud Data Pipeline",
     "Cloud Databases",
     "Web Development"
     ],
@@ -411,5 +400,39 @@
     "link": [{"address": "https://github.com/thomasity/GLBL_ALT", "type":"github"}],
     "owner": "thomasity",
     "repo": "GLBL_ALT"
+  },
+  {
+    "name": "Voice Report App",
+    "year": 2025,
+    "difficulty": "Intermediate",
+    "fields": [
+      "Mobile App Development",
+      "Backend Development",
+      "AI",
+      "Document Parsing"
+    ],
+    "frameworks": [
+      "React Native",
+      "Expo Router",
+      "FastAPI"
+    ],
+    "libraries": [
+      "expo-speech",
+      "expo-document-picker",
+      "expo-file-system",
+      "react-native-safe-area-context",
+      "pydantic",
+      "uvicorn"
+    ],
+    "languages": [
+      "TypeScript",
+      "Python"
+    ],
+    "description": "A voice-driven report-filling tool: import empty reports (TXT/DOCX/PDF) from the device, convert them to a machine-readable template on a FastAPI backend, and use live speech to populate comment sections in a React Native (Expo) app with tab navigation.",
+    "link": [{"address": "https://github.com/thomasity/FormFiller", "type": "github"}],
+    "ongoing": true,
+    "owner": "thomasity",
+    "repo": "FormFiller"
   }
+
 ]

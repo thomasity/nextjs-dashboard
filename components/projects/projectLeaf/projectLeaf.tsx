@@ -29,7 +29,7 @@ function DifficultyHighlighter({ difficulty, children }: DifficultyHighlighterPr
 export default function ProjectLeaf({ project }: { project: Project }) {
 
     return (
-        <Link href={`/projects/${slugify(project.name)}`} className='!w-full !h-64 !p-0 !m-0'>
+        <Link href={`/projects/${project.id}`} className='!w-full !h-64 !p-0 !m-0'>
             <div className={clsx(styles.card, styles[`${project.difficulty.toLowerCase()}-glow`])}>
                 <DifficultyHighlighter difficulty={project.difficulty}>
                     <div className='!flex !flex-col-reverse !items-start !m-0 !p-0 !h-[19%]'>

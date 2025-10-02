@@ -12,13 +12,38 @@ import useIsMobile from '@/lib/hooks/useIsMobile';
 
 
 export default function Page() {
-  const [projects, setProjects] = useState<Project[]>(projectsData as Project[]);
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [totalProjects, setTotalProjects] = useState<number>(0);
   const [filteredProjects, setFilteredProjects] = useState<Project[]>(projects);
   const [filter, setFilter] = useState<string>('');
   const isMobile = useIsMobile();
 
+  
   useEffect(() => {
-    if (filteredProjects.length === projectsData.length) setFilteredProjects(projects);
+    let cancelled = false;
+
+    (async () => {
+      try {
+        const res = await fetch('/api/projects', { cache: 'no-store' });
+        if (!res.ok) throw new Error('Failed to fetch');
+        const data = (await res.json()) as Project[];
+        console.log(data);
+        setTotalProjects(data.length);
+        if (!cancelled) {
+          setProjects(data);
+          setFilteredProjects(data);
+        }
+      } catch (e) {
+        console.warn('Falling back to bundled projectsData due to fetch error:', e);
+        // keep the initial projectsData fallback
+      }
+    })();
+
+    return () => { cancelled = true; };
+  }, []);
+
+  useEffect(() => {
+    if (filteredProjects.length === totalProjects) setFilteredProjects(projects);
     else {
       const newProjects = projects.filter((project) => filteredProjects.includes(project));
       setFilteredProjects(newProjects);

@@ -15,6 +15,7 @@ export interface Resume {
 }
 
 export interface Project {
+    id: number;
     name: string;
     year: number;
     difficulty: string;

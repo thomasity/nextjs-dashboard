@@ -3,7 +3,6 @@
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { Project } from "@/app/types";
-import { slugify } from "@/lib/format";
 
 export default function FeaturedProjectLeaf({ project }: { project: Project }) {
 
@@ -48,7 +47,7 @@ export default function FeaturedProjectLeaf({ project }: { project: Project }) {
                     null
                     )
                 }
-                <Link href={`/projects/${slugify(project.name)}`} className="ml-auto mr-4"><button className="!text-lg !px-8">See More</button></Link>
+                <Link href={`/projects/${project.id}`} className="ml-auto mr-4"><button className="!text-lg !px-8">See More</button></Link>
             </div>
         </div>
     );

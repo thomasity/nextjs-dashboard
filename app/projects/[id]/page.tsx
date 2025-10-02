@@ -1,15 +1,14 @@
-import Projects from '@/app/data/projects.json';
 import { notFound } from 'next/navigation';
+import { prisma } from '@/lib/prisma';
 import Link from 'next/link';
 import MarkdownWindow from '@/components/projects/markdownWindow';
-import { slugify } from '@/lib/format';
 import { Project } from '@/app/types';
 import { TvMinimalPlay, Github } from 'lucide-react';
 import Image from 'next/image';
 
 interface ProjectPageProps {
   params: Promise<{
-    name: string;
+    id: string;
   }>;
 }
 
@@ -63,8 +62,9 @@ function SkillList({ category, skills, project_name }: { category: string; skill
 
 export default async function ProjectPage(props: ProjectPageProps) {
     const params = await props.params;
-    const decodedName = decodeURIComponent(params.name);
-    const project = Projects.find(p => slugify(p.name) === decodedName) as Project;
+    const id = Number(params.id);
+    if (Number.isNaN(id)) notFound();
+    const project = await prisma.project.findUnique({ where: { id } });
 
     if (!project) return notFound();
 

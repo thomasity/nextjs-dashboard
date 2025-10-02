@@ -3,7 +3,11 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev --turbopack",
-    "start": "next start"
+    "start": "next start",
+    "prisma:generate": "prisma generate",
+    "db:push": "prisma db push",
+    "db:migrate": "prisma migrate dev --name init",
+    "db:seed": "prisma db seed"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
@@ -28,17 +32,24 @@
     "react-markdown": "^10.1.0",
     "remark-gfm": "^4.0.1",
     "tailwindcss": "^4.1.11",
-    "typescript": "5.8.3",
     "use-debounce": "^10.0.5",
     "zod": "^4.0.14"
   },
   "devDependencies": {
+    "@prisma/client": "^6.16.3",
     "@tailwindcss/typography": "^0.5.16",
     "@types/bcrypt": "^6.0.0",
-    "@types/node": "24.1.0",
+    "@types/node": "^24.6.2",
     "@types/nodemailer": "^6.4.17",
     "@types/react": "19.1.9",
     "@types/react-dom": "19.1.7",
-    "globals": "^16.3.0"
+    "globals": "^16.3.0",
+    "prisma": "^6.16.3",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
   }
 }
