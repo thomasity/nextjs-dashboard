@@ -1,12 +1,10 @@
 'use client';
-import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
-import useIsMobile from '@/lib/hooks/useIsMobile';
 import { useTheme } from 'next-themes';
-import { DownloadResume, EmailMe } from '@/components/socialMediaWidget/socialMediaWidget';
+import { DownloadResume, EmailMe } from '@/components/buttons/buttons';
 import projectsData from '@/app/data/projects.json';
 import { Project } from '@/app/types';
-import FeaturedProjectLeaf from '@/components/projectLeaf/featuredProjectLeaf';
+import FeaturedProjectLeaf from '@/components/projects/projectLeaf/featuredProjectLeaf';
 
 
 

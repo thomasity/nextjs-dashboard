@@ -2,10 +2,10 @@
 import Link from 'next/link';
 import React from 'react';
 import { usePathname } from 'next/navigation';
-import SideNav from '../sideNav/sideNav';
+import MobileHeader from './mobileHeader/mobileHeader';
 import useIsMobile from '@/lib/hooks/useIsMobile';
 import clsx from 'clsx';
-import ThemeToggle from '../themeToggle/themeToggle';
+import ThemeToggle from '../theme/themeToggle';
 
 const links = [
     'Home',
@@ -21,7 +21,7 @@ export default function Header() {
     return (
         <header>
             {isMobile ? (
-                <SideNav />
+                <MobileHeader />
             ) : (
             <nav className="w-full flex flex-row justify-between items-center">
                 <a id="email" href="mailto:tcallen1001@gmail.com">tcallen1001@gmail.com</a>

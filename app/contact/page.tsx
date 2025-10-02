@@ -1,5 +1,5 @@
 import React from 'react';
-import ContactForm from '@/components/contactForm';
+import ContactForm from '@/components/contact/contactForm';
 import Link from 'next/link';
 
 export default function Page() {

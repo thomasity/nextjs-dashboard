@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 import { Project } from '@/app/types';
-import styles from '@/components/projectCrossBar/projectCrossBar.module.css';
+import styles from './projectCrossBar.module.css';
 import clsx from 'clsx';
 
 enum DifficultyLevel {

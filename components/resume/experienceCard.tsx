@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 import styles from './resumeCards.module.css';
 import useIsMobile from '@/lib/hooks/useIsMobile';
-import Logo from '../logo';
+import Logo from './logo';
 
 export default function ExperienceCard({ info } : { info : Experience}) {
     const isMobile = useIsMobile();

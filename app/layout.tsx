@@ -6,7 +6,7 @@ import { comfortaa } from '@/styles/fonts';
 import { ThemeProvider } from 'next-themes';
 import Header from '@/components/header/header';
 import Footer from '@/components/footer/footer';
-import ThemeToggle from '@/components/themeToggle/themeToggle';
+import ThemeToggle from '@/components/theme/themeToggle';
 
 export const metadata: Metadata = {
   title: 'Thomas Callen - Software Developer Portfolio',

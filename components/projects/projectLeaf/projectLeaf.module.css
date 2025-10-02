@@ -46,16 +46,28 @@
     line-height: 1.2;
 }
 
-:global(.dark) .beginner:hover {
+.beginner {
+    border-left: 4px solid #4caf50 !important; /* Green for beginner */
+}
+
+.intermediate {
+    border-left: 4px solid #ff9800 !important; /* Orange for intermediate */
+} 
+
+.advanced {
+    border-left: 4px solid #f44336 !important; /* Red for advanced */
+}
+
+:global(.dark) .beginner-glow:hover {
     box-shadow: 0 0 10px #4caf4f93;
     transition: box-shadow 0.3s;
 }
-:global(.dark) .intermediate:hover {
+:global(.dark) .intermediate-glow:hover {
     box-shadow: 0 0 10px #ff99008b;
     transition: box-shadow 0.3s;
 }
 
-:global(.dark) .advanced:hover {
+:global(.dark) .advanced-glow:hover {
     box-shadow: 0 0 10px #f4433682;
     transition: box-shadow 0.3s;
 }
@@ -76,6 +88,7 @@
     line-height: normal;
     @apply line-clamp-3;
 }
+
 
 
 

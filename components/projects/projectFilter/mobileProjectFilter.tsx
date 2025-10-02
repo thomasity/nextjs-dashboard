@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react';
 import { getFilters } from '@/app/data/frameworkTree';
 import { Project } from '@/app/types';
 import projectsData from '@/app/data/projects.json';
-import FilterTab from '../filterTab';
+import FilterTab from './filterTab';
 
 const projects: Project[] = projectsData;
 const filters = getFilters({ projects });

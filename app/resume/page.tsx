@@ -1,8 +1,8 @@
 import React from 'react';
 import resumeData from '@/app/data/resume.json';
-import EducationCard from '@/components/resumeCards/educationCard';
-import ExperienceCard from '@/components/resumeCards/experienceCard';
-import SkillCard from '@/components/resumeCards/skillCard';
+import EducationCard from '@/components/resume/educationCard';
+import ExperienceCard from '@/components/resume/experienceCard';
+import SkillCard from '@/components/resume/skillCard';
 import { Phone, MapPin, Mail, GraduationCap, School } from 'lucide-react';
 
 const resume = resumeData;

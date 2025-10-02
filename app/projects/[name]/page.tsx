@@ -1,7 +1,7 @@
 import Projects from '@/app/data/projects.json';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import MarkdownWindow from '@/components/markdownWindow';
+import MarkdownWindow from '@/components/projects/markdownWindow';
 import { slugify } from '@/lib/format';
 import { Project } from '@/app/types';
 import { TvMinimalPlay, Github } from 'lucide-react';

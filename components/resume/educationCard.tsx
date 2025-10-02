@@ -6,7 +6,7 @@ import Image from 'next/image';
 import styles from './resumeCards.module.css';
 import { isCourseArray } from '@/lib/util';
 import useIsMobile from '@/lib/hooks/useIsMobile';
-import Logo from '../logo';
+import Logo from './logo';
 
 
 export default function EducationCard({ info } : { info : Education}) {

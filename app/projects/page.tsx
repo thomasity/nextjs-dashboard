@@ -1,13 +1,13 @@
 'use client';
 
 import { use, useEffect, useState } from 'react';
-import ProjectLeaf from '../../components/projectLeaf/projectLeaf';
-import FeaturedProjectLeaf from '../../components/projectLeaf/featuredProjectLeaf';
-import ProjectFilter from '@/components/projectFilter/projectFilter';
+import ProjectLeaf from '../../components/projects/projectLeaf/projectLeaf';
+import FeaturedProjectLeaf from '../../components/projects/projectLeaf/featuredProjectLeaf';
+import ProjectFilter from '@/components/projects/projectFilter/projectFilter';
 import projectsData from '@/app/data/projects.json';
 import styles from './projects.module.css';
 import { Project } from '@/app/types';
-import ProjectCrossBar from '@/components/projectCrossBar/projectCrossBar';
+import ProjectCrossBar from '@/components/projects/projectCrossBar/projectCrossBar';
 import useIsMobile from '@/lib/hooks/useIsMobile';
 
 

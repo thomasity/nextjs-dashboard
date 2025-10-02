@@ -4,7 +4,7 @@ import clsx from 'clsx';
 
 const navLinks = ['Home', 'Projects', 'Resume', 'Contact'];
 
-export default function SideNav() {
+export default function MobileHeader() {
 
   return (
     <section

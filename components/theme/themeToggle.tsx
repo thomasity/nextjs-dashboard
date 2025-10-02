@@ -3,7 +3,7 @@
 import clsx from 'clsx';
 import { useTheme } from 'next-themes';
 import React from 'react';
-import styles from '@/components/themeToggle/themeToggle.module.css';
+import styles from '@/components/theme/themeToggle.module.css';
 
 export default function ThemeToggle({}) {
   const { theme, setTheme } = useTheme();
