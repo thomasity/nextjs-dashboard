@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { Project } from '@/app/types';
 import styles from '@/components/projectCrossBar/projectCrossBar.module.css';
+import clsx from 'clsx';
 
 enum DifficultyLevel {
   Beginner = 1,
@@ -51,7 +52,7 @@ export default function ProjectCrossBar({
         <div className='!w-auto !text-left !m-0 !p-0'>
             <button
                 onClick={() => setOpen(!open)}
-                className='w-52'
+                className='w-52 !text-sm'
             >
                 <span>{sortState}</span> <span>{open ? '▼' : '►'}</span>
             </button>
@@ -64,7 +65,7 @@ export default function ProjectCrossBar({
                             setSortState('Year: New to Old');
                             setOpen(false);
                         }}
-                        className={styles['sort-button']}
+                        className={clsx(styles['sort-button'], "!text-sm")}
                     >
                         Year: New to Old
                     </button>
@@ -74,7 +75,7 @@ export default function ProjectCrossBar({
                             setSortState('Year: Old to New');
                             setOpen(false);
                         }}
-                        className={styles['sort-button']}
+                        className={clsx(styles['sort-button'], "!text-sm")}
                     >
                         Year: Old to New
                     </button>
@@ -84,7 +85,7 @@ export default function ProjectCrossBar({
                             setSortState('Complexity: High to Low');
                             setOpen(false);
                         }}
-                        className={styles['sort-button']}
+                        className={clsx(styles['sort-button'], "!text-sm")}
                     >
                         Complexity: High to Low
                     </button>
@@ -94,14 +95,14 @@ export default function ProjectCrossBar({
                             setSortState('Complexity: Low to High');
                             setOpen(false);
                         }}
-                        className={styles['sort-button']}
+                        className={clsx(styles['sort-button'], "!text-sm")}
                     >
                         Complexity: Low to High
                     </button>
                 </section>
             )}
         </div>
-        <p className={`${styles['filter-text']} !text-xs`}>{filter !== '' ? `Showing: ${filter}` : 'No filter(s) selected'}</p>
+        <p className={`${styles['filter-text']} !text-sm`}>{filter !== '' ? `Showing: ${filter}` : 'No filter(s) selected'}</p>
         <div className={`${styles['difficulty-container']} !flex-row !justify-end !w-auto gap-2 !p-0 !m-0`}>
             <div className={styles['difficulty-container']}>
                 <div className={`${styles['difficulty-color']} bg-[#4caf50]`} />

@@ -16,7 +16,6 @@ const links = [
 
 export default function Header() {
     const pathname = usePathname();
-    const decodedPathname = decodeURIComponent(pathname);
     const isMobile = useIsMobile();
 
     return (

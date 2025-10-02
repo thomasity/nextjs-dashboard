@@ -1,5 +1,5 @@
 .cross-bar-container {
-  margin: 0;
+  margin-bottom: 1rem;
   padding: 0;
   display: flex;
   flex-direction: row;
@@ -27,6 +27,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  border: var(--border-color) solid var(--border-width);
 }
 
 .sort-button:last-child {

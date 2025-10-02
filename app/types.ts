@@ -1,5 +1,10 @@
 import { StaticImageData } from "next/image";
 
+interface Link {
+    type: "github" | "live",
+    address: string
+}
+
 export interface Resume {
     name: string,
     summary: string,
@@ -18,10 +23,12 @@ export interface Project {
     libraries: string[];
     languages: string[];
     description: string;
-    link?: string;
-    course?: string;
+    link?: Link[];
     image?: string;
     featured?: boolean;
+    ongoing?: boolean;
+    owner?: string;
+    repo?: string;
 }
 
 export interface Course {

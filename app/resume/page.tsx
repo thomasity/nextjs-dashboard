@@ -12,7 +12,7 @@ export default function Page() {
 
   return (
     <main className="page-wrapper mt-8">
-      <div className="w-full max-w-[80%] grid xl:grid-cols-4 grid-cols-1 gap-4">
+      <div className="w-full xl:max-w-[80%] grid xl:grid-cols-4 grid-cols-1 gap-4">
         <div className="col-span-1 h-fit p-4">
           <div className="flex flex-col items-center gap-4 mb-4">
             <div className="flex flex-col items-center justify-center my-8">
@@ -43,12 +43,6 @@ export default function Page() {
               </div>
             </div>
           </div>
-          {/* <div className="border-b mb-4 pb-4">
-            <h2>Education</h2>
-            {resume['education'].map((edu, i) => (
-              <EducationCard key={i} info={edu} />
-            ))}
-          </div> */}
           <div className="mb-4 pb-4">
             <h2 className="!font-semibold">Skills</h2>
             {resume['skills'].map((skill, i) => (

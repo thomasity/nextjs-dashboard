@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import clsx from 'clsx';
 
 
 export default function FilterTab({
@@ -7,11 +8,13 @@ export default function FilterTab({
   items,
   selected,
   onChange,
+  className
 }: {
   label: string,
   items: string[] | number[];
   selected: (string | number)[];
   onChange: (val: (string | number)[]) => void;
+  className?: string;
 }) {
   const [expanded, setExpanded] = useState<boolean>(false);
 
@@ -25,13 +28,13 @@ export default function FilterTab({
 
 
   return (
-    <div className='!h-auto w-full !m-0 !p-2 border-[var(--border-color)] border-b'>
+    <div className={clsx("border-b theme-border last:border-0 my-2", className)}>
         <div
         onClick={() => setExpanded(!expanded)}
         className='cursor-pointer !flex !flex-row !justify-between !items-center !p-0'
         >
           <p>{label}</p>
-          <p className='text-sm'>{expanded ? '▼' : '►'}</p>
+          <p className='!text-sm'>{expanded ? '▼' : '►'}</p>
         </div>
         {expanded &&
           <ul className='!h-full !max-h-32 !w-full !list-none !p-0 !m-0 !border !border-[var(--border-color)] !overflow-auto'>
@@ -47,7 +50,7 @@ export default function FilterTab({
                     }
                     }
                   >
-                    <p className='!h-full !p-1 !text-xs'>
+                    <p className='!h-full !p-1 !text-sm'>
                     {item}
                     </p>
                     <input

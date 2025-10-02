@@ -4,16 +4,17 @@ import clsx from 'clsx';
 import styles from './projectLeaf.module.css';
 import DifficultyHighlighter from '../difficultyHighlighter/difficultyHighlighter';
 import { Project } from '@/app/types';
+import { slugify } from '@/lib/format';
 
 export default function ProjectLeaf({ project }: { project: Project }) {
 
     return (
-        <Link href={`/projects/${project.name}`} className='!w-full !h-64 !p-0 !m-0'>
+        <Link href={`/projects/${slugify(project.name)}`} className='!w-full !h-64 !p-0 !m-0'>
             <div className={clsx(styles.card, styles[project.difficulty.toLowerCase()])}>
-                <p className={styles.year}>{project.year}</p>
                 <DifficultyHighlighter difficulty={project.difficulty}>
                     <div className='!flex !flex-col-reverse !items-start !m-0 !p-0 !h-[19%]'>
                         <h3 className={styles.name}>{project.name}</h3>
+                        <p className={styles.year}>{project.year}</p>
                     </div>
                     <div className='!flex !flex-col !items-start !m-0 !mb-1 !p-0 !h-[6%]'>
                         <p className={styles.field}>{project.fields.join(', ')}</p>

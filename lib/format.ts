@@ -22,3 +22,13 @@ export function formatYearMonth(dateStr: string, still_working?: boolean): strin
     if (monthName === 'Invalid Month') return monthName;
     return `${monthName} ${year}`;
 }
+
+export function slugify(input: string) {
+  return input
+    .normalize("NFKD")                 // split accents
+    .replace(/[\u0300-\u036f]/g, "")   // remove diacritics
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")       // non-alphanum → hyphen
+    .replace(/^-+|-+$/g, "")           // trim hyphens
+    .slice(0, 80);                     // optional max length
+}

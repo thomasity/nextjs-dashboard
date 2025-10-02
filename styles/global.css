@@ -63,6 +63,9 @@
   --blue: #0969da;
   --blue-hover: #075ac1;
   --blue-active: #064ca7;
+  --red:        #dc2626;
+  --red-hover:  #b91c1c;
+  --red-active: #991b1b; 
 }
 
 .theme-border {
@@ -109,30 +112,6 @@ header {
   width: 100%;
   height: fit-content;
   padding: 1rem 2rem;
-  /* border-bottom: var(--border-color) solid var(--border-width); */
-}
-
-/* .dark header {
-  background-color:black;
-} */
-
-
-@media (max-width: 700px) {
-  header {
-    grid-template-columns: auto auto;
-    justify-content: center;
-    align-items: center;
-    background-color: transparent;
-    width: 100%;
-    position: fixed;
-    margin: 0;
-    padding: 1rem;
-  }
-
-  header > :last-child {
-    grid-column: 2;
-    justify-self: center;
-  }
 }
 
 nav {
@@ -162,14 +141,11 @@ footer {
 }
 
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   main {
     width: 100%;
     padding: 1rem;
-    margin-top: 4rem;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    margin-top: 2rem;
   }
 }
 
@@ -203,6 +179,21 @@ button:active {
 
 .button-blue:active {
   background-color: var(--blue-active); /* even more contrast, same hue */
+}
+
+.button-red {
+  background-color: var(--red);
+  color: var(--font-white);
+  border: none;
+  font-size: 1rem;
+}
+
+.button-red:hover {
+  background-color: var(--red-hover);
+}
+
+.button-red:active {
+  background-color: var(--red-active);
 }
 
 input[type="text"],
@@ -243,7 +234,7 @@ h1 {
   font-weight: 700;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   h1 {
     font-size: 1.875rem;
     line-height: 2.25rem;
@@ -340,7 +331,6 @@ h3 {
 
 #landing {
   width: 100%;
-  border-bottom: var(--border-color) solid var(--border-width);
   display: flex;
   justify-content: center;
   align-items: center;

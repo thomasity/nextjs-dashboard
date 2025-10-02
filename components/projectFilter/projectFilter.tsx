@@ -71,15 +71,15 @@ export default function ProjectFilter({ setProjects, projects, setFilter }
   return (
     <aside className='!h-full !w-full !mb-auto !flex !flex-col !justify-start !items-center !overflow-hidden !p-0'>
       <div className='!w-full !flex !flex-row !justify-between !items-center !border-[var(--border-color)] !border-b-[3px] !pb-0'>
-        <p>Filters</p>
+        <p className="!text-2xl">Filters</p>
         <button
           onClick={resetFilters}
-          className='!mb-1 !px-4 !py-2 !text-xs'
+          className='!mb-1 !px-6 !text-sm'
         >
           Clear
         </button>
       </div>
-      <div className='!h-auto !p-0 !m-0 !overflow-auto'>
+      <div className='h-full w-full !p-0 !m-0 !overflow-auto'>
         <FilterTab
           label='Frameworks'
           items={frameworkTree}

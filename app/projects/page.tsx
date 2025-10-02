@@ -12,7 +12,7 @@ import useIsMobile from '@/lib/hooks/useIsMobile';
 
 
 export default function Page() {
-  const [projects, setProjects] = useState<Project[]>(projectsData);
+  const [projects, setProjects] = useState<Project[]>(projectsData as Project[]);
   const [filteredProjects, setFilteredProjects] = useState<Project[]>(projects);
   const [filter, setFilter] = useState<string>('');
   const isMobile = useIsMobile();
@@ -27,46 +27,44 @@ export default function Page() {
   }, [projects]);
 
   return (
-    <main className="page-wrapper">
-      <section className="w-full max-w-[80%]">
-        <h2 className="mr-auto mb-4">Featured Projects</h2>
-        <div className="grid xl:grid-cols-2 grid-cols-1 gap-4 mb-4">
-          {projectsData.map((p) => (
-            p.featured &&<FeaturedProjectLeaf key={p.name} project={p} />
-          ))}
-        </div>
-      </section>
-      <section className="w-full max-w-[80%] mb-4">
+  <main className="page-wrapper p-4">
+    <section className="w-full max-w-[1400px] mb-4 border-b theme-border p-4">
+      <h2 className="mr-auto !text-4xl">Featured Projects</h2>
+      <div className="grid xl:grid-cols-2 grid-cols-1 gap-4 mb-4">
+        {projects.map((p) => (
+          p.featured &&<FeaturedProjectLeaf key={p.name} project={p} />
+        ))}
+      </div>
+    </section>
+
+    <section className="w-full max-w-[1400px] flex flex-col items-center p-4">
+      <div className="mb-8 flex flex-col items-start w-full">
+        <h2 className="!text-4xl">All Projects</h2>
+        <p className="text-(--subtle-font-color)">A collection of all my projects, from beginner to advanced. Filter and explore to find projects that match your interests and skill level!</p>
         <p className="text-(--subtle-font-color) italic">* Click on a project to see more details!</p>
-      </section>
-      <section className="w-full max-w-[80%] mb-4">
-        <hr className="border-t border-(--border-color)" />
-      </section>
-      <section className="w-full max-w-[80%] flex flex-col items-center">
-        <h2 className="mr-auto">All Projects</h2>
-        <p className="text-(--subtle-font-color) mr-auto">A collection of all my projects, from beginner to advanced. Filter and explore to find projects that match your interests and skill level!</p>
-        <div className={`${styles['component-wrapper']} w-full`}>
-          {!isMobile && <ProjectFilter setFilter={setFilter} setProjects={setFilteredProjects} projects={projects}/>}
-          <div className={styles['projects-wrapper']}>
+      </div>
+      <div className={`${styles['component-wrapper']} w-full`}>
+        {!isMobile && <ProjectFilter setFilter={setFilter} setProjects={setFilteredProjects} projects={projects}/>}
+        <div className={styles['projects-wrapper']}>
 
-            <section className={styles['projects-body']}>
-              <ProjectCrossBar projects={projects} setProjects={setProjects} filter={filter}/>
+          <section className={styles['projects-body']}>
+            <ProjectCrossBar projects={projects} setProjects={setProjects} filter={filter}/>
 
-              {projects.length === 0 ? (
-                <p>No projects found.</p>
-              ) : (
-                  <div className={styles['scroll-view']}>
-                    {filteredProjects.map((p) => (
-                      <ProjectLeaf key={p.name} project={p} />
-                    ))}
-                  </div>
-              )}
-              {!isMobile && <p className='!ml-auto !mb-0 !text-xs !text-(--subtle-font-color)'>{filteredProjects.length} projects</p>}
-            </section>
-          </div>
-
+            {projects.length === 0 ? (
+              <p>No projects found.</p>
+            ) : (
+                <div className={styles['scroll-view']}>
+                  {filteredProjects.map((p) => (
+                    <ProjectLeaf key={p.name} project={p} />
+                  ))}
+                </div>
+            )}
+            {!isMobile && <p className='text-right mt-2 !text-sm text-(--subtle-font-color)'>{filteredProjects.length} projects</p>}
+          </section>
         </div>
-      </section>
-    </main>
+
+      </div>
+    </section>
+  </main>
   );
 }
