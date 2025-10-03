@@ -8,7 +8,7 @@ import Header from '@/components/header/header';
 import Footer from '@/components/footer/footer';
 import { prisma } from '@/lib/prisma';
 import { ProjectsProvider } from '@/components/projects/projectsProvider';
-import type { Project as DBProject } from '@/generated/prisma';
+import type { Project as DBProject } from '@prisma/client';
 import type { Project as UIProject, Link } from '@/app/types';
 
 export const metadata: Metadata = {

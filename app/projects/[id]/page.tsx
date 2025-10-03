@@ -3,7 +3,7 @@ import { prisma } from '@/lib/prisma';
 import Link from 'next/link';
 import MarkdownWindow from '@/components/projects/markdownWindow';
 import type { Project as UIProject, Link as LinkType } from '@/app/types';
-import type { Project as DBProject } from '@/generated/prisma';
+import type { Project as DBProject } from '@prisma/client';
 import { TvMinimalPlay, Github } from 'lucide-react';
 import Image from 'next/image';
 
