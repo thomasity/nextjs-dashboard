@@ -13,11 +13,13 @@ enum DifficultyLevel {
 export default function ProjectCrossBar({
   projects,
   setProjects,
-  filter
+  filter,
+  className
 }: {
   projects: Project[],
   setProjects: React.Dispatch<React.SetStateAction<Project[]>>,
-  filter: string
+  filter: string,
+  className?: string
 }) {
     const [open, setOpen] = useState<boolean>(false);
     const [sortState, setSortState] = useState<string>('Year: New to Old');
@@ -48,7 +50,7 @@ export default function ProjectCrossBar({
     };
 
   return (
-    <div className={styles['cross-bar-container']}>
+    <div className={clsx(styles['cross-bar-container'], className)}>
         <div className='!w-auto !text-left !m-0 !p-0'>
             <button
                 onClick={() => setOpen(!open)}

@@ -2,31 +2,16 @@
 import React, { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
 import { DownloadResume, EmailMe } from '@/components/buttons/buttons';
-import projectsData from '@/app/data/projects.json';
 import { Project } from '@/app/types';
 import FeaturedProjectLeaf from '@/components/projects/projectLeaf/featuredProjectLeaf';
+import { useProjects } from '@/components/projects/projectsProvider';
 
 
 
 
 export default function Page() {
   const { theme, setTheme } = useTheme();
-  const [projects, setProjects] = useState<Project[]>(projectsData as Project[]);
-
-  useEffect(() => {
-    let cancelled = false;
-    (async () => {
-      try {
-        const res = await fetch('/api/projects?ongoing=true', { cache: 'no-store' });
-        if (!res.ok) throw new Error('Failed to fetch');
-        const data = (await res.json()) as Project[];
-        if (!cancelled) setProjects(data);
-      } catch (e) {
-        console.error(e);
-      }
-    })();
-    return () => { cancelled = true; };
-  }, []);
+  const projects = useProjects();
 
   return (
     <div className="page-wrapper">
@@ -71,8 +56,8 @@ export default function Page() {
         <section className="w-full max-w-[1400px] mb-4 p-4">
           <h2 className="mr-auto my-4 !font-bold">Work I'm Working On:</h2>
           <div className="grid xl:grid-cols-2 grid-cols-1 gap-4 mb-4">
-            {projects.length ? (projects.map((p) => (
-              <FeaturedProjectLeaf key={p.name} project={p} />
+            {projects && Array.isArray(projects) ? (projects.map((p) => (
+              p.ongoing && <FeaturedProjectLeaf key={p.name} project={p} />
             ))) : <p>No Active Projects</p>}
           </div>
         </section>

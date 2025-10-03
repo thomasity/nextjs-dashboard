@@ -6,7 +6,9 @@ import { comfortaa } from '@/styles/fonts';
 import { ThemeProvider } from 'next-themes';
 import Header from '@/components/header/header';
 import Footer from '@/components/footer/footer';
-import ThemeToggle from '@/components/theme/themeToggle';
+import { prisma } from '@/lib/prisma';
+import { ProjectsProvider } from '@/components/projects/projectsProvider';
+import { Project } from '@/app/types';
 
 export const metadata: Metadata = {
   title: 'Thomas Callen - Software Developer Portfolio',
@@ -58,19 +60,24 @@ export const metadata: Metadata = {
 
 export const viewport = 'width=device-width, initial-scale=1';
 
-
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const projects = await prisma.project.findMany({
+    orderBy: { year: 'desc' }, // adjust as needed
+  }) as Project[];
+
   return (
     <html lang="en" suppressHydrationWarning className={`${comfortaa.variable}`}>
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <Header />
-            {children}
-          <Footer />
+          <ProjectsProvider initialProjects={projects}>
+            <Header />
+              {children}
+            <Footer />
+          </ProjectsProvider>
         </ThemeProvider>
       </body>
     </html>

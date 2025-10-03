@@ -4,17 +4,7 @@ import React, { useState, useEffect } from 'react';
 // import { frameworkTree, languageTree, fieldTree } from '@/app/data/frameworkTree';
 import { getFilters } from '@/app/data/frameworkTree';
 import { Project } from '@/app/types';
-import projectsData from '@/app/data/projects.json';
 import FilterTab from './filterTab';
-
-const projects: Project[] = projectsData;
-const filters = getFilters({ projects });
-const yearTree = filters[0];
-const fieldTree = filters[1];
-const frameworkTree = filters[2];
-const libraryTree = filters[3];
-const languageTree = filters[4];
-const difficultyTree = filters[5];
 
 
 export default function MobileProjectFilter({ setProjects, projects, setFilter } 
@@ -29,6 +19,12 @@ export default function MobileProjectFilter({ setProjects, projects, setFilter }
   const [selectedYears, setSelectedYears] = useState<number[]>([]);
   const [selectedLibraries, setSelectedLibraries] = useState<string[]>([]);
   const [selectedDifficulties, setSelectedDifficulties] = useState<string[]>([]);
+  const [yearTree, setYearTree] = useState<number[] | string[]>([]);
+  const [fieldTree, setFieldTree] = useState<number[] | string[]>([]);
+  const [frameworkTree, setFrameworkTree] = useState<number[] | string[]>([]);
+  const [libraryTree, setLibraryTree] = useState<number[] | string[]>([]);
+  const [languageTree, setLanguageTree] = useState<number[] | string[]>([]);
+  const [difficultyTree, setDifficultyTree] = useState<number[] | string[]>([]);
 
   function generateLogicExpression(groups: Array<string[] | number[]>) {
     if (!Array.isArray(groups)) return '';
@@ -42,6 +38,18 @@ export default function MobileProjectFilter({ setProjects, projects, setFilter }
 
     return (orGroups.join(' AND '));
   }
+
+  useEffect(() => {
+      console.log("PROJECTS ", projects);
+      const filters = getFilters({ projects });
+      setYearTree(filters[0]);
+      setFieldTree(filters[1]);
+      setFrameworkTree(filters[2]);
+      setLibraryTree(filters[3]);
+      setLanguageTree(filters[4]);
+      setDifficultyTree(filters[5]);
+  
+    }, [projects])
 
   useEffect(() => {
 

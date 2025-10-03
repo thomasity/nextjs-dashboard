@@ -64,7 +64,7 @@ export default async function ProjectPage(props: ProjectPageProps) {
     const params = await props.params;
     const id = Number(params.id);
     if (Number.isNaN(id)) notFound();
-    const project = await prisma.project.findUnique({ where: { id } });
+    const project = await prisma.project.findUnique({ where: { id } }) as Project;
 
     if (!project) return notFound();
 
@@ -77,10 +77,10 @@ export default async function ProjectPage(props: ProjectPageProps) {
                 <div className="col-span-2">
                   <p className='!text-sm !text-(--subtle-font-color)'>{project.year}</p>
                   <h1>{project.name}</h1>
-                  <p className='!text-(--subtle-font-color) !text-sm'>{project.fields.join(', ')}</p>
+                  {project.fields && Array.isArray(project.fields) && <p className='!text-(--subtle-font-color) !text-sm'>{project.fields.join(', ')}</p>}
                 </div>
                 <div className="col-span-1 flex flex-col items-end">
-                  {renderLinks(project)}
+                  {project && renderLinks(project)}
                 </div>
               </div>
                 {project.image && (
@@ -97,19 +97,19 @@ export default async function ProjectPage(props: ProjectPageProps) {
                 )}
               <div className='p-4'>
                 <div className="w-full">
-                  {project.languages.length != 0 ? (
+                  {project.languages && Array.isArray(project.languages) ? (
                       <SkillList category="Language" skills={project.languages} project_name={project.name} />
                     ) : (
                           null
                         )
                   }
-                  {project.frameworks.length != 0 ? (
+                  {project.frameworks && Array.isArray(project.frameworks) ? (
                     <SkillList category="Framework" skills={project.frameworks} project_name={project.name} />
                       ) : (
                         null
                       )
                     }
-                  {project.libraries.length != 0 ? (
+                  {project.libraries && Array.isArray(project.libraries) ? (
                     <SkillList category={project.libraries.length > 1 ? 'Librarie' : 'Library'} skills={project.libraries} project_name={project.name} />
                       ) : (
                           null
