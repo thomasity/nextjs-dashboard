@@ -8,7 +8,8 @@ import Header from '@/components/header/header';
 import Footer from '@/components/footer/footer';
 import { prisma } from '@/lib/prisma';
 import { ProjectsProvider } from '@/components/projects/projectsProvider';
-import { Project } from '@/app/types';
+import type { Project as DBProject } from '@/generated/prisma';
+import type { Project as UIProject, Link } from '@/app/types';
 
 export const metadata: Metadata = {
   title: 'Thomas Callen - Software Developer Portfolio',
@@ -65,9 +66,18 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const projects = await prisma.project.findMany({
+  const rawProjects: DBProject[] = await prisma.project.findMany({
     orderBy: { year: 'desc' }, // adjust as needed
-  }) as Project[];
+  });
+
+  const projects: UIProject[] = rawProjects.map(p => ({
+    ...p,
+    link: p.link as unknown as Link[] | undefined,
+    fields: p.fields as string[],
+    frameworks: p.frameworks as string[],
+    libraries: p.libraries as string[],
+    languages: p.languages as string[],
+  }));
 
   return (
     <html lang="en" suppressHydrationWarning className={`${comfortaa.variable}`}>

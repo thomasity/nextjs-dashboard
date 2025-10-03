@@ -2,7 +2,8 @@ import { notFound } from 'next/navigation';
 import { prisma } from '@/lib/prisma';
 import Link from 'next/link';
 import MarkdownWindow from '@/components/projects/markdownWindow';
-import { Project } from '@/app/types';
+import type { Project as UIProject, Link as LinkType } from '@/app/types';
+import type { Project as DBProject } from '@/generated/prisma';
 import { TvMinimalPlay, Github } from 'lucide-react';
 import Image from 'next/image';
 
@@ -13,7 +14,7 @@ interface ProjectPageProps {
 }
 
 
-function renderLinks(project: Project) {
+function renderLinks(project: UIProject) {
   const links = project.link;
   if (links) {
     return (
@@ -64,9 +65,24 @@ export default async function ProjectPage(props: ProjectPageProps) {
     const params = await props.params;
     const id = Number(params.id);
     if (Number.isNaN(id)) notFound();
-    const project = await prisma.project.findUnique({ where: { id } }) as Project;
+    const rawProject: DBProject | null = await prisma.project.findUnique({
+      where: { id },
+    });
 
-    if (!project) return notFound();
+    if (!rawProject) {
+      return <div>Not found</div>;
+    }
+
+    // 🔑 Map DB → UI type
+    const project: UIProject = {
+      ...rawProject,
+      link: rawProject.link as unknown as LinkType[] | undefined,
+      fields: rawProject.fields as unknown as string[],
+      frameworks: rawProject.frameworks as unknown as string[],
+      libraries: rawProject.libraries as unknown as string[],
+      languages: rawProject.languages as unknown as string[],
+      image: rawProject.image ?? undefined,
+    };
 
     return (
       <div className="page-wrapper mt-8">
