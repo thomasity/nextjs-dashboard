@@ -1,16 +1,16 @@
-import { notFound } from 'next/navigation';
-import { prisma } from '@/lib/prisma';
+'use client';
+import { notFound, useParams } from 'next/navigation';
 import Link from 'next/link';
 import MarkdownWindow from '@/components/projects/markdownWindow';
-import type { Project as UIProject, Link as LinkType } from '@/app/types';
-import type { Project as DBProject } from '@prisma/client';
+import type { Project as UIProject } from '@/app/types';
 import { TvMinimalPlay, Github } from 'lucide-react';
 import Image from 'next/image';
+import { useProjects } from '@/components/projects/projectsProvider';
 
 interface ProjectPageProps {
-  params: Promise<{
+  params: {
     id: string;
-  }>;
+  };
 }
 
 
@@ -61,29 +61,13 @@ function SkillList({ category, skills, project_name }: { category: string; skill
   );
 }
 
-export default async function ProjectPage(props: ProjectPageProps) {
-    const params = await props.params;
-    const id = Number(params.id);
+export default function ProjectPage(props: ProjectPageProps) {
+    const { id } = useParams<{ id: string }>();
     if (Number.isNaN(id)) notFound();
-    const rawProject: DBProject | null = await prisma.project.findUnique({
-      where: { id },
-    });
+    const projects = useProjects();
+    const project = projects.find(p => p.id === Number(id));
 
-    if (!rawProject) {
-      return <div>Not found</div>;
-    }
-
-    // 🔑 Map DB → UI type
-    const project: UIProject = {
-      ...rawProject,
-      link: rawProject.link as unknown as LinkType[] | undefined,
-      fields: rawProject.fields as unknown as string[],
-      frameworks: rawProject.frameworks as unknown as string[],
-      libraries: rawProject.libraries as unknown as string[],
-      languages: rawProject.languages as unknown as string[],
-      image: rawProject.image ?? undefined,
-    };
-
+    if (!project) notFound();
     return (
       <div className="page-wrapper mt-8">
           <main className="document w-full shadow">

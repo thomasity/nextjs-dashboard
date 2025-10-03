@@ -1,7 +1,5 @@
 'use client';
 
-import { use, useEffect, useState } from 'react';
-import ProjectLeaf from '../../components/projects/projectLeaf/projectLeaf';
 import FeaturedProjectLeaf from '../../components/projects/projectLeaf/featuredProjectLeaf';
 import { useProjects } from '@/components/projects/projectsProvider';
 import ProjectControls from '@/components/projects/projectControls';

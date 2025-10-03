@@ -1,3 +1,4 @@
+'use client';
 import { useState, useEffect } from 'react';
 import { Project } from "@/app/types";
 import ProjectFilter from './projectFilter/projectFilter';
