@@ -385,54 +385,72 @@
     "year": 2024,
     "difficulty": "Advanced",
     "fields": [
-    "Internet of Things (IoT)",
-    "Embedded Systems",
-    "Cloud Databases",
-    "Web Development"
+      "Internet of Things (IoT)",
+      "Embedded Systems",
+      "Cloud Databases",
+      "Web Development",
+      "Backend Development",
+      "API Design"
     ],
-    "frameworks": ["Next.js"],
-    "libraries": ["React", "azure-iot-device", "pyodbc"],
-    "languages": ["MicroPython", "Python", "TypeScript", "SQL"],
-    "description": "Multipart project for GLBL Foundation: assembled Raspberry Pi Pico–based sensor nodes integrating turbidity, total dissolved solids (TDS), and temperature sensors; transmitted telemetry to Azure IoT Hub (Microsoft IoT Hub); and stored/query datasets in Azure SQL Database (Microsoft SQL Server–compatible). In parallel, helped build a Next.js/React website to communicate the foundation’s mission and lay groundwork for future data visualization of device readings.",
+    "frameworks": [
+      "Next.js",
+      "ASP.NET Core"
+    ],
+    "libraries": [
+      "React",
+      "azure-iot-device",
+      "pyodbc",
+      "EF Core"
+    ],
+    "languages": [
+      "MicroPython",
+      "TypeScript",
+      "SQL",
+      "C#"
+    ],
+    "description": "Multipart project for GLBL Foundation: assembled Raspberry Pi Pico–based sensor nodes integrating turbidity, total dissolved solids (TDS), and temperature sensors. Devices published telemetry to Azure IoT Hub, where a custom ASP.NET Core backend ingested, validated, and stored data in Microsoft SQL Server using EF Core. The backend also exposed a REST API for querying device telemetry and supporting downstream analytics. In parallel, contributed to a Next.js/React website to communicate the foundation’s mission and provide groundwork for future data visualization of real-time water quality readings.",
     "featured": false,
     "image": "/project_covers/GLBL_cover.png",
     "ongoing": true,
-    "link": [{"address": "https://github.com/thomasity/GLBL_ALT", "type":"github"}],
+    "link": [
+      {
+        "address": "https://github.com/thomasity/GLBL_ALT",
+        "type": "github"
+      }
+    ],
     "owner": "thomasity",
     "repo": "GLBL_ALT"
   },
   {
-    "name": "Voice Report App",
+    "name": "Inspection Report App",
     "year": 2025,
     "difficulty": "Intermediate",
     "fields": [
       "Mobile App Development",
-      "Backend Development",
-      "AI",
-      "Document Parsing"
+      "Android Development"
     ],
     "frameworks": [
-      "React Native",
-      "Expo Router",
-      "FastAPI"
+      "Jetpack Compose",
+      "AWS Amplify",
+      "AWS Cognito",
+      "AWS S3"
     ],
     "libraries": [
-      "expo-speech",
-      "expo-document-picker",
-      "expo-file-system",
-      "react-native-safe-area-context",
-      "pydantic",
-      "uvicorn"
+      "Jetpack Navigation",
+      "Kotlin Coroutines",
+      "Material3"
     ],
     "languages": [
-      "TypeScript",
-      "Python"
+      "Kotlin",
+      "SQL"
     ],
-    "description": "A voice-driven report-filling tool: import empty reports (TXT/DOCX/PDF) from the device, convert them to a machine-readable template on a FastAPI backend, and use live speech to populate comment sections in a React Native (Expo) app with tab navigation.",
-    "link": [{"address": "https://github.com/thomasity/FormFiller", "type": "github"}],
+    "description": "A mobile inspection app built with Jetpack Compose that streamlines daily field reporting for construction projects. Users can create projects, log detailed reports with photos, track site conditions, and automatically organize data for fast, reliable documentation.",
+    "link": [{"address": "https://github.com/thomasity/InspectionBuddy", "type": "github"}],
+    "featured": false,
+    "image": "/project_covers/inspectionbuddy_cover.png", 
     "ongoing": true,
     "owner": "thomasity",
-    "repo": "FormFiller"
+    "repo": "InspectionBuddy"
   }
 
 ]

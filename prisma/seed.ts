@@ -37,6 +37,9 @@ async function main() {
   const dataPath = path.resolve(process.cwd(), DATA_RELATIVE);
   console.log(`Reading seed data from: ${dataPath}`);
 
+  await prisma.project.deleteMany({});
+  console.log('Cleared existing project data.');
+
   const items = await readJson<ProjectRow[]>(dataPath);
   if (!Array.isArray(items)) throw new Error('Seed file is not an array.');
   if (items.length === 0) {

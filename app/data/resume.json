@@ -257,19 +257,19 @@
   "skills": [
     {
         "title": "Languages",
-        "items": ["C", "C++", "Python", "Java", "MATLAB", "SQL", "JavaScript/TypeScript", "HTML/CSS"]
+        "items": ["C", "C++", "C#", "Python", "Java", "SQL", "JavaScript/TypeScript", "HTML/CSS"]
     },
     {
         "title": "Frameworks",
-        "items": ["Next.js", "Flask", "Express.js", "Spark", "Hadoop"]
+        "items": ["React/Next.js", "Flask", "FastAPI", "Express.js", "ASP.NET Core"]
     },
     {
         "title": "Libraries",
-        "items": ["React", "Tailwind CSS", "NumPy", "Matplotlib", "qiskit", "OpenCV"]
+        "items": ["Tailwind CSS", "NumPy", "Matplotlib", "qiskit", "OpenCV"]
     },
     {
         "title":"Databases",
-        "items": ["PostgreSQL", "MySQL", "Firebase"]
+        "items": ["PostgreSQL", "MySQL", "DynamoDB", "Microsoft SQL Server"]
     },
     {
         "title": "Tools",
@@ -277,7 +277,7 @@
     },
     {
         "title": "Platforms",
-        "items": ["Node.js", "AWS", "Raspberry Pi", "Arduino"]
+        "items": ["AWS", "Azure", "Raspberry Pi", "Arduino"]
     },
     {
         "title":"Hardware",

@@ -1,5 +1,7 @@
 'use client';
 import Link from 'next/link';
+import Image from 'next/image';
+import { useTheme } from 'next-themes';
 import React from 'react';
 import { usePathname } from 'next/navigation';
 import MobileHeader from './mobileHeader/mobileHeader';
@@ -17,6 +19,7 @@ const links = [
 export default function Header() {
     const pathname = usePathname();
     const isMobile = useIsMobile();
+    const { theme, setTheme } = useTheme();
 
     return (
         <header>
@@ -24,7 +27,7 @@ export default function Header() {
                 <MobileHeader />
             ) : (
             <nav className="w-full flex flex-row justify-between items-center">
-                <a id="email" href="mailto:tcallen1001@gmail.com">tcallen1001@gmail.com</a>
+                <Link key={"root"} href="/">{theme !== 'dark' ? <img src="/logo.png" alt="Logo" height={128}  width={128}/> : <img src='logo_dark.png' alt="Logo" height={128}  width={128}/>}</Link>
                 <div className="trapezoid-nav">
                     {links.map((link) => {
                         const path = link === 'Home' ? '/' : `/${link.toLowerCase()}`;
