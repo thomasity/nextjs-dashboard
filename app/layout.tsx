@@ -42,9 +42,16 @@ export const metadata: Metadata = {
     images: ['https://yourwebsite.com/twitter-image.png'],
   },
   icons: {
-    icon: '/favicon.ico',
-    // shortcut: '/favicon-16x16.png',
-    // apple: '/apple-touch-icon.png',
+    icon: [
+      {
+        url: "/favicon-light.ico",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        url: "/favicon-dark.ico",
+        media: "(prefers-color-scheme: dark)",
+      },
+    ]
   },
   robots: {
     index: true,
