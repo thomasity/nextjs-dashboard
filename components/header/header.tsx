@@ -8,6 +8,7 @@ import MobileHeader from './mobileHeader/mobileHeader';
 import useIsMobile from '@/lib/hooks/useIsMobile';
 import clsx from 'clsx';
 import ThemeToggle from '../theme/themeToggle';
+import ThemedImage from '../ThemedImage';
 
 const links = [
     'Home',
@@ -19,7 +20,6 @@ const links = [
 export default function Header() {
     const pathname = usePathname();
     const isMobile = useIsMobile();
-    const { theme, setTheme } = useTheme();
 
     return (
         <header>
@@ -27,7 +27,7 @@ export default function Header() {
                 <MobileHeader />
             ) : (
             <nav className="w-full flex flex-row justify-between items-center">
-                <Link key={"root"} href="/">{theme !== 'dark' ? <img src="/logo.png" alt="Logo" height={128}  width={128}/> : <img src='logo_dark.png' alt="Logo" height={128}  width={128}/>}</Link>
+                <Link key={"root"} href="/"><ThemedImage lightSrc='/logo.png' darkSrc='/logo_dark.png' defaultSrc='/logo.png' alt='Logo' height={128} width={128} /></Link>
                 <div className="trapezoid-nav">
                     {links.map((link) => {
                         const path = link === 'Home' ? '/' : `/${link.toLowerCase()}`;

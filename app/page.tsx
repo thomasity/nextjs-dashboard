@@ -4,6 +4,7 @@ import { useTheme } from 'next-themes';
 import { DownloadResume, EmailMe } from '@/components/buttons/buttons';
 import FeaturedProjectLeaf from '@/components/projects/projectLeaf/featuredProjectLeaf';
 import { useProjects } from '@/components/projects/projectsProvider';
+import ThemedImage from '@/components/ThemedImage';
 
 
 
@@ -31,21 +32,22 @@ export default function LandingPage() {
         </main>
         <section className="w-full h-full grid grid-cols-3 gap-4 p-8 border-y theme-border mb-4">
           <div className="flex flex-col items-center border-r theme-border p-4 text-center space-y-4">
-            <img src={theme == 'light' ? "/backend.png" : "/backend-dark.png"} alt="Backend Development" width={64} height={64} className="bg-[#f9fafb] rounded-xl" />
+            <ThemedImage defaultSrc="/backend.png" lightSrc="/backend.png" darkSrc="/backend-dark.png" alt="Backend Development" width={64} height={64} className="bg-[#f9fafb] rounded-xl" />
+
             <div>
               <p className="">Back-end Development</p>
               <p className="text-[var(--inverse-subtle-font-color)] !text-sm">FastAPI / Node.js / Express / Next.js / SQL</p>
             </div>
           </div>
           <div className="flex flex-col items-center border-r theme-border p-4 text-center space-y-4">
-            <img src={theme == 'light' ? "/frontend.png" : "/frontend-dark.png"} alt="Frontend Development" width={64} height={64} className="bg-[#f9fafb] rounded-xl" />
+            <ThemedImage defaultSrc="/frontend.png" lightSrc="/frontend.png" darkSrc="/frontend-dark.png" alt="Frontend Development" width={64} height={64} className="bg-[#f9fafb] rounded-xl" />
             <div>
               <p className="">Front-end Development</p>
               <p className="text-[var(--inverse-subtle-font-color)] !text-sm">React / Next.js / Tailwind CSS / JavaScript</p>
             </div>
           </div>
           <div className="flex flex-col items-center p-4 text-center space-y-4">
-            <img src={theme == 'light' ? "/embedded.png" : "/embedded-dark.png"} alt="Embedded Development" width={64} height={64} className="bg-[#f9fafb] rounded-xl" />
+            <ThemedImage defaultSrc="/embedded.png" lightSrc="/embedded.png" darkSrc="/embedded-dark.png" alt="Embedded Development" width={64} height={64} className="bg-[#f9fafb] rounded-xl" />
             <div>
               <p className="">Embedded Systems Prototyping</p>
               <p className="text-[var(--inverse-subtle-font-color)] !text-sm">Arduino / Raspberry Pi / C / C++</p>

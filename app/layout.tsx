@@ -88,7 +88,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en" suppressHydrationWarning className={`${comfortaa.variable}`}>
-      <body>
+      <body suppressHydrationWarning>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <ProjectsProvider initialProjects={projects}>
             <Header />
