@@ -461,7 +461,7 @@
     "libraries": [],
     "languages": ["TypeScript", "HTML", "CSS"],
     "description": "A browser-based single-player Texas Hold’em poker game built with a deterministic TypeScript game engine and a React UI. The project uses an event-driven reducer to model game flow, declarative side effects for bot turns and delayed transitions, and isolated hand evaluation logic. Designed with a strong separation between domain logic and presentation, the engine is fully testable and independent of the UI.",
-    "link": [{"address": "https://github.com/thomasity/poker", "type": "github"}],
+    "link": [{"address": "https://github.com/thomasity/poker", "type": "github"}, {"address": "https://poker.tommycallen.com", "type": "live"}],
     "image": "/project_covers/poker_cover.png",
     "repo": "poker",
     "featured": true,
