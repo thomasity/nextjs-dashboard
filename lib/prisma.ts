@@ -1,11 +1,25 @@
-import { PrismaClient } from '@prisma/client';
+import fs from "node:fs";
+import path from "node:path";
+import { Pool } from "pg";
+import { PrismaPg } from "@prisma/adapter-pg";
+import { PrismaClient } from "../prisma/generated/prisma/client"; // adjust path
 
-const globalForPrisma = global as unknown as { prisma?: PrismaClient };
+const connectionString = process.env.DATABASE_URL!;
+if (!connectionString) throw new Error("DATABASE_URL is not set");
 
-export const prisma =
-  globalForPrisma.prisma ??
-  new PrismaClient({
-    log: process.env.NODE_ENV === 'development' ? ['query', 'error', 'warn'] : ['error'],
-  });
+const ca = fs.readFileSync(
+  path.join(process.cwd(), "prisma/certs/global-bundle.pem"),
+  "utf8"
+);
 
-if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma;
+const pool = new Pool({
+  connectionString,
+  ssl: {
+    ca,
+    rejectUnauthorized: true,
+  },
+});
+
+const adapter = new PrismaPg(pool);
+
+export const prisma = new PrismaClient({ adapter });

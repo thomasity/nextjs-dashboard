@@ -1,6 +1,5 @@
 'use client';
 import React from 'react';
-import { useTheme } from 'next-themes';
 import { DownloadResume, EmailMe } from '@/components/buttons/buttons';
 import FeaturedProjectLeaf from '@/components/projects/projectLeaf/featuredProjectLeaf';
 import { useProjects } from '@/components/projects/projectsProvider';
@@ -10,7 +9,6 @@ import ThemedImage from '@/components/ThemedImage';
 
 
 export default function LandingPage() {
-  const { theme, setTheme } = useTheme();
   const projects = useProjects();
 
   return (
