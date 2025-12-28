@@ -50,7 +50,7 @@ function SkillList({ category, skills, project_name }: { category: string; skill
       </div>
       <div className='p-0 m-0 items-start'>
           <ul className='flex flex-wrap p-0 m-0 gap-2'>
-              {(skills).map((skill, index) => (
+              {skills.map((skill, index) => (
                   <li key={`${project_name}-${category}-${index}`}>
                       <p className="rounded-full bg-[var(--bg-active)] py-1 px-4 !text-sm">{skill}</p>
                   </li>
@@ -97,19 +97,19 @@ export default function ProjectPage(props: ProjectPageProps) {
                 )}
               <div className='p-4'>
                 <div className="w-full">
-                  {project.languages && Array.isArray(project.languages) ? (
+                  {project.languages && Array.isArray(project.languages) && project.languages.length > 0 ? (
                       <SkillList category="Language" skills={project.languages} project_name={project.name} />
                     ) : (
                           null
                         )
                   }
-                  {project.frameworks && Array.isArray(project.frameworks) ? (
+                  {project.frameworks && Array.isArray(project.frameworks) && project.frameworks.length > 0 ? (
                     <SkillList category="Framework" skills={project.frameworks} project_name={project.name} />
                       ) : (
                         null
                       )
                     }
-                  {project.libraries && Array.isArray(project.libraries) ? (
+                  {project.libraries && Array.isArray(project.libraries) && project.libraries.length > 0 ? (
                     <SkillList category={project.libraries.length > 1 ? 'Librarie' : 'Library'} skills={project.libraries} project_name={project.name} />
                       ) : (
                           null
