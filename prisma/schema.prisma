@@ -1,9 +1,6 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client"
-  output = "./generated/prisma"
+  output   = "./generated/prisma"
 }
 
 datasource db {
@@ -15,12 +12,12 @@ model Project {
   name        String   @unique
   year        Int
   difficulty  String
-  fields      Json
-  frameworks  Json
-  libraries   Json
-  languages   Json
+  fields      Json     @default("[]")
+  frameworks  Json     @default("[]")
+  libraries   Json     @default("[]")
+  languages   Json     @default("[]")
   description String
-  link        Json?       // stores Link[] as JSON
+  link        Json?
   image       String?
   featured    Boolean  @default(false)
   ongoing     Boolean  @default(false)
@@ -28,6 +25,7 @@ model Project {
   repo        String?
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+  platforms   Json     @default("[]")
 
   @@index([year])
   @@index([featured, ongoing])

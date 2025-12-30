@@ -534,7 +534,8 @@ export const ProjectScalarFieldEnum = {
   owner: 'owner',
   repo: 'repo',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  updatedAt: 'updatedAt',
+  platforms: 'platforms'
 } as const
 
 export type ProjectScalarFieldEnum = (typeof ProjectScalarFieldEnum)[keyof typeof ProjectScalarFieldEnum]

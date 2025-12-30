@@ -23,6 +23,7 @@ export interface Project {
   frameworks: string[];
   libraries: string[];
   languages: string[];
+  platforms: string[];
   description: string;
   link?: Link[];
   image?: string | null;

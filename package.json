@@ -7,7 +7,6 @@
     "prisma:generate": "prisma generate --schema prisma/schema.prisma",
     "prisma:migrate:dev": "prisma migrate dev --schema prisma/schema.prisma",
     "prisma:migrate:deploy": "prisma migrate deploy --schema prisma/schema.prisma",
-    "db:seed": "prisma db seed",
     "postinstall": "prisma generate",
     "test": "vitest",
     "test:ui": "vitest --ui",
@@ -62,10 +61,10 @@
     "happy-dom": "^20.0.11",
     "prisma": "^7.2.0",
     "ts-node": "^10.9.2",
-    "tsx": "^4.20.6",
+    "tsx": "^4.21.0",
     "typescript": "^5.9.3"
   },
   "prisma": {
-    "seed": "tsx prisma/seed.ts"
+    "seed": "node -r ts-node/register ./prisma/seed.ts"
   }
 }

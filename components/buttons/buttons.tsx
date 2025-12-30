@@ -11,7 +11,7 @@ export function DownloadResume({className}: {className?: string}) {
         <Link
             href='/resume.pdf'
             // download='ThomasCallen_Resume.pdf'
-            className="text-center"
+            className={"text-center " + (className ? className : "")}
             rel='noopener noreferrer'
             target='_blank'
             id="download-resume"

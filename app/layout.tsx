@@ -8,7 +8,7 @@ import Header from '@/components/header/header';
 import Footer from '@/components/footer/footer';
 import { prisma } from '@/lib/prisma';
 import { ProjectsProvider } from '@/components/projects/projectsProvider';
-import type { Project as DBProject } from '@prisma/client';
+import type { Project as DBProject } from '@/prisma/generated/prisma/client';
 import type { Project as UIProject, Link } from '@/app/types';
 
 export const metadata: Metadata = {
@@ -84,6 +84,7 @@ export default async function RootLayout({
     frameworks: p.frameworks as string[],
     libraries: p.libraries as string[],
     languages: p.languages as string[],
+    platforms: p.platforms as string[],
   }));
 
   return (

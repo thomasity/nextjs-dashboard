@@ -3,7 +3,8 @@ import resumeData from '@/app/data/resume.json';
 import EducationCard from '@/components/resume/educationCard';
 import ExperienceCard from '@/components/resume/experienceCard';
 import SkillCard from '@/components/resume/skillCard';
-import { Phone, MapPin, Mail, GraduationCap, School } from 'lucide-react';
+import { DownloadResume } from '@/components/buttons/buttons';
+import { Phone, MapPin, Mail, GraduationCap, School, Download } from 'lucide-react';
 
 const resume = resumeData;
 
@@ -23,6 +24,7 @@ export default function Page() {
             <div className="bg-[var(--bg-color)] border-t theme-border w-full">
               <h1 className="text-center mt-2">Thomas Callen</h1>
               <p className="text-center text-(--subtle-font-color) !text-sm mb-2">Software Developer</p>
+              <DownloadResume className="w-fit mx-auto"/>
             </div>
             <div className="mb-4 pb-4 px-8 mr-auto text-[var(--font-color)]"> 
               <div className="grid grid-cols-4 gap-2 ">

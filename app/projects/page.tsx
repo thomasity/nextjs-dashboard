@@ -3,10 +3,11 @@
 import FeaturedProjectLeaf from '../../components/projects/projectLeaf/featuredProjectLeaf';
 import { useProjects } from '@/components/projects/projectsProvider';
 import ProjectControls from '@/components/projects/projectControls';
+import { Project } from '../types';
 
 
 export default function Page() {
-  const projects = useProjects();
+  const projects : Project[] = useProjects();
  
 
   return (

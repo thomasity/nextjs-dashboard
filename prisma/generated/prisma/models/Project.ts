@@ -84,6 +84,7 @@ export type ProjectCountAggregateOutputType = {
   repo: number
   createdAt: number
   updatedAt: number
+  platforms: number
   _all: number
 }
 
@@ -146,6 +147,7 @@ export type ProjectCountAggregateInputType = {
   repo?: true
   createdAt?: true
   updatedAt?: true
+  platforms?: true
   _all?: true
 }
 
@@ -253,6 +255,7 @@ export type ProjectGroupByOutputType = {
   repo: string | null
   createdAt: Date
   updatedAt: Date
+  platforms: runtime.JsonValue
   _count: ProjectCountAggregateOutputType | null
   _avg: ProjectAvgAggregateOutputType | null
   _sum: ProjectSumAggregateOutputType | null
@@ -296,6 +299,7 @@ export type ProjectWhereInput = {
   repo?: Prisma.StringNullableFilter<"Project"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Project"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Project"> | Date | string
+  platforms?: Prisma.JsonFilter<"Project">
 }
 
 export type ProjectOrderByWithRelationInput = {
@@ -316,6 +320,7 @@ export type ProjectOrderByWithRelationInput = {
   repo?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  platforms?: Prisma.SortOrder
 }
 
 export type ProjectWhereUniqueInput = Prisma.AtLeast<{
@@ -339,6 +344,7 @@ export type ProjectWhereUniqueInput = Prisma.AtLeast<{
   repo?: Prisma.StringNullableFilter<"Project"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Project"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Project"> | Date | string
+  platforms?: Prisma.JsonFilter<"Project">
 }, "id" | "name">
 
 export type ProjectOrderByWithAggregationInput = {
@@ -359,6 +365,7 @@ export type ProjectOrderByWithAggregationInput = {
   repo?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  platforms?: Prisma.SortOrder
   _count?: Prisma.ProjectCountOrderByAggregateInput
   _avg?: Prisma.ProjectAvgOrderByAggregateInput
   _max?: Prisma.ProjectMaxOrderByAggregateInput
@@ -387,16 +394,17 @@ export type ProjectScalarWhereWithAggregatesInput = {
   repo?: Prisma.StringNullableWithAggregatesFilter<"Project"> | string | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Project"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Project"> | Date | string
+  platforms?: Prisma.JsonWithAggregatesFilter<"Project">
 }
 
 export type ProjectCreateInput = {
   name: string
   year: number
   difficulty: string
-  fields: Prisma.JsonNullValueInput | runtime.InputJsonValue
-  frameworks: Prisma.JsonNullValueInput | runtime.InputJsonValue
-  libraries: Prisma.JsonNullValueInput | runtime.InputJsonValue
-  languages: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  fields?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  frameworks?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  libraries?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  languages?: Prisma.JsonNullValueInput | runtime.InputJsonValue
   description: string
   link?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   image?: string | null
@@ -406,6 +414,7 @@ export type ProjectCreateInput = {
   repo?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  platforms?: Prisma.JsonNullValueInput | runtime.InputJsonValue
 }
 
 export type ProjectUncheckedCreateInput = {
@@ -413,10 +422,10 @@ export type ProjectUncheckedCreateInput = {
   name: string
   year: number
   difficulty: string
-  fields: Prisma.JsonNullValueInput | runtime.InputJsonValue
-  frameworks: Prisma.JsonNullValueInput | runtime.InputJsonValue
-  libraries: Prisma.JsonNullValueInput | runtime.InputJsonValue
-  languages: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  fields?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  frameworks?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  libraries?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  languages?: Prisma.JsonNullValueInput | runtime.InputJsonValue
   description: string
   link?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   image?: string | null
@@ -426,6 +435,7 @@ export type ProjectUncheckedCreateInput = {
   repo?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  platforms?: Prisma.JsonNullValueInput | runtime.InputJsonValue
 }
 
 export type ProjectUpdateInput = {
@@ -445,6 +455,7 @@ export type ProjectUpdateInput = {
   repo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  platforms?: Prisma.JsonNullValueInput | runtime.InputJsonValue
 }
 
 export type ProjectUncheckedUpdateInput = {
@@ -465,6 +476,7 @@ export type ProjectUncheckedUpdateInput = {
   repo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  platforms?: Prisma.JsonNullValueInput | runtime.InputJsonValue
 }
 
 export type ProjectCreateManyInput = {
@@ -472,10 +484,10 @@ export type ProjectCreateManyInput = {
   name: string
   year: number
   difficulty: string
-  fields: Prisma.JsonNullValueInput | runtime.InputJsonValue
-  frameworks: Prisma.JsonNullValueInput | runtime.InputJsonValue
-  libraries: Prisma.JsonNullValueInput | runtime.InputJsonValue
-  languages: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  fields?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  frameworks?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  libraries?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  languages?: Prisma.JsonNullValueInput | runtime.InputJsonValue
   description: string
   link?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   image?: string | null
@@ -485,6 +497,7 @@ export type ProjectCreateManyInput = {
   repo?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  platforms?: Prisma.JsonNullValueInput | runtime.InputJsonValue
 }
 
 export type ProjectUpdateManyMutationInput = {
@@ -504,6 +517,7 @@ export type ProjectUpdateManyMutationInput = {
   repo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  platforms?: Prisma.JsonNullValueInput | runtime.InputJsonValue
 }
 
 export type ProjectUncheckedUpdateManyInput = {
@@ -524,6 +538,7 @@ export type ProjectUncheckedUpdateManyInput = {
   repo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  platforms?: Prisma.JsonNullValueInput | runtime.InputJsonValue
 }
 
 export type ProjectCountOrderByAggregateInput = {
@@ -544,6 +559,7 @@ export type ProjectCountOrderByAggregateInput = {
   repo?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  platforms?: Prisma.SortOrder
 }
 
 export type ProjectAvgOrderByAggregateInput = {
@@ -630,6 +646,7 @@ export type ProjectSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   repo?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  platforms?: boolean
 }, ExtArgs["result"]["project"]>
 
 export type ProjectSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -650,6 +667,7 @@ export type ProjectSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exten
   repo?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  platforms?: boolean
 }, ExtArgs["result"]["project"]>
 
 export type ProjectSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -670,6 +688,7 @@ export type ProjectSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exten
   repo?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  platforms?: boolean
 }, ExtArgs["result"]["project"]>
 
 export type ProjectSelectScalar = {
@@ -690,9 +709,10 @@ export type ProjectSelectScalar = {
   repo?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  platforms?: boolean
 }
 
-export type ProjectOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "year" | "difficulty" | "fields" | "frameworks" | "libraries" | "languages" | "description" | "link" | "image" | "featured" | "ongoing" | "owner" | "repo" | "createdAt" | "updatedAt", ExtArgs["result"]["project"]>
+export type ProjectOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "year" | "difficulty" | "fields" | "frameworks" | "libraries" | "languages" | "description" | "link" | "image" | "featured" | "ongoing" | "owner" | "repo" | "createdAt" | "updatedAt" | "platforms", ExtArgs["result"]["project"]>
 
 export type $ProjectPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Project"
@@ -715,6 +735,7 @@ export type $ProjectPayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     repo: string | null
     createdAt: Date
     updatedAt: Date
+    platforms: runtime.JsonValue
   }, ExtArgs["result"]["project"]>
   composites: {}
 }
@@ -1155,6 +1176,7 @@ export interface ProjectFieldRefs {
   readonly repo: Prisma.FieldRef<"Project", 'String'>
   readonly createdAt: Prisma.FieldRef<"Project", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"Project", 'DateTime'>
+  readonly platforms: Prisma.FieldRef<"Project", 'Json'>
 }
     
 

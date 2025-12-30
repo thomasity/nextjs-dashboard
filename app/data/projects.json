@@ -7,6 +7,7 @@
     "frameworks": [],
     "libraries": [],
     "languages": ["MATLAB"],
+    "platforms": [],
     "description": "This project contains a set of MATLAB scripts designed to solve real-world engineering problems involving structural mechanics and operational logistics.",
     "link": ""
     },
@@ -18,6 +19,7 @@
       "frameworks": [],
       "libraries": [],
       "languages": ["MATLAB"],
+      "platforms": [],
       "description": "A MATLAB-based system for detecting tumors in medical images, applying noise reduction, and visualizing results using heatmaps and a watch-style interface."
     },
     {
@@ -28,6 +30,7 @@
       "frameworks": [],
       "libraries": [],
       "languages": ["MATLAB"],
+      "platforms": [],
       "description": "A MATLAB-based tool for analyzing wind farm data and visualizing energy performance metrics using custom plotting routines."
     },
     {
@@ -38,6 +41,7 @@
       "frameworks": [],
       "libraries": [],
       "languages": ["C++"],
+      "platforms": [],
       "description": "A C++ program that calculates the optimal braking coefficient to stop an object within a given distance using binary search and Euler's method to simulate deceleration."
     },
     {
@@ -48,6 +52,7 @@
       "frameworks": [],
       "libraries": [],
       "languages": ["C++"],
+      "platforms": [],
       "description": "A C++ project that evaluates the trustworthiness of reviews based on score thresholds, using file I/O and conditional logic."
     },
     {
@@ -58,6 +63,7 @@
       "frameworks": [],
       "libraries": [],
       "languages": ["C++"],
+      "platforms": [],
       "description": "A C++ program that reads a CSV file, extracts a numeric column by name, and generates a frequency-based statistical summary of its values."
     },
     {
@@ -68,6 +74,7 @@
       "frameworks": [],
       "libraries": [],
       "languages": ["C++"],
+      "platforms": [],
       "description": "A C++ project that implements an image processing toolkit using custom data structures and modular functions for resizing, rotating, and processing images, with accompanying unit tests."
     },
     {
@@ -78,6 +85,7 @@
       "frameworks": [],
       "libraries": [],
       "languages": ["C++"],
+      "platforms": [],
       "description": "A modular C++ implementation of the classic card game Euchre, including classes for players, cards, and game logic, as well as configurable game settings and unit tests."
     },
     {
@@ -88,6 +96,7 @@
       "frameworks": [],
       "libraries": [],
       "languages": ["C++"],
+      "platforms": [],
       "description": "A templated C++ implementation of a doubly-linked, double-ended list with iterator support, featuring standard list operations and a full test suite."
     },
     {
@@ -98,6 +107,7 @@
       "frameworks": [],
       "libraries": [],
       "languages": ["C++"],
+      "platforms": [],
       "description": "A C++ project that trains and evaluates a simple text classifier using word frequency and label probability, modeled after a Naive Bayes approach, with support for CSV input and debug inspection."
     },
     {
@@ -108,6 +118,7 @@
       "frameworks": [],
       "libraries": [],
       "languages": ["C"],
+      "platforms": [],
       "description": "A C project that assembles and simulates programs written in the LC-2K instruction set architecture, translating assembly code to machine code and running it on a simulated processor."
     },
     {
@@ -118,6 +129,7 @@
       "frameworks": [],
       "libraries": [],
       "languages": ["C"],
+      "platforms": [],
       "description": "A two-pass assembler and linker for the LC-2K instruction set written in C, capable of translating assembly code into machine code and resolving external symbols across multiple modules."
     },
     {
@@ -128,6 +140,7 @@
       "frameworks": [],
       "libraries": [],
       "languages": ["C"],
+      "platforms": [],
       "description": "A C-based pipeline simulator for the LC-2K instruction set, implementing a 5-stage pipeline with instruction decoding, data forwarding, and cycle-by-cycle execution tracking."
     },
     {
@@ -138,6 +151,7 @@
       "frameworks": [],
       "libraries": [],
       "languages": ["C"],
+      "platforms": [],
       "description": "A configurable cache simulator for the LC-2K architecture written in C, modeling cache read/write behavior with support for LRU replacement and memory access tracking."
     },
     {
@@ -145,9 +159,10 @@
       "year": 2025,
       "difficulty": "Intermediate",
       "fields": ["Data Mining", "Recommendation Systems"],
-      "frameworks": ["Apache Spark"],
+      "frameworks": [],
       "libraries": ["PySpark"],
       "languages": ["Python"],
+      "platforms": ["Spark"],
       "description": "A Spark-based Python project that analyzes movie ratings and transaction data to extract frequent itemsets, association rules, and popularity metrics for recommendation purposes."
     },
     {
@@ -156,8 +171,9 @@
       "difficulty": "Intermediate",
       "fields": ["Data Mining"],
       "frameworks": [],
-      "libraries": ["NumPy"],
+      "libraries": ["numPy", "PySpark", "scikit-learn"],
       "languages": ["Python"],
+      "platforms": ["Spark"],
       "description": "A Python toolkit for document clustering and similarity analysis using k-means, LSH, cosine similarity, shingling, and LOF for outlier detection."
     },
     {
@@ -166,8 +182,9 @@
       "difficulty": "Intermediate",
       "fields": ["Quantum Computing"],
       "frameworks": [],
-      "libraries": ["NumPy"],
+      "libraries": ["numPy"],
       "languages": ["Python"],
+      "platforms": [],
       "description": "A basic quantum circuit simulator built in Python using NumPy, supporting multiple qubits, standard quantum gates, and probabilistic measurement of quantum states."
     },
     {
@@ -175,9 +192,10 @@
       "year": 2025,
       "difficulty": "Intermediate",
       "fields": ["Quantum Computing"],
-      "frameworks": ["Qiskit"],
-      "libraries": ["Qiskit"],
+      "frameworks": [],
+      "libraries": ["Qiskit", "numpy"],
       "languages": ["Python"],
+      "platforms": [],
       "description": "A Python-based simulation of Grover’s quantum search algorithm using Qiskit, with logic for CNF-based oracle generation and modular testing of circuit components."
     },
     {
@@ -185,9 +203,10 @@
       "year": 2025,
       "difficulty": "Intermediate",
       "fields": ["Quantum Computing"],
-      "frameworks": ["Qiskit"],
-      "libraries": ["Qiskit", "NumPy"],
+      "frameworks": [],
+      "libraries": ["Qiskit", "numPy"],
       "languages": ["Python"],
+      "platforms": [],
       "description": "A Qiskit-based implementation of the Steane [[7,1,3]] quantum error-correcting code with encoding, syndrome measurement, error correction, and validation."
     },
     {
@@ -198,6 +217,7 @@
       "frameworks": [],
       "libraries": ["Jinja2", "Click"],
       "languages": ["Python", "HTML", "CSS"],
+      "platforms": [],
       "description": "A Python-based static site generator for an Instagram-style photo-sharing site using Jinja2 templates and JSON configuration."
     },
     {
@@ -205,9 +225,10 @@
       "year": 2024,
       "difficulty": "Intermediate",
       "fields": ["Web Development"],
-      "frameworks": [],
-      "libraries": ["Flask", "Jinja2", "SQLite3"],
+      "frameworks": ["Flask"],
+      "libraries": ["Jinja2", "SQLite3"],
       "languages": ["Python", "HTML", "CSS", "SQL"],
+      "platforms": [],
       "description": "A server-side web application that mimics Instagram functionality, using Python views, Jinja templating, and SQLite to render dynamic user pages, posts, and interactions."
     },
     {
@@ -215,9 +236,10 @@
       "year": 2024,
       "difficulty": "Intermediate",
       "fields": ["Web Development"],
-      "frameworks": ["React"],
-      "libraries": ["Flask", "React", "Webpack", "Babel"],
+      "frameworks": ["React", "Flask"],
+      "libraries": ["React", "Webpack", "Babel"],
       "languages": ["JavaScript", "HTML", "CSS", "SQL", "Python"],
+      "platforms": ["SQLite", "AWS EC2"],
       "description": "A React-based frontend for a photo-sharing app that dynamically renders content from a RESTful API backed by a SQL database, combining modern UI design with persistent backend data."
     },
     {
@@ -228,6 +250,7 @@
       "frameworks": [],
       "libraries": ["Click", "Socket", "JSON", "threading"],
       "languages": ["Python"],
+      "platforms": ["AWS EC2", "Hadoop"],
       "description": "A full Python implementation of a distributed MapReduce system with socket-based job coordination, configurable job submission, and parallel worker execution."
     },
     {
@@ -238,6 +261,7 @@
       "frameworks": ["Flask"],
       "libraries": ["Flask", "threading", "requests"],
       "languages": ["Python", "HTML"],
+      "platforms": ["AWS EC2", "Hadoop"],
       "description": "A Python-based distributed search engine that uses MapReduce for HTML indexing and a Flask frontend to perform multi-threaded, segment-based query resolution."
     },
     {
@@ -248,6 +272,7 @@
       "frameworks": [],
       "libraries": ["hashlib", "sys"],
       "languages": ["Python"],
+      "platforms": [],
       "description": "A Python suite demonstrating real-world cryptographic attacks including Bleichenbacher's RSA forgery, CBC padding oracle attacks, and SHA-256 length extension, intended for educational use."
     },
     {
@@ -258,6 +283,7 @@
     "frameworks": [],
     "libraries": ["json", "zipfile", "itertools"],
     "languages": ["Python"],
+    "platforms": [],
     "description": "A Python project that solves a multi-part assignment on reverse-engineering LCGs, auditing ballot-level election data, and unshuffling improperly sanitized CVRs to expose election system vulnerabilities."
   },
   {
@@ -268,6 +294,7 @@
     "frameworks": [],
     "libraries": [],
     "languages": ["HTML", "JavaScript", "SQL"],
+    "platforms": [],
     "description": "A hands-on web security lab demonstrating Cross-Site Request Forgery, SQL Injection, and Cross-Site Scripting attacks, designed for EECS 388 coursework."
   },
   {
@@ -278,6 +305,7 @@
     "frameworks": [],
     "libraries": ["cryptography", "ssl", "pyotp", "requests"],
     "languages": ["Python"],
+    "platforms": [],
     "description": "A Python-based project simulating client certificate spoofing and TOTP-based MFA bypasses in a secure certificate exchange system, developed for EECS 388 coursework."
   },
   {
@@ -288,6 +316,7 @@
     "frameworks": [],
     "libraries": [],
     "languages": ["C", "Python"],
+    "platforms": [],
     "description": "A security lab for exploiting stack-based buffer overflows and shellcode vulnerabilities in C programs, supported by Python exploit scripts. Designed for EECS 388 coursework."
   },
   {
@@ -295,13 +324,14 @@
     "year": 2024,
     "difficulty": "Advanced",
     "fields": ["Mobile App Development"],
-    "frameworks": ["React Native", "Expo", "Firebase"],
+    "frameworks": ["React Native", "Expo"],
+    "platforms": ["Firebase"],
     "libraries": [
       "expo",
       "react-native",
       "firebase"
     ],
-    "languages": ["JavaScript", "TypeScript"],
+    "languages": ["JavaScript", "TypeScript", "HTML", "CSS"],
     "description": "A social media app built with React Native and Firebase that helps students find housing and compatible roommates by creating profiles and connecting based on shared interests. The app uses Firebase email link authentication and cloud services, and is designed for EECS 441 coursework."
   },
   {
@@ -311,7 +341,8 @@
     "fields": ["Embedded Systems"],
     "frameworks": [],
     "libraries": ["UTFT", "Wire", "SPI"],
-    "languages": ["C++", "Arduino"],
+    "languages": ["C++"],
+    "platforms": ["Arduino"],
     "description": "An Arduino-based touchscreen UI for a mars rowing machine, designed to show reps and weight metrics to astronauts in a mars base environment. Inspired by a NASA xHAB Challenge and completed as part of UofM's BLiSS project team, the display uses a 7” capacitive TFT panel and real-time telemetry from the rower.",
     "featured": true,
     "image": "/project_covers/MHAPS_cover.jpg",
@@ -328,9 +359,10 @@
       "Embedded Systems",
       "Web Development"
     ],
-    "frameworks": ["React", "Raspberry Pi"],
+    "frameworks": ["React", "Flask", "Express.js"],
     "libraries": ["serial", "threading"],
-    "languages": ["JavaScript", "Python"],
+    "languages": ["JavaScript", "Python", "MicroPython", "HTML", "CSS"],
+    "platforms": ["Raspberry Pi", "Raspberry Pi Pico"],
     "description": "A full-stack control and telemetry system developed for NASA's X-Hab project to support the redesign of ISS EXPRESS racks for lunar habitats. Combines a React frontend with a Raspberry Pi backend that streams MJPEG video, receives telemetry from Pi Picos over UART, and controls rack components via GPIO relay.",
     "image": "/project_covers/racknstack_cover.png",
     "featured": true,
@@ -345,7 +377,8 @@
     "fields": ["Mobile App Development"],
     "frameworks": ["React Native"],
     "libraries": ["React Navigation", "Context API"],
-    "languages": ["JavaScript"],
+    "languages": ["JavaScript", "TypeScript", "HTML", "CSS"],
+    "platforms": [],
     "description": "A React Native app for managing groceries, finding recipes, and tracking user statistics. Includes multi-screen navigation, state sharing with Context API, and a mobile-friendly interface."
   },
   {
@@ -353,9 +386,10 @@
     "year": 2025,
     "difficulty": "Advanced",
     "fields": ["Web Development"],
-    "frameworks": ["Next.js", "AWS"],
-    "libraries": ["Next", "React", "Prisma"],
-    "languages": ["TypeScript"],
+    "frameworks": ["Next.js", "React"],
+    "libraries": ["Tailwind CSS", "Prisma"],
+    "platforms": ["AWS Amplify", "Amazon RDS"],
+    "languages": ["TypeScript", "HTML", "CSS", "SQL"],
     "description": "A React Native app for managing groceries, finding recipes, and tracking user statistics. Includes multi-screen navigation, state sharing with Context API, and a mobile-friendly interface.",
     "featured": true,
     "image": "/project_covers/website_cover.png",
@@ -369,9 +403,10 @@
     "year": 2025,
     "difficulty": "Advanced",
     "fields": ["Algorithmic Trading", "Machine Learning",  "Web Development"],
-    "frameworks": ["Next.js", "FastAPI"],
-    "libraries": ["pandas", "numpy", "yfinance", "alpaca-trade-api", "scikit-learn"],
+    "frameworks": ["Next.js", "React", "FastAPI"],
+    "libraries": ["pandas", "numpy", "yfinance", "alpaca-trade-api", "scikit-learn", "recharts"],
     "languages": ["Python", "TypeScript"],
+    "platforms": [],
     "description": "Python engine that backtests multiple k-means–style centroid counts to discover the highest-performing unsupervised stock-selection strategies among the most liquid tickers each month. The top strategy selects positions at each month’s start and automatically places orders via the Alpaca Trading & Broker API. A companion Next.js dashboard visualizes recent trades, current portfolio value, and historical performance.",
     "featured": true,
     "image": "/project_covers/stock_cover.png",
@@ -394,10 +429,10 @@
     ],
     "frameworks": [
       "Next.js",
+      "React",
       "ASP.NET Core"
     ],
     "libraries": [
-      "React",
       "azure-iot-device",
       "pyodbc",
       "EF Core"
@@ -407,6 +442,10 @@
       "TypeScript",
       "SQL",
       "C#"
+    ],
+    "platforms": [
+      "Azure IoT Hub",
+      "Microsoft SQL Server"
     ],
     "description": "Multipart project for GLBL Foundation: assembled Raspberry Pi Pico–based sensor nodes integrating turbidity, total dissolved solids (TDS), and temperature sensors. Devices published telemetry to Azure IoT Hub, where a custom ASP.NET Core backend ingested, validated, and stored data in Microsoft SQL Server using EF Core. The backend also exposed a REST API for querying device telemetry and supporting downstream analytics. In parallel, contributed to a Next.js/React website to communicate the foundation’s mission and provide groundwork for future data visualization of real-time water quality readings.",
     "featured": false,
@@ -431,9 +470,7 @@
     ],
     "frameworks": [
       "Jetpack Compose",
-      "AWS Amplify",
-      "AWS Cognito",
-      "AWS S3"
+      "AWS Amplify"
     ],
     "libraries": [
       "Jetpack Navigation",
@@ -443,6 +480,12 @@
     "languages": [
       "Kotlin",
       "SQL"
+    ],
+    "platforms": [
+      "Android",
+      "AWS Amplify",
+      "AWS Cognito",
+      "AWS S3"
     ],
     "description": "A mobile inspection app built with Jetpack Compose that streamlines daily field reporting for construction projects. Users can create projects, log detailed reports with photos, track site conditions, and automatically organize data for fast, reliable documentation.",
     "link": [{"address": "https://github.com/thomasity/InspectionBuddy", "type": "github"}],
@@ -459,6 +502,7 @@
     "fields": ["Game Development", "Frontend Development"],
     "frameworks": ["React", "Vite"],
     "libraries": [],
+    "platforms": ["AWS Amplify"],
     "languages": ["TypeScript", "HTML", "CSS"],
     "description": "A browser-based single-player Texas Hold’em poker game built with a deterministic TypeScript game engine and a React UI. The project uses an event-driven reducer to model game flow, declarative side effects for bot turns and delayed transitions, and isolated hand evaluation logic. Designed with a strong separation between domain logic and presentation, the engine is fully testable and independent of the UI.",
     "link": [{"address": "https://github.com/thomasity/poker", "type": "github"}, {"address": "https://poker.tommycallen.com", "type": "live"}],

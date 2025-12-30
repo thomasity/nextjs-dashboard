@@ -47,6 +47,14 @@ export default function FeaturedProjectLeaf({ project }: { project: Project }) {
                     null
                     )
                 }
+                {project.platforms.length != 0 ? (
+                    <p className="!text-sm text-[var(--subtle-font-color)]">
+                    {project.platforms.length > 1 ? 'Platforms' : 'Platform'}: {project.platforms.join(', ')}
+                    </p>
+                    ) : (
+                    null
+                    )
+                }
                 <Link href={`/projects/${project.id}`} className="ml-auto mr-4"><button className="!text-lg !px-8">See More</button></Link>
             </div>
         </div>

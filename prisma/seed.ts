@@ -1,12 +1,29 @@
-// prisma/seed.ts
-// Run with: prisma db seed  (package.json => { "prisma": { "seed": "tsx prisma/seed.ts" } })
-
-import { PrismaClient } from '@prisma/client';
-import fs from 'node:fs/promises';
+import fs from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
+import { Pool } from "pg";
+import { PrismaPg } from "@prisma/adapter-pg";
+import { PrismaClient } from "./generated/prisma/client"; // adjust path
 
-const prisma = new PrismaClient();
+const connectionString = process.env.DATABASE_URL!;
+if (!connectionString) throw new Error("DATABASE_URL is not set");
+
+const ca = fs.readFileSync(
+  path.join(process.cwd(), "prisma/certs/global-bundle.pem"),
+  "utf8"
+);
+
+const pool = new Pool({
+  connectionString,
+  ssl: {
+    ca,
+    rejectUnauthorized: true,
+  },
+});
+
+const adapter = new PrismaPg(pool);
+
+export const prisma = new PrismaClient({ adapter });
 
 type Link = { type: string; address: string };
 type ProjectRow = {
@@ -17,6 +34,7 @@ type ProjectRow = {
   frameworks: string[];
   libraries: string[];
   languages: string[];
+  platforms: string[];
   description: string;
   link?: Link[];
   image?: string;
@@ -29,16 +47,13 @@ type ProjectRow = {
 const DATA_RELATIVE = process.env.SEED_PATH ?? 'app/data/projects.json';
 
 async function readJson<T>(filePath: string): Promise<T> {
-  const raw = await fs.readFile(filePath, 'utf8');
+  const raw = fs.readFileSync(filePath, 'utf8');
   return JSON.parse(raw) as T;
 }
 
 async function main() {
   const dataPath = path.resolve(process.cwd(), DATA_RELATIVE);
   console.log(`Reading seed data from: ${dataPath}`);
-
-  await prisma.project.deleteMany({});
-  console.log('Cleared existing project data.');
 
   const items = await readJson<ProjectRow[]>(dataPath);
   if (!Array.isArray(items)) throw new Error('Seed file is not an array.');
@@ -48,6 +63,7 @@ async function main() {
   }
 
   for (const p of items) {
+    console.log(p.platforms);
     await prisma.project.upsert({
       where: { name: p.name }, // ensure Project.name is @unique in schema
       update: {
@@ -57,6 +73,7 @@ async function main() {
         frameworks: p.frameworks,
         libraries: p.libraries,
         languages: p.languages,
+        platforms: p.platforms,
         description: p.description,
         link: p.link as any ?? null,
         image: p.image ?? null,
@@ -73,6 +90,7 @@ async function main() {
         frameworks: p.frameworks,
         libraries: p.libraries,
         languages: p.languages,
+        platforms: p.platforms,
         description: p.description,
         link: p.link as any ?? null,
         image: p.image ?? null,
