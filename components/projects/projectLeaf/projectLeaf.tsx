@@ -31,19 +31,19 @@ export default function ProjectLeaf({ project }: { project: Project }) {
         <Link href={`/projects/${project.id}`} className='!w-full !h-64 !p-0 !m-0'>
             <div className={clsx(styles.card, styles[`${project.difficulty.toLowerCase()}-glow`])}>
                 <DifficultyHighlighter difficulty={project.difficulty}>
-                    <div className="!h-fit">
-                        <div className='!flex !flex-col-reverse !items-start !m-0 !p-0 !h-[19%]'>
+                    <div className="!h-fit flex !flex-col !justify-around !p-2 !m-0 !h-full">
+                        <div className='!flex !flex-col-reverse !items-start !m-0 !p-0'>
                             <h3 className={styles.name}>{project.name}</h3>
                             <p className={styles.year}>{project.year}</p>
                         </div>
                         {project.fields && project.fields.length != 0 ? (
-                        <div className='!flex !flex-col !items-start !m-0 !mb-1 !p-0 !h-[5%]'>
+                        <div className='!flex !flex-col !items-start !m-0 !mb-1 !p-0'>
                             <p className={styles.field}>{project.fields.join(', ')}</p>
                         </div>
                         ) : (
                             null
                         )}
-                        <div className='!flex !flex-col !justify-center !m-0 !mb-1 !p-0 !h-[38%]'>
+                        <div className='!flex !flex-col !justify-center !m-0 !mb-1 !p-0'>
                             <p className={styles.description}>{project.description}</p>
                         </div>
                         <div className='!flex !flex-col !items-start !m-0 !mb-1 !p-0'>

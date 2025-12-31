@@ -20,7 +20,7 @@ export default function ProjectsCarrousel({ projects, className }: { projects: P
                 <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
                     {projects.map((project, index) => (
                         <div key={index} className="w-full flex-shrink-0 flex justify-center items-center">
-                            <FeaturedProjectLeaf project={project} className="w-[75%] grid-cols-2" />
+                            <FeaturedProjectLeaf project={project} className="w-[75%] grid-cols-2" clamped={true} />
                         </div>
                     ))}
                 </div>

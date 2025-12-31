@@ -1,6 +1,6 @@
 {
   "name": "Thomas Kent Callen",
-  "summary": "Computer Science engineer with experience in embedded systems, IoT hardware/software integration, and full-stack development. Skilled in building prototypes from concept to deployment, including Raspberry Pi/Pico-based sensor systems, cloud integration (Azure, AWS), and React frontends. Proven leadership in NASA-funded student design challenges and nonprofit engineering initiatives.",
+  "summary": "Junior software engineer experienced in building end-to-end systems across web, cloud, and IoT. Skilled in Python, C#, SQL, and JavaScript, with projects spanning REST APIs (FastAPI, ASP.NET, Flask), cloud-backed data pipelines on Azure/AWS, and modern front-end applications in Next.js. Work includes IoT telemetry pipelines into Azure SQL, distributed control systems for embedded devices, and general full-stack web application development.",
   "education": [
     {
       "degree": "Bachelor of Science in Engineering in Computer Science",
@@ -257,15 +257,15 @@
   "skills": [
     {
         "title": "Languages",
-        "items": ["C", "C++", "C#", "Python", "Java", "SQL", "JavaScript/TypeScript", "HTML/CSS"]
+        "items": ["C++", "C#", "Python", "SQL", "JavaScript/TypeScript", "HTML/CSS"]
     },
     {
         "title": "Frameworks",
-        "items": ["React/Next.js", "Flask", "FastAPI", "Express.js", "ASP.NET Core"]
+        "items": ["React/Next.js", "Flask", "FastAPI", "Express.js", "ASP.NET Core", "Prisma"]
     },
     {
         "title": "Libraries",
-        "items": ["Tailwind CSS", "NumPy", "Matplotlib", "qiskit", "OpenCV"]
+        "items": ["Tailwind CSS", "numpy", "Matplotlib", "qiskit", "OpenCV"]
     },
     {
         "title":"Databases",
@@ -273,7 +273,7 @@
     },
     {
         "title": "Tools",
-        "items": ["Git", "GitHub", "Docker", "Figma"]
+        "items": ["Git", "Docker", "Figma"]
     },
     {
         "title": "Platforms",

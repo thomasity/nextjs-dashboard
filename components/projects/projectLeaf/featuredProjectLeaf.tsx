@@ -14,7 +14,7 @@ function MetaLine({ label, items }: { label: string; items: string[] }) {
   );
 }
 
-export default function FeaturedProjectLeaf({ project, className }: { project: Project, className?: string }) {
+export default function FeaturedProjectLeaf({ project, clamped, className }: { project: Project, clamped?: boolean, className?: string }) {
   const imageSrc =
     typeof project.image === "string" && project.image.length > 0
       ? project.image
@@ -75,7 +75,7 @@ export default function FeaturedProjectLeaf({ project, className }: { project: P
             </div>
           )}
 
-          <p className="!mt-4 !text-sm !leading-relaxed !line-clamp-4">
+          <p className={`!mt-4 !text-sm !leading-relaxed line-clamp-4 ${clamped ? 'xl:line-clamp-none' : ''}`}>
             {project.description}
           </p>
         </div>
