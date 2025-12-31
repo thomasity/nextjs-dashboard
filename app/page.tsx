@@ -54,9 +54,9 @@ export default function LandingPage() {
         </section>
         <section className="w-full max-w-[1400px] mb-4 p-4">
           <h2 className="mr-auto my-4 !font-bold">Work I'm Working On:</h2>
-          <div className="grid xl:grid-cols-2 grid-cols-1 gap-4 mb-4">
+          <div className="grid xl:grid-cols-2 grid-cols-1 gap-8 mb-4">
             {projects && Array.isArray(projects) ? (projects.map((p) => (
-              p.ongoing && <FeaturedProjectLeaf key={p.name} project={p} />
+              p.ongoing && <FeaturedProjectLeaf key={p.name} project={p} className="sm:grid-cols-2"/>
             ))) : <p>No Active Projects</p>}
           </div>
         </section>

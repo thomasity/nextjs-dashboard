@@ -1,9 +1,6 @@
 'use client';
 import React from 'react';
-import styles from './socialMediaWidget.module.css';
-import { useTheme } from 'next-themes';
 import { ArrowDownTrayIcon, EnvelopeIcon } from '@heroicons/react/24/solid';
-import Image from 'next/image';
 import Link from 'next/link';
 
 export function DownloadResume({className}: {className?: string}) {

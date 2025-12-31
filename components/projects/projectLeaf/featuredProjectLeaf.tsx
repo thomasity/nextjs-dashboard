@@ -14,7 +14,7 @@ function MetaLine({ label, items }: { label: string; items: string[] }) {
   );
 }
 
-export default function FeaturedProjectLeaf({ project }: { project: Project }) {
+export default function FeaturedProjectLeaf({ project, className }: { project: Project, className?: string }) {
   const imageSrc =
     typeof project.image === "string" && project.image.length > 0
       ? project.image
@@ -27,14 +27,13 @@ export default function FeaturedProjectLeaf({ project }: { project: Project }) {
   const platforms = project.platforms ?? [];
 
   return (
-    <article className="!grid !grid-cols-2 !gap-8 !md:gap-10 !p-6 !md:p-8 !rounded-2xl border border-[var(--border-color)] !bg-[var(--bg-color)] !shadow-md !hover:shadow-lg !transition">
-      {/* Left: stretch to match right height, button pinned to bottom */}
-      <div className="!flex !flex-col !md:min-h-full">
-        <div className="!flex-1 !flex !items-center !justify-center">
+    <article className={`grid gap-8 md:gap-10 p-6 md:p-8 rounded-2xl border border-[var(--border-color)] shadow-md ${className}`}>
+      <div className="flex flex-col md:min-h-full col-span-1">
+        <div className="flex-1 flex items-center justify-center">
           <Image
             src={imageSrc}
             alt={project.name ? `${project.name} cover photo` : "Project cover photo"}
-            width={1200}
+            width={1000}
             height={800}
             className="!w-full !h-auto !rounded-xl !border !theme-border !shadow-sm !object-cover"
             priority
@@ -43,14 +42,14 @@ export default function FeaturedProjectLeaf({ project }: { project: Project }) {
 
         <div className="mt-5">
           <Link href={`/projects/${project.id}`} className="block">
-            <button className="!w-full !px-6 !py-2 !rounded-full !text-base !font-semibold">
+            <button className="!w-full !px-6 !py-2 !rounded-full !text-base !font-semibold shadow-sm">
               See More
             </button>
           </Link>
         </div>
       </div>
 
-      <div className="!flex !flex-col !md:min-h-full">
+      <div className="!flex !flex-col !md:min-h-full !col-span-1">
         <div>
           <p className="!text-sm !text-[var(--subtle-font-color)]">{project.year}</p>
 
