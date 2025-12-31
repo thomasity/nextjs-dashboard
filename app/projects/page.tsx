@@ -11,10 +11,10 @@ export default function Page() {
  
 
   return (
-    <main className="page-wrapper p-4">
-      <section className="w-full max-w-[1400px] mb-4 border-b theme-border p-4">
-        <h2 className="mr-auto !text-4xl">Featured Projects</h2>
-        <div className="grid xl:grid-cols-2 grid-cols-1 gap-4 mb-4">
+    <main className="page-wrapper p-4 max-w-[1400px] mx-auto">
+      <section className="w-full mb-4 border-b theme-border p-4">
+        <h2 className="mr-auto !text-4xl !mb-4">Featured Projects</h2>
+        <div className="grid md:grid-cols-2 grid-cols-1 gap-8 mb-4">
           {projects.map((p) => (
             p.featured &&<FeaturedProjectLeaf key={p.name} project={p} />
           ))}

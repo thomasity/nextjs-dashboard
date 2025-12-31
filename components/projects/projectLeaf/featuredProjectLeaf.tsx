@@ -1,62 +1,95 @@
 "use client";
 
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import { Project } from "@/app/types";
 
-export default function FeaturedProjectLeaf({ project }: { project: Project }) {
+function MetaLine({ label, items }: { label: string; items: string[] }) {
+  if (!items?.length) return null;
+  return (
+    <p className="!text-sm !text-[var(--subtle-font-color)] !leading-snug">
+      {label}
+      {items.length > 1 ? "s" : ""}: {items.join(", ")}
+    </p>
+  );
+}
 
-    return (
-        <div className="grid grid-cols-1 md:grid-cols-2 p-4 gap-8 xl:border-0 border-b theme-border last:border-0">
-            <div className="flex justify-center items-center">
-                <Image
-                    src={typeof project.image === "string" ? project.image : "/placeholder-image.svg"}
-                    alt={project.name ? `${project.name} cover photo` : "Project cover photo"}
-                    height={200}
-                    width={300}
-                    className="shadow"
-                    priority
-                />
-                </div>
-                <div className="flex flex-col justify-center">
-                <p>{project.year}</p>
-                <h3 className="!font-semibold">{project.name}</h3>
-                <p className="!text-sm !text-[var(--subtle-font-color)] mb-2">{project.fields.join(', ')}</p>
-                <p className="!text-sm mb-2 line-clamp-3">{project.description}</p>
-                {project.frameworks.length != 0 ? (
-                    <p className="!text-sm text-[var(--subtle-font-color)]">
-                    Framework{project.frameworks.length > 1 ? 's' : null }: {project.frameworks.join(', ')}
-                    </p>
-                    ) : (
-                    null
-                    )
-                }
-                {project.languages.length != 0 ? (
-                    <p className="!text-sm text-[var(--subtle-font-color)]">
-                    Language{project.languages.length > 1 ? 's' : null }: {project.languages.join(', ')}
-                    </p>
-                    ) : (
-                    null
-                    )
-                }
-                {project.libraries.length != 0 ? (
-                    <p className="!text-sm text-[var(--subtle-font-color)]">
-                    {project.libraries.length > 1 ? 'Libraries' : 'Library'}: {project.libraries.join(', ')}
-                    </p>
-                    ) : (
-                    null
-                    )
-                }
-                {project.platforms.length != 0 ? (
-                    <p className="!text-sm text-[var(--subtle-font-color)]">
-                    {project.platforms.length > 1 ? 'Platforms' : 'Platform'}: {project.platforms.join(', ')}
-                    </p>
-                    ) : (
-                    null
-                    )
-                }
-                <Link href={`/projects/${project.id}`} className="ml-auto mr-4"><button className="!text-lg !px-8">See More</button></Link>
-            </div>
+export default function FeaturedProjectLeaf({ project }: { project: Project }) {
+  const imageSrc =
+    typeof project.image === "string" && project.image.length > 0
+      ? project.image
+      : "/placeholder-image.svg";
+
+  const fields = project.fields ?? [];
+  const frameworks = project.frameworks ?? [];
+  const languages = project.languages ?? [];
+  const libraries = project.libraries ?? [];
+  const platforms = project.platforms ?? [];
+
+  return (
+    <article className="!grid !grid-cols-2 !gap-8 !md:gap-10 !p-6 !md:p-8 !rounded-2xl border border-[var(--border-color)] !bg-[var(--bg-color)] !shadow-md !hover:shadow-lg !transition">
+      {/* Left: stretch to match right height, button pinned to bottom */}
+      <div className="!flex !flex-col !md:min-h-full">
+        <div className="!flex-1 !flex !items-center !justify-center">
+          <Image
+            src={imageSrc}
+            alt={project.name ? `${project.name} cover photo` : "Project cover photo"}
+            width={1200}
+            height={800}
+            className="!w-full !h-auto !rounded-xl !border !theme-border !shadow-sm !object-cover"
+            priority
+          />
         </div>
-    );
+
+        <div className="mt-5">
+          <Link href={`/projects/${project.id}`} className="block">
+            <button className="!w-full !px-6 !py-2 !rounded-full !text-base !font-semibold">
+              See More
+            </button>
+          </Link>
+        </div>
+      </div>
+
+      <div className="!flex !flex-col !md:min-h-full">
+        <div>
+          <p className="!text-sm !text-[var(--subtle-font-color)]">{project.year}</p>
+
+          <h3 className="!mt-1 !text-2xl !md:text-3xl !font-semibold !leading-tight !line-clamp-2">
+            {project.name}
+          </h3>
+
+          {!!fields.length && (
+            <div className="!mt-3 !flex !flex-wrap !gap-2">
+              {fields.slice(0, 6).map((f) => (
+                <span
+                  key={f}
+                  className="rounded-full bg-[var(--bg-active)] py-1 px-4 !text-xs"
+                >
+                  {f}
+                </span>
+              ))}
+              {fields.length > 6 && (
+                <span className="!text-xs !px-2 !py-1 !rounded-full !border !theme-border !bg-[var(--bg-hover)] !text-[var(--subtle-font-color)]">
+                  +{fields.length - 6} more
+                </span>
+              )}
+            </div>
+          )}
+
+          <p className="!mt-4 !text-sm !leading-relaxed !line-clamp-4">
+            {project.description}
+          </p>
+        </div>
+
+        <div className="!flex-1" />
+
+        <div className="!mt-5 !pt-4 !border-t !theme-border !space-y-1">
+          <MetaLine label="Framework" items={frameworks} />
+          <MetaLine label="Language" items={languages} />
+          <MetaLine label="Library" items={libraries} />
+          <MetaLine label="Platform" items={platforms} />
+        </div>
+      </div>
+    </article>
+  );
 }

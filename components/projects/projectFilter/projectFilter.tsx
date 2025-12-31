@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-// import { frameworkTree, languageTree, fieldTree } from '@/app/data/frameworkTree';
 import { getFilters } from '@/app/data/frameworkTree';
 import { Project } from '@/app/types';
 import FilterTab from './filterTab';
@@ -21,12 +20,14 @@ export default function ProjectFilter({ setProjects, projects, setFilter, classN
   const [selectedYears, setSelectedYears] = useState<number[]>([]);
   const [selectedLibraries, setSelectedLibraries] = useState<string[]>([]);
   const [selectedDifficulties, setSelectedDifficulties] = useState<string[]>([]);
+  const [selectedPlatforms, setSelectedPlatforms] = useState<string[]>([]);
   const [yearTree, setYearTree] = useState<number[] | string[]>([]);
   const [fieldTree, setFieldTree] = useState<number[] | string[]>([]);
   const [frameworkTree, setFrameworkTree] = useState<number[] | string[]>([]);
   const [libraryTree, setLibraryTree] = useState<number[] | string[]>([]);
   const [languageTree, setLanguageTree] = useState<number[] | string[]>([]);
   const [difficultyTree, setDifficultyTree] = useState<number[] | string[]>([]);
+  const [platformTree, setPlatformTree] = useState<number[] | string[]>([]);
 
   function generateLogicExpression(groups: Array<string[] | number[]>) {
     if (!Array.isArray(groups)) return '';
@@ -50,6 +51,7 @@ export default function ProjectFilter({ setProjects, projects, setFilter, classN
     setLibraryTree(filters[3]);
     setLanguageTree(filters[4]);
     setDifficultyTree(filters[5]);
+    setPlatformTree(filters[6]);
 
   }, [projects])
 
@@ -61,12 +63,13 @@ export default function ProjectFilter({ setProjects, projects, setFilter, classN
       (selectedFields.length === 0 || project.fields.some((lang: string) => selectedFields.includes(lang))) &&
       (selectedYears.length === 0 || selectedYears.includes(project.year)) &&
       (selectedLibraries.length === 0 || project.libraries.some((lib: string) => selectedLibraries.includes(lib))) &&
-      (selectedDifficulties.length === 0 || selectedDifficulties.includes(project.difficulty))
+      (selectedDifficulties.length === 0 || selectedDifficulties.includes(project.difficulty)) &&
+      (selectedPlatforms.length === 0 || project.platforms.some((plat: string) => selectedPlatforms.includes(plat)))
     );
     setProjects(filteredProjects);
-    setFilter(generateLogicExpression([selectedFrameworks, selectedLanguages, selectedFields, selectedLibraries, selectedYears, selectedDifficulties]));
+    setFilter(generateLogicExpression([selectedFrameworks, selectedLanguages, selectedFields, selectedLibraries, selectedYears, selectedDifficulties, selectedPlatforms]));
 
-  }, [selectedFrameworks, selectedLanguages, selectedFields, selectedLibraries, selectedYears, selectedDifficulties]);
+  }, [selectedFrameworks, selectedLanguages, selectedFields, selectedLibraries, selectedYears, selectedDifficulties, selectedPlatforms]);
 
   const resetFilters = ():void => {
     setSelectedFrameworks([]);
@@ -75,6 +78,7 @@ export default function ProjectFilter({ setProjects, projects, setFilter, classN
     setSelectedLibraries([]);
     setSelectedYears([]);
     setSelectedDifficulties([]);
+    setSelectedPlatforms([]);
     setFilter('');
   };
 
@@ -91,6 +95,30 @@ export default function ProjectFilter({ setProjects, projects, setFilter, classN
       </div>
       <div className='h-full w-full !p-0 !m-0 !overflow-auto'>
         <FilterTab
+          label='Years'
+          items={yearTree}
+          selected={selectedYears}
+          onChange={(val) => setSelectedYears(val.map(Number))}
+        />
+        <FilterTab
+          label='Project Complexity'
+          items={difficultyTree}
+          selected={selectedDifficulties}
+          onChange={(val) => setSelectedDifficulties(val.map(String))}
+        />
+        <FilterTab
+          label='Fields'
+          items={fieldTree}
+          selected={selectedFields}
+          onChange={(val) => setSelectedFields(val.map(String))}
+        />
+        <FilterTab
+          label='Platforms'
+          items={platformTree}
+          selected={selectedPlatforms}
+          onChange={(val) => setSelectedPlatforms(val.map(String))}
+        />
+        <FilterTab
           label='Frameworks'
           items={frameworkTree}
           selected={selectedFrameworks}
@@ -103,28 +131,10 @@ export default function ProjectFilter({ setProjects, projects, setFilter, classN
           onChange={(val) => setSelectedLanguages(val.map(String))}
         />
         <FilterTab
-          label='Fields'
-          items={fieldTree}
-          selected={selectedFields}
-          onChange={(val) => setSelectedFields(val.map(String))}
-        />
-        <FilterTab
-          label='Years'
-          items={yearTree}
-          selected={selectedYears}
-          onChange={(val) => setSelectedYears(val.map(Number))}
-        />
-        <FilterTab
           label='Libraries'
           items={libraryTree}
           selected={selectedLibraries}
           onChange={(val) => setSelectedLibraries(val.map(String))}
-        />
-        <FilterTab
-          label='Project Complexity'
-          items={difficultyTree}
-          selected={selectedDifficulties}
-          onChange={(val) => setSelectedDifficulties(val.map(String))}
         />
 
       </div>

@@ -62,6 +62,7 @@ export function getFilters({projects} : { projects : Project[]}) {
     const frameworks = new Set<string>();
     const libraries = new Set<string>();
     const languages = new Set<string>();
+    const platforms = new Set<string>();
 
     projects.forEach((project) => {
         years.add(project.year);
@@ -77,6 +78,9 @@ export function getFilters({projects} : { projects : Project[]}) {
         project.languages.forEach((language) => {
             languages.add(language);
         });
+        project.platforms.forEach((platform) => {
+            platforms.add(platform);
+        });
     });
 
     const sortedYears = [...years].sort();
@@ -85,7 +89,8 @@ export function getFilters({projects} : { projects : Project[]}) {
     const sortedLibraries = [...libraries].sort();
     const sortedLanguages = [...languages].sort();
     const difficulties = ['Beginner', 'Intermediate', 'Advanced'];
+    const sortedPlatforms = [...platforms].sort();
 
-    return [sortedYears, sortedFields, sortedFrameworks, sortedLibraries, sortedLanguages, difficulties];
+    return [sortedYears, sortedFields, sortedFrameworks, sortedLibraries, sortedLanguages, difficulties, sortedPlatforms];
 
 }

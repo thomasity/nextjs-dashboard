@@ -1,16 +1,13 @@
 .card {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    min-height: 250px;
+    height: 250px;
     width: 100%;
-    padding: 1rem 1rem 1rem 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: scale 0.3s, box-shadow 0.3s;
     border: var(--border-color) solid 1px;
     background-color: var(--bg-color);
-    padding-right: 1rem; 
 }
 
 .card:hover {
@@ -38,12 +35,16 @@
     .card:last-child {
         border-bottom: none;
     }
+    .name {
+        line-clamp: none;
+    }
 }
 
 .name {
     font-size: 18px;
     font-weight: 600;
     line-height: 1.2;
+    line-clamp: 1;
 }
 
 .beginner {
