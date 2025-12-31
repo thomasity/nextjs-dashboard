@@ -18,7 +18,7 @@ export default function LandingPage() {
               <p>Hello, my name is <span id="me" className="font-bold">Thomas Callen</span> and I'm a </p>
               <h1 id="title">Software Developer.</h1>
               <div className="lg:w-2/3">
-                <p className="!text-sm">I specialize in building high-quality web applications using modern technologies like React, Next.js, and TypeScript. With a strong foundation in computer science and a passion for coding, I create efficient and scalable solutions that meet user needs.</p>
+                <p className="!text-sm">I build end-to-end software, from modern web apps to the backend systems and infrastructure that support them. With a strong computer science background, I focus on writing clean, scalable code that solves real problems.</p>
                 <br />
                 <p className="!text-sm">Feel free to explore my portfolio to see some of the projects I've worked on, and don't hesitate to reach out if you'd like to connect or collaborate!</p>
               </div>
