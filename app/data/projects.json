@@ -511,5 +511,22 @@
     "featured": true,
     "ongoing": true,
     "owner": "thomasity"
-  }
+  },
+  {
+  "name": "On-Demand Minecraft Server (EC2 + Lambda)",
+  "year": 2025,
+  "difficulty": "Intermediate",
+  "fields": ["Cloud", "Backend Development", "DevOps"],
+  "frameworks": [],
+  "libraries": ["AWS SDK (Boto3)"],
+  "languages": ["Python"],
+  "platforms": ["AWS EC2", "AWS Lambda", "Minecraft (Paper)"],
+  "description": "Built an on-demand Minecraft server on AWS using EC2 for compute and a Lambda function to start the instance remotely. This allowed my friends and me to spin up the server only when needed, minimizing idle compute cost while keeping the setup simple to use.",
+  "link": [],
+  "image": null,
+  "featured": false,
+  "ongoing": false,
+  "owner": null,
+  "repo": null
+}
 ]
