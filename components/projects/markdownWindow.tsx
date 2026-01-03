@@ -36,7 +36,6 @@ export default function MarkdownWindow({ owner, repo, className }: { owner: stri
         fetchPrivacy().then((privateResponse) => {
           if (privateResponse) {
             setIsPrivate(true);
-            console.log("Private repo!")
             setMarkdown('# Private Repository.\n Request Permission to View.')
           } else {
             setIsPrivate(false);

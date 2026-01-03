@@ -115,7 +115,7 @@ export default function ProjectPage(props: ProjectPageProps) {
                           null
                         )
                   }
-                  {project.platforms && Array.isArray(project.platforms) && project.platforms.length > 0 ? (
+                   {project.platforms && Array.isArray(project.platforms) && project.platforms.length > 0 ? (
                     <SkillList category="Platform" skills={project.platforms} project_name={project.name} />
                       ) : (     
                           null

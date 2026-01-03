@@ -4,7 +4,6 @@ const GITHUB_API = "https://api.github.com";
 const API_VERSION = "2022-11-28";
 
 function buildHeaders(format: string) {
-  // raw: Markdown text, html: GitHub-rendered HTML, json: API JSON (base64)
   const accept =
     format === "html"
       ? "application/vnd.github.html"
@@ -25,14 +24,12 @@ async function fetchGithubReadme(owner: string, repo: string, ref?: string, form
   if (ref) url.searchParams.set("ref", ref);
   const res = await fetch(url, {
     headers: buildHeaders(format),
-    // cache README for 5 minutes
     next: { revalidate: 300 },
   });
   return res;
 }
 
 async function fallbackRaw(owner: string, repo: string, ref?: string) {
-  // Try raw.githubusercontent.com as a fallback (raw markdown)
   const branches = ref ? [ref] : ["main", "master"];
   for (const b of branches) {
     const url = `https://raw.githubusercontent.com/${owner}/${repo}/${b}/README.md`;
@@ -49,14 +46,11 @@ export async function GET(
   const { owner, repo } = await params;
   const { searchParams } = new URL(req.url);
   const ref = searchParams.get("ref") ?? undefined;
-  const format = (searchParams.get("format") ?? "raw").toLowerCase(); // raw | html | json
-
-  // 1) Try GitHub API
+  const format = (searchParams.get("format") ?? "raw").toLowerCase();
   let res = await fetchGithubReadme(owner, repo, ref, format);
   if (res.ok) {
     const body = await res.arrayBuffer();
 
-    // Content-Type by format
     const contentType =
       format === "html"
         ? "text/html; charset=utf-8"
@@ -73,7 +67,6 @@ export async function GET(
     });
   }
 
-  // 2) Fallback to raw.githubusercontent.com for raw markdown
   if (format === "raw") {
     const raw = await fallbackRaw(owner, repo, ref);
     if (raw?.ok) {
@@ -88,7 +81,6 @@ export async function GET(
     }
   }
 
-  // 3) Error bubble-up
   const status = res.status || 500;
   const msg = await safeText(res);
   return NextResponse.json(

@@ -450,7 +450,7 @@
     "description": "Multipart project for GLBL Foundation: assembled Raspberry Pi Pico–based sensor nodes integrating turbidity, total dissolved solids (TDS), and temperature sensors. Devices published telemetry to Azure IoT Hub, where a custom ASP.NET Core backend ingested, validated, and stored data in Microsoft SQL Server using EF Core. The backend also exposed a REST API for querying device telemetry and supporting downstream analytics. In parallel, contributed to a Next.js/React website to communicate the foundation’s mission and provide groundwork for future data visualization of real-time water quality readings.",
     "featured": false,
     "image": "/project_covers/GLBL_cover.png",
-    "ongoing": true,
+    "ongoing": false,
     "link": [
       {
         "address": "https://github.com/thomasity/GLBL_ALT",

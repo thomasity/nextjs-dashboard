@@ -123,14 +123,14 @@
         "title": "Software Engineer",
         "location": "Remote",
         "start": "2024-11",
-        "end": "2025-07",
+        "end": "2025-11",
         "details": [
             "Design and prototype the embedded systems of a free-source internet-connected water purifier/analyzer",
             "Build responsive web and mobile UIs using React to visualize data from water purifiers"
         ],
         "logo": "/logos/glbl_logo.webp",
         "link": "https://glblfoundation.org/",
-        "still_working": true
+        "still_working": false
     },
     {
         "company": "Kinetix LLC",
