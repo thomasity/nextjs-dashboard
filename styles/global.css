@@ -59,6 +59,7 @@
   --border-color: rgb(222 222 222);
   --bg-color: #f9fafb;
   --bg-inverse: #0d1117;
+  --bg-inverse-rgb: 13, 17, 23;
   --bg-hover: #ececec;
   --bg-active: #e0e0e0;
   --border-width: 1px;
@@ -84,6 +85,7 @@
   --border-color: #262c36;
   --bg-color: #0d1117;
   --bg-inverse: #f9fafb;
+  --bg-inverse-rgb: 255, 255, 255;
   --bg-hover: #181b20;
   --bg-active: #23272e;
   --subtle-font-color: #9198a1;
@@ -429,4 +431,41 @@ h3 {
 .trapezoid-nav {
   clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
   border: var(--border-color) solid var(--border-width);
+}
+
+@keyframes chat-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(var(--bg-inverse-rgb), 0.18);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(0, 0, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+.chatPulse {
+  animation: chat-pulse 2.6s ease-out infinite;
+}
+
+.typingDots {
+  display: inline-block;
+  width: 3ch;          /* reserves space for "..." */
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: baseline; /* keeps it on the text line */
+}
+
+.typingDots::after {
+  content: "...";
+  display: inline-block;
+  animation: typing-dots 1.2s steps(4, end) infinite;
+}
+
+@keyframes typing-dots {
+  0%   { clip-path: inset(0 100% 0 0); } /* show nothing */
+  33%  { clip-path: inset(0 66% 0 0); }  /* show "." */
+  66%  { clip-path: inset(0 33% 0 0); }  /* show ".." */
+  100% { clip-path: inset(0 0 0 0); }    /* show "..." */
 }

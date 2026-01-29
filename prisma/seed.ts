@@ -1,27 +1,15 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
-import { Pool } from "pg";
-import { PrismaPg } from "@prisma/adapter-pg";
-import { PrismaClient } from "./generated/prisma/client"; // adjust path
+import { PrismaBetterSqlite3 } from "@prisma/adapter-better-sqlite3";
+import { PrismaClient } from "./generated/prisma/client";
 
-const connectionString = process.env.DATABASE_URL!;
-if (!connectionString) throw new Error("DATABASE_URL is not set");
+const datasourceUrl = process.env.DATABASE_URL;
+if (!datasourceUrl) throw new Error("DATABASE_URL is not set");
 
-const ca = fs.readFileSync(
-  path.join(process.cwd(), "prisma/certs/global-bundle.pem"),
-  "utf8"
-);
+const sqliteFile = datasourceUrl.replace(/^file:/, "");
 
-const pool = new Pool({
-  connectionString,
-  ssl: {
-    ca,
-    rejectUnauthorized: true,
-  },
-});
-
-const adapter = new PrismaPg(pool);
+const adapter = new PrismaBetterSqlite3({ url: sqliteFile});
 
 export const prisma = new PrismaClient({ adapter });
 

@@ -6,6 +6,7 @@ import { comfortaa } from '@/styles/fonts';
 import { ThemeProvider } from 'next-themes';
 import Header from '@/components/header/header';
 import Footer from '@/components/footer/footer';
+import { FloatingChat } from '@/components/chat/FloatingChat';
 import { prisma } from '@/lib/prisma';
 import { ProjectsProvider } from '@/components/projects/projectsProvider';
 import type { Project as DBProject } from '@/prisma/generated/prisma/client';
@@ -74,7 +75,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const rawProjects: DBProject[] = await prisma.project.findMany({
-    orderBy: { year: 'desc' }, // adjust as needed
+    orderBy: { year: 'desc' },
   });
 
   const projects: UIProject[] = rawProjects.map(p => ({
@@ -94,6 +95,7 @@ export default async function RootLayout({
           <ProjectsProvider initialProjects={projects}>
             <Header />
               {children}
+            {/* <FloatingChat /> */}
             <Footer />
           </ProjectsProvider>
         </ThemeProvider>
