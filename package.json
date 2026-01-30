@@ -4,7 +4,6 @@
     "build": "next build",
     "dev": "next dev --turbopack",
     "start": "next start",
-    "postinstall": "prisma generate",
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:watch": "vitest --watch",
