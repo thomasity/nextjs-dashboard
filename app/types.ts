@@ -1,7 +1,7 @@
 import { StaticImageData } from "next/image";
 
 export interface Link {
-  type: 'github' | 'live';
+  type: string;
   address: string;
 }
 

@@ -4,9 +4,6 @@
     "build": "next build",
     "dev": "next dev --turbopack",
     "start": "next start",
-    "prisma:generate": "prisma generate --schema prisma/schema.prisma",
-    "prisma:migrate:dev": "prisma migrate dev --schema prisma/schema.prisma",
-    "prisma:migrate:deploy": "prisma migrate deploy --schema prisma/schema.prisma",
     "postinstall": "prisma generate",
     "test": "vitest",
     "test:ui": "vitest --ui",
@@ -15,19 +12,15 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
-    "@prisma/adapter-better-sqlite3": "^7.3.0",
-    "@prisma/adapter-pg": "^7.2.0",
     "@prisma/client": "^6.19.2",
     "@tailwindcss/forms": "^0.5.10",
     "@tailwindcss/postcss": "^4.1.11",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.0",
-    "@vercel/postgres": "^0.10.0",
     "@vercel/speed-insights": "^1.2.0",
     "@vitest/ui": "^4.0.15",
     "autoprefixer": "^10.4.21",
     "bcrypt": "^6.0.0",
-    "better-sqlite3": "^9.6.0",
     "clsx": "^2.1.1",
     "eslint-config-next": "^15.5.2",
     "framer-motion": "^12.23.22",
@@ -38,7 +31,6 @@
     "next-themes": "^0.4.6",
     "nodemailer": "^7.0.5",
     "openai": "^6.15.0",
-    "pg": "^8.16.3",
     "postcss": "8.5.6",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
@@ -64,12 +56,8 @@
     "@vitejs/plugin-react": "^4.7.0",
     "globals": "^16.3.0",
     "happy-dom": "^20.0.11",
-    "prisma": "^6.19.2",
     "ts-node": "^10.9.2",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"
-  },
-  "prisma": {
-    "seed": "node -r ts-node/register ./prisma/seed.ts"
   }
 }

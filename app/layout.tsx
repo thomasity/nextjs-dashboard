@@ -7,10 +7,9 @@ import { ThemeProvider } from 'next-themes';
 import Header from '@/components/header/header';
 import Footer from '@/components/footer/footer';
 import { FloatingChat } from '@/components/chat/FloatingChat';
-import { prisma } from '@/lib/prisma';
 import { ProjectsProvider } from '@/components/projects/projectsProvider';
-import type { Project as DBProject } from '@/prisma/generated/prisma/client';
-import type { Project as UIProject, Link } from '@/app/types';
+import type { Project , Link } from '@/app/types';
+import projectData from '@/app/data/projects.json';
 
 export const metadata: Metadata = {
   title: 'Thomas Callen - Software Developer Portfolio',
@@ -74,11 +73,9 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const rawProjects: DBProject[] = await prisma.project.findMany({
-    orderBy: { year: 'desc' },
-  });
+  const rawProjects: Project[] = projectData;
 
-  const projects: UIProject[] = rawProjects.map(p => ({
+  const projects: Project[] = rawProjects.map(p => ({
     ...p,
     link: p.link as unknown as Link[] | undefined,
     fields: p.fields as string[],

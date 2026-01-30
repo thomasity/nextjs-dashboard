@@ -1,5 +1,6 @@
 [
     {
+    "id": 1,
     "name": "Structural Analysis and Logistics Toolkit",
     "year": 2021,
     "difficulty": "Beginner",
@@ -8,10 +9,10 @@
     "libraries": [],
     "languages": ["MATLAB"],
     "platforms": [],
-    "description": "This project contains a set of MATLAB scripts designed to solve real-world engineering problems involving structural mechanics and operational logistics.",
-    "link": ""
+    "description": "This project contains a set of MATLAB scripts designed to solve real-world engineering problems involving structural mechanics and operational logistics."
     },
     {
+      "id": 2,
       "name": "Tumor Detection and Visualization in Medical Imaging",
       "year": 2021,
       "difficulty": "Intermediate",
@@ -23,6 +24,7 @@
       "description": "A MATLAB-based system for detecting tumors in medical images, applying noise reduction, and visualizing results using heatmaps and a watch-style interface."
     },
     {
+      "id": 3,
       "name": "Wind Farm Performance Analysis and Visualization",
       "year": 2021,
       "difficulty": "Intermediate",
@@ -34,6 +36,7 @@
       "description": "A MATLAB-based tool for analyzing wind farm data and visualizing energy performance metrics using custom plotting routines."
     },
     {
+      "id": 4,
       "name": "Optimal Braking Coefficient Calculator",
       "year": 2021,
       "difficulty": "Intermediate",
@@ -45,6 +48,7 @@
       "description": "A C++ program that calculates the optimal braking coefficient to stop an object within a given distance using binary search and Euler's method to simulate deceleration."
     },
     {
+      "id": 5,
       "name": "Review Trustworthiness Evaluator",
       "year": 2021,
       "difficulty": "Beginner",
@@ -56,6 +60,7 @@
       "description": "A C++ project that evaluates the trustworthiness of reviews based on score thresholds, using file I/O and conditional logic."
     },
     {
+      "id": 6,
       "name": "Column-Based Statistical Summary Tool",
       "year": 2022,
       "difficulty": "Beginner",
@@ -67,6 +72,7 @@
       "description": "A C++ program that reads a CSV file, extracts a numeric column by name, and generates a frequency-based statistical summary of its values."
     },
     {
+      "id": 7,
       "name": "Modular Image Processing Toolkit",
       "year": 2022,
       "difficulty": "Intermediate",
@@ -78,6 +84,7 @@
       "description": "A C++ project that implements an image processing toolkit using custom data structures and modular functions for resizing, rotating, and processing images, with accompanying unit tests."
     },
     {
+      "id": 8,
       "name": "Euchre",
       "year": 2022,
       "difficulty": "Intermediate",
@@ -89,6 +96,7 @@
       "description": "A modular C++ implementation of the classic card game Euchre, including classes for players, cards, and game logic, as well as configurable game settings and unit tests."
     },
     {
+      "id": 9,
       "name": "Generic Doubly-Linked List with Iterator Interface",
       "year": 2022,
       "difficulty": "Intermediate",
@@ -100,6 +108,7 @@
       "description": "A templated C++ implementation of a doubly-linked, double-ended list with iterator support, featuring standard list operations and a full test suite."
     },
     {
+      "id": 10,
       "name": "Naive Text Classifier Using Word Frequency and Logistic Modeling",
       "year": 2022,
       "difficulty": "Intermediate",
@@ -111,6 +120,7 @@
       "description": "A C++ project that trains and evaluates a simple text classifier using word frequency and label probability, modeled after a Naive Bayes approach, with support for CSV input and debug inspection."
     },
     {
+      "id": 11,
       "name": "LC-2K Assembler and Simulator",
       "year": 2023,
       "difficulty": "Intermediate",
@@ -122,6 +132,7 @@
       "description": "A C project that assembles and simulates programs written in the LC-2K instruction set architecture, translating assembly code to machine code and running it on a simulated processor."
     },
     {
+      "id": 12,
       "name": "LC-2K Assembler and Linker",
       "year": 2023,
       "difficulty": "Intermediate",
@@ -133,6 +144,7 @@
       "description": "A two-pass assembler and linker for the LC-2K instruction set written in C, capable of translating assembly code into machine code and resolving external symbols across multiple modules."
     },
     {
+      "id": 13,
       "name": "LC-2K 5-Stage Pipeline Simulator",
       "year": 2023,
       "difficulty": "Intermediate",
@@ -144,6 +156,7 @@
       "description": "A C-based pipeline simulator for the LC-2K instruction set, implementing a 5-stage pipeline with instruction decoding, data forwarding, and cycle-by-cycle execution tracking."
     },
     {
+      "id": 14,
       "name": "LC-2K Cache Simulator",
       "year": 2023,
       "difficulty": "Intermediate",
@@ -155,6 +168,7 @@
       "description": "A configurable cache simulator for the LC-2K architecture written in C, modeling cache read/write behavior with support for LRU replacement and memory access tracking."
     },
     {
+      "id": 15,
       "name": "Movie Recommendation Analytics",
       "year": 2025,
       "difficulty": "Intermediate",
@@ -166,6 +180,7 @@
       "description": "A Spark-based Python project that analyzes movie ratings and transaction data to extract frequent itemsets, association rules, and popularity metrics for recommendation purposes."
     },
     {
+      "id": 16,
       "name": "Document Similarity and Clustering Toolkit",
       "year": 2025,
       "difficulty": "Intermediate",
@@ -177,6 +192,7 @@
       "description": "A Python toolkit for document clustering and similarity analysis using k-means, LSH, cosine similarity, shingling, and LOF for outlier detection."
     },
     {
+      "id": 17,
       "name": "Lightweight Quantum Circuit Simulator",
       "year": 2025,
       "difficulty": "Intermediate",
@@ -188,6 +204,7 @@
       "description": "A basic quantum circuit simulator built in Python using NumPy, supporting multiple qubits, standard quantum gates, and probabilistic measurement of quantum states."
     },
     {
+      "id": 18,
       "name": "Grover's Algorithm Simulation",
       "year": 2025,
       "difficulty": "Intermediate",
@@ -199,6 +216,7 @@
       "description": "A Python-based simulation of Grover’s quantum search algorithm using Qiskit, with logic for CNF-based oracle generation and modular testing of circuit components."
     },
     {
+      "id": 19,
       "name": "Steane [[7,1,3]] Quantum Error Correction Code",
       "year": 2025,
       "difficulty": "Intermediate",
@@ -210,6 +228,7 @@
       "description": "A Qiskit-based implementation of the Steane [[7,1,3]] quantum error-correcting code with encoding, syndrome measurement, error correction, and validation."
     },
     {
+      "id": 20,
       "name": "Insta485 Static Site Generator",
       "year": 2024,
       "difficulty": "Intermediate",
@@ -221,6 +240,7 @@
       "description": "A Python-based static site generator for an Instagram-style photo-sharing site using Jinja2 templates and JSON configuration."
     },
     {
+      "id": 21,
       "name": "Insta485 Server-Side Dynamic Photo Sharing Web App",
       "year": 2024,
       "difficulty": "Intermediate",
@@ -232,6 +252,7 @@
       "description": "A server-side web application that mimics Instagram functionality, using Python views, Jinja templating, and SQLite to render dynamic user pages, posts, and interactions."
     },
     {
+      "id": 22,
       "name": "Insta485 Client-Side Dynamic Photo App",
       "year": 2024,
       "difficulty": "Intermediate",
@@ -243,6 +264,7 @@
       "description": "A React-based frontend for a photo-sharing app that dynamically renders content from a RESTful API backed by a SQL database, combining modern UI design with persistent backend data."
     },
     {
+      "id": 23,
       "name": "Distributed MapReduce Framework",
       "year": 2024,
       "difficulty": "Advanced",
@@ -254,6 +276,7 @@
       "description": "A full Python implementation of a distributed MapReduce system with socket-based job coordination, configurable job submission, and parallel worker execution."
     },
     {
+      "id": 24,
       "name": "Distributed MapReduce Search Engine",
       "year": 2024,
       "difficulty": "Advanced",
@@ -265,6 +288,7 @@
       "description": "A Python-based distributed search engine that uses MapReduce for HTML indexing and a Flask frontend to perform multi-threaded, segment-based query resolution."
     },
     {
+      "id": 25,
       "name": "Cryptographic Attack Suite",
       "year": 2024,
       "difficulty": "Advanced",
@@ -276,6 +300,7 @@
       "description": "A Python suite demonstrating real-world cryptographic attacks including Bleichenbacher's RSA forgery, CBC padding oracle attacks, and SHA-256 length extension, intended for educational use."
     },
     {
+      "id": 26,
     "name": "Flawed Ballot Randomization Analysis",
     "year": 2024,
     "difficulty": "Advanced",
@@ -287,6 +312,7 @@
     "description": "A Python project that solves a multi-part assignment on reverse-engineering LCGs, auditing ballot-level election data, and unshuffling improperly sanitized CVRs to expose election system vulnerabilities."
   },
   {
+    "id": 27,
     "name": "Exploiting Common Web Vulnerabilities",
     "year": 2024,
     "difficulty": "Intermediate",
@@ -298,6 +324,7 @@
     "description": "A hands-on web security lab demonstrating Cross-Site Request Forgery, SQL Injection, and Cross-Site Scripting attacks, designed for EECS 388 coursework."
   },
   {
+    "id": 28,
     "name": "Certificate Forgery and Multi-Factor Authentication Bypass",
     "year": 2024,
     "difficulty": "Advanced",
@@ -309,6 +336,7 @@
     "description": "A Python-based project simulating client certificate spoofing and TOTP-based MFA bypasses in a secure certificate exchange system, developed for EECS 388 coursework."
   },
   {
+    "id": 29,
     "name": "Buffer Overflow Exploitation and Shellcode Injection",
     "year": 2024,
     "difficulty": "Advanced",
@@ -320,6 +348,7 @@
     "description": "A security lab for exploiting stack-based buffer overflows and shellcode vulnerabilities in C programs, supported by Python exploit scripts. Designed for EECS 388 coursework."
   },
   {
+    "id": 30,
     "name": "Roomerines",
     "year": 2024,
     "difficulty": "Advanced",
@@ -335,6 +364,7 @@
     "description": "A social media app built with React Native and Firebase that helps students find housing and compatible roommates by creating profiles and connecting based on shared interests. The app uses Firebase email link authentication and cloud services, and is designed for EECS 441 coursework."
   },
   {
+    "id": 31,
     "name": "Rowing Machine Display Interface for NASA xHAB Rower System",
     "year": 2024,
     "difficulty": "Intermediate",
@@ -351,6 +381,7 @@
     "link": [{"address": "https://github.com/thomasity/RowingMachineDisplayInterface", "type": "github"}]
   },
   {
+    "id": 32,
     "name": "UI and Controls System for NASA xHAB ISS EXPRESS Rack Redesign",
     "year": 2025,
     "difficulty": "Advanced",
@@ -371,6 +402,7 @@
     "repo": "racknstack"
   },
   {
+    "id": 33,
     "name": "Smart Grocery & Meal Planner App",
     "year": 2023,
     "difficulty": "Intermediate",
@@ -382,6 +414,7 @@
     "description": "A React Native app for managing groceries, finding recipes, and tracking user statistics. Includes multi-screen navigation, state sharing with Context API, and a mobile-friendly interface."
   },
   {
+    "id": 34,
     "name": "This Website!",
     "year": 2025,
     "difficulty": "Advanced",
@@ -399,6 +432,7 @@
     "repo": "nextjs-dashboard"
   },
   {
+    "id": 35,
     "name": "ML-Driven Paper Trader",
     "year": 2025,
     "difficulty": "Advanced",
@@ -416,6 +450,7 @@
     "repo": "ML-Driven_Paper_Trader"
   },
   {
+    "id": 36,
     "name": "Open-Source Smart Water Purifier / Analyzer (GLBL Foundation)",
     "year": 2024,
     "difficulty": "Advanced",
@@ -461,6 +496,7 @@
     "repo": "GLBL_ALT"
   },
   {
+    "id": 37,
     "name": "Inspection Report App",
     "year": 2025,
     "difficulty": "Intermediate",
@@ -496,6 +532,7 @@
     "repo": "InspectionBuddy"
   },
   {
+    "id": 38,
     "name": "Single-Player Texas Hold’em Poker",
     "year": 2025,
     "difficulty": "Intermediate",
@@ -513,6 +550,7 @@
     "owner": "thomasity"
   },
   {
+    "id": 39,
   "name": "On-Demand Minecraft Server (EC2 + Lambda)",
   "year": 2025,
   "difficulty": "Intermediate",
@@ -522,7 +560,6 @@
   "languages": ["Python"],
   "platforms": ["AWS EC2", "AWS Lambda", "Minecraft (Paper)"],
   "description": "Built an on-demand Minecraft server on AWS using EC2 for compute and a Lambda function to start the instance remotely. This allowed my friends and me to spin up the server only when needed, minimizing idle compute cost while keeping the setup simple to use.",
-  "link": [],
   "image": null,
   "featured": false,
   "ongoing": false,
