@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { prisma } from '@/lib/prisma';
+import projectData from '@/app/data/projects.json';
 
 export const dynamic = 'force-dynamic';
 
@@ -9,23 +9,19 @@ export async function GET(request: Request) {
     const featured = searchParams.get('featured');
     const year = searchParams.get('year');
     const q = searchParams.get('q');
-    const ongoing = searchParams.get('ongoing'); // <-- add this
+    const ongoing = searchParams.get('ongoing');
 
-    const projects = await prisma.project.findMany({
-      where: {
-        ...(featured ? { featured: featured === 'true' } : {}),
-        ...(ongoing ? { ongoing: ongoing === 'true' } : {}), // <-- filter
-        ...(year ? { year: Number(year) } : {}),
-        ...(q
-          ? {
-              OR: [
-                { name: { contains: q } },
-                { description: { contains: q } },
-              ],
-            }
-          : {}),
-      },
-      orderBy: [{ updatedAt: 'desc' }, { year: 'desc' }, { name: 'asc' }],
+    const projects = projectData.filter(project => {
+      if (featured && project.featured !== (featured === 'true')) return false;
+      if (ongoing && project.ongoing !== (ongoing === 'true')) return false;
+      if (year && project.year !== Number(year)) return false;
+      if (q) {
+        const query = q.toLowerCase();
+        if (!project.name.toLowerCase().includes(query) && !project.description.toLowerCase().includes(query)) {
+          return false;
+        }
+      }
+      return true;
     });
 
     return NextResponse.json(projects);
