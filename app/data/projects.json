@@ -528,7 +528,7 @@
     "link": [{"address": "https://github.com/thomasity/InspectionBuddy", "type": "github"}],
     "featured": false,
     "image": "/project_covers/inspectionbuddy_cover.png", 
-    "ongoing": true,
+    "ongoing": false,
     "owner": "thomasity",
     "repo": "InspectionBuddy"
   },
@@ -566,5 +566,42 @@
   "ongoing": false,
   "owner": null,
   "repo": null
+},
+{
+  "id": 40,
+  "name": "Prediction Royale",
+  "year": 2026,
+  "difficulty": "Advanced",
+  "fields": [
+    "Fintech",
+    "Data Aggregation",
+    "Full-Stack Development",
+    "Market Analysis"
+  ],
+  "frameworks": [
+    "Next.js (App Router)"
+  ],
+  "libraries": [
+    "Tailwind CSS v4",
+    "postgres.js",
+    "pgx/v5"
+  ],
+  "languages": [
+    "TypeScript",
+    "Go",
+    "SQL"
+  ],
+  "platforms": [
+    "PostgreSQL",
+    "Kalshi API",
+    "Polymarket API"
+  ],
+  "description": "A real-time prediction market aggregator that continuously ingests and cross-matches events from Kalshi and Polymarket. A Go-based matching engine scores event pairs by title similarity, outcome labels, category tags, and close time — then precomputes probability divergences and liquidity metrics across all matched outcomes. The Next.js web app surfaces the most liquid, most divergent, and soonest-closing pairs through a dark fintech interface featuring a hero carousel, tag-based market browsing, per-market mirrored outcome bars, and a live search autocomplete.",
+  "featured": true,
+  "ongoing": true,
+  "owner": "thomasity",
+  "repo": "PredictionRoyale",
+  "link": [{"address": "https://github.com/thomasity/PredictionRoyale", "type": "github"}],
+  "image": "/project_covers/prediction_royale_cover.png"
 }
 ]

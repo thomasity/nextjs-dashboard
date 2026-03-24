@@ -127,7 +127,7 @@ export default function ProjectPage(props: ProjectPageProps) {
 
             <article className="w-full col-span-3 p-4">
               <div>
-                <h3 className='!text-3xl !mr-auto !font-semibold mb-4'>README.md</h3>
+                <h3 className='!text-3xl mr-auto font-semibold mb-4'>README.md</h3>
                 {project.owner && project.repo &&<MarkdownWindow owner={project.owner} repo={project.repo} className="border theme-border h-[40rem] overflow-x-hidden" />}
               </div>
             </article>
