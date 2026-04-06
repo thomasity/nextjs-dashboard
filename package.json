@@ -7,7 +7,7 @@
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:watch": "vitest --watch",
-    "chat:store": ""
+    "chat:store": "node --env-file=.env --import tsx/esm scripts/setup-vector-store.ts"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",

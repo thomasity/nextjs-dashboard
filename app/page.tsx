@@ -1,15 +1,14 @@
-'use client';
 import React from 'react';
 import { DownloadResume, EmailMe } from '@/components/buttons/buttons';
 import FeaturedProjectLeaf from '@/components/projects/projectLeaf/featuredProjectLeaf';
-import { useProjects } from '@/components/projects/projectsProvider';
 import ThemedImage from '@/components/ThemedImage';
+import type { Project, Link } from '@/app/types';
+import rawProjectData from '@/app/data/projects.json';
 
-
-
+const projects = rawProjectData as unknown as Project[];
 
 export default function LandingPage() {
-  const projects = useProjects();
+  const ongoingProjects = projects.filter(p => p.ongoing);
 
   return (
     <div className="page-wrapper">
@@ -31,7 +30,6 @@ export default function LandingPage() {
         <section className="w-full h-full grid grid-cols-3 gap-4 p-8 border-y theme-border mb-4">
           <div className="flex flex-col items-center border-r theme-border p-4 text-center space-y-4">
             <ThemedImage defaultSrc="/backend.png" lightSrc="/backend.png" darkSrc="/backend-dark.png" alt="Backend Development" width={64} height={64} className="bg-[#f9fafb] rounded-xl" />
-
             <div>
               <p className="">Back-end Development</p>
               <p className="text-[var(--inverse-subtle-font-color)] !text-sm">FastAPI / Node.js / Express / Next.js / SQL</p>
@@ -55,9 +53,11 @@ export default function LandingPage() {
         <section className="w-full max-w-[1400px] mb-4 p-4">
           <h2 className="mr-auto my-4 !font-bold">Work I'm Working On:</h2>
           <div className="grid xl:grid-cols-2 grid-cols-1 gap-8 mb-4">
-            {projects && Array.isArray(projects) ? (projects.map((p) => (
-              p.ongoing && <FeaturedProjectLeaf key={p.name} project={p} className="sm:grid-cols-2"/>
-            ))) : <p>No Active Projects</p>}
+            {ongoingProjects.length > 0
+              ? ongoingProjects.map((p) => (
+                  <FeaturedProjectLeaf key={p.name} project={p} className="sm:grid-cols-2" />
+                ))
+              : <p>No Active Projects</p>}
           </div>
         </section>
     </div>

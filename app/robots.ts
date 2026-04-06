@@ -2,7 +2,7 @@
 import type { MetadataRoute } from "next";
 
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://example.com";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://tommycallen.com";
 const isIndexable =
   process.env.NEXT_PUBLIC_SITE_ENV === "production";
 
@@ -35,7 +35,7 @@ export default function robots(): MetadataRoute.Robots {
         ],
       },
     ],
-    sitemap: `${siteUrl}/sitemap.ts`,
+    sitemap: `${siteUrl}/sitemap.xml`,
     host: siteUrl,
   };
 }

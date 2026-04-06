@@ -601,7 +601,7 @@
   "ongoing": true,
   "owner": "thomasity",
   "repo": "PredictionRoyale",
-  "link": [{"address": "https://github.com/thomasity/PredictionRoyale", "type": "github"}],
+  "link": [{"address": "https://github.com/thomasity/PredictionRoyale", "type": "github"}, {"address": "https://predictionroyale.com", "type": "live"}],
   "image": "/project_covers/prediction_royale_cover.png"
 }
 ]

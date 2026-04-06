@@ -1,97 +1,130 @@
+/**
+ * Builds a local embeddings store from app/data/projects.json and app/data/resume.json.
+ * Run with: npm run chat:store
+ * Output: app/data/embeddings.json
+ */
+
 import OpenAI from "openai";
-import { NextResponse } from "next/server";
-import { createReadStream } from "node:fs";
+import fs from "node:fs";
 import path from "node:path";
-
-
-const SYSTEM_PROMPT = `
-You are a friendly, concise portfolio assistant.
-
-Primary goals:
-- Help visitors quickly understand Thomas’s experience and best projects.
-- Recommend what to click next on the website.
-- Answer recruiter-style questions clearly.
-
-Style:
-- Friendly, confident, not salesy.
-- Use bullets when listing.
-- Ask at most one question at a time.
-
-Length:
-- Keep answers under 120 words unless the user asks for more detail
-
-Accuracy:
-- Only use facts from PORTFOLIO_CONTEXT or the conversation.
-- If missing info, say "I’m not sure" and offer the closest relevant page.
-
-Boundaries:
-- No legal/medical/financial advice.
-- Do not request sensitive personal information.
-`;
-
-
-export const runtime = "nodejs";
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
-const projectsDataPath = path.join(process.cwd(), "app/data/projects.json");
-let projectsFileIdPromise: Promise<string> | null = null;
-
-const ensureProjectsInVectorStore = async (vectorStoreId: string) => {
-  if (!projectsFileIdPromise) {
-    projectsFileIdPromise = (async () => {
-      const file = await openai.files.create({
-        file: createReadStream(projectsDataPath),
-        purpose: "assistants",
-      });
-      await openai.vectorStores.files.create(vectorStoreId, { file_id: file.id });
-      return file.id;
-    })();
-  }
-
-  await projectsFileIdPromise;
-};
-
-export async function POST(req: Request) {
-  const { message } = await req.json();
-
-  const vectorStoreId = process.env.OPENAI_VECTOR_STORE_ID;
-  if (!vectorStoreId) {
-    return NextResponse.json(
-      { error: "Missing OPENAI_VECTOR_STORE_ID" },
-      { status: 500 }
-    );
-  }
-
-  await ensureProjectsInVectorStore(vectorStoreId);
-
-  const response = await openai.responses.create({
-    model: "gpt-4.1",
-    input: [
-      {
-        role: "system",
-        content:
-          "You are a portfolio assistant for Thomas. Use file_search to answer using the resume/projects. If unsure, ask a clarifying question.",
-      },
-      { role: "user", content: message },
-    ],
-    tools: [
-      {
-        type: "file_search",
-        vector_store_ids: [vectorStoreId],
-        max_num_results: 6,
-      },
-    ],
-    include: ["file_search_call.results"],
-  });
-
-  const outputText =
-    response.output
-      .filter((o: any) => o.type === "message")
-      .flatMap((m: any) => m.content)
-      .filter((c: any) => c.type === "output_text")
-      .map((c: any) => c.text)
-      .join("\n\n") || "";
-
-  return NextResponse.json({ text: outputText });
+interface Chunk {
+  text: string;
+  embedding: number[];
 }
+
+function buildChunks(): string[] {
+  const dataDir = path.join(process.cwd(), "app/data");
+  const projects = JSON.parse(fs.readFileSync(path.join(dataDir, "projects.json"), "utf-8"));
+  const resume = JSON.parse(fs.readFileSync(path.join(dataDir, "resume.json"), "utf-8"));
+
+  const chunks: string[] = [];
+
+  // One chunk per project
+  for (const p of projects) {
+    const lines = [
+      `Project: ${p.name}`,
+      `Year: ${p.year}`,
+      p.fields?.length ? `Fields: ${p.fields.join(", ")}` : null,
+      p.languages?.length ? `Languages: ${p.languages.join(", ")}` : null,
+      p.frameworks?.length ? `Frameworks: ${p.frameworks.join(", ")}` : null,
+      p.libraries?.length ? `Libraries: ${p.libraries.join(", ")}` : null,
+      p.platforms?.length ? `Platforms: ${p.platforms.join(", ")}` : null,
+      p.description ? `Description: ${p.description}` : null,
+    ].filter(Boolean) as string[];
+    chunks.push(lines.join("\n"));
+  }
+
+  // Resume summary
+  chunks.push(`About Thomas Callen:\n${resume.summary}`);
+
+  // Education
+  for (const e of resume.education) {
+    const lines = [
+      `Education: ${e.degree} at ${e.school}`,
+      e.minor ? `Minor: ${e.minor}` : null,
+      e.graduation ? `Graduated: ${e.graduation}` : null,
+      e.gpa ? `GPA: ${e.gpa}` : null,
+    ].filter(Boolean) as string[];
+    chunks.push(lines.join("\n"));
+  }
+
+  // Coursework as a single chunk
+  const coursework = resume.education[0]?.coursework;
+  if (coursework?.length) {
+    const lines = coursework.map(
+      (c: { title: string; semester: string; year: number; description: string }) =>
+        `- ${c.title} (${c.semester} ${c.year}): ${c.description}`
+    );
+    chunks.push(`Relevant Coursework:\n${lines.join("\n")}`);
+  }
+
+  // Work experience — one chunk each
+  for (const e of resume.experience) {
+    const lines = [
+      `Work Experience: ${e.title} at ${e.company}`,
+      `Location: ${e.location}`,
+      `Duration: ${e.start} to ${e.end ?? "present"}`,
+      e.details?.length
+        ? `Responsibilities:\n${(e.details as string[]).map((d) => `- ${d}`).join("\n")}`
+        : null,
+    ].filter(Boolean) as string[];
+    chunks.push(lines.join("\n"));
+  }
+
+  // Extracurriculars — one chunk each
+  for (const e of resume.extracurriculars) {
+    const lines = [
+      `Extracurricular: ${e.title} at ${e.company}`,
+      `Duration: ${e.start} to ${e.end ?? "present"}`,
+      e.details?.length
+        ? `Details:\n${(e.details as string[]).map((d) => `- ${d}`).join("\n")}`
+        : null,
+    ].filter(Boolean) as string[];
+    chunks.push(lines.join("\n"));
+  }
+
+  // Skills — one chunk per category
+  for (const s of resume.skills as { title: string; items: string[] }[]) {
+    chunks.push(`Skills — ${s.title}: ${s.items.join(", ")}`);
+  }
+
+  return chunks;
+}
+
+async function embedBatch(texts: string[]): Promise<number[][]> {
+  const res = await openai.embeddings.create({
+    model: "text-embedding-3-small",
+    input: texts,
+  });
+  return res.data.map((d) => d.embedding);
+}
+
+async function main() {
+  console.log("Building chunks from projects.json and resume.json...");
+  const chunks = buildChunks();
+  console.log(`${chunks.length} chunks to embed.`);
+
+  const batchSize = 20;
+  const results: Chunk[] = [];
+
+  for (let i = 0; i < chunks.length; i += batchSize) {
+    const batch = chunks.slice(i, i + batchSize);
+    const embeddings = await embedBatch(batch);
+    for (let j = 0; j < batch.length; j++) {
+      results.push({ text: batch[j], embedding: embeddings[j] });
+    }
+    console.log(`Embedded ${Math.min(i + batchSize, chunks.length)}/${chunks.length}`);
+  }
+
+  const outPath = path.join(process.cwd(), "app/data/embeddings.json");
+  fs.writeFileSync(outPath, JSON.stringify(results));
+  console.log(`Saved ${results.length} embeddings to app/data/embeddings.json`);
+}
+
+main().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});

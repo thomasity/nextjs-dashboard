@@ -1,4 +1,10 @@
 import React from 'react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Resume | Thomas Callen',
+  description: 'Resume of Thomas Callen — software engineer with experience in full-stack web development, cloud infrastructure (AWS/Azure), and embedded systems.',
+};
 import resumeData from '@/app/data/resume.json';
 import EducationCard from '@/components/resume/educationCard';
 import ExperienceCard from '@/components/resume/experienceCard';

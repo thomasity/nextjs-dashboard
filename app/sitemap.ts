@@ -18,12 +18,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const projects = projectData as Project[];
 
   const projectUrls: MetadataRoute.Sitemap = projects
-    .filter(p => p?.name)
+    .filter(p => p?.id)
     .map(p => ({
-      url: `${site}/projects/${encodeURIComponent(p.name)}`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.6,
+      url: `${site}/projects/${p.id}`,
+      lastModified: new Date(p.year, 11, 31),
+      changeFrequency: "yearly",
+      priority: p.featured ? 0.8 : 0.6,
     }));
 
   return [...staticUrls, ...projectUrls];
